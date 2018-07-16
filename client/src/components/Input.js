@@ -1,4 +1,5 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
 export class Input extends React.Component{
   componentDidUpdate(prevProps){
@@ -30,3 +31,5 @@ export class Input extends React.Component{
     );
   }
 }
+
+export default connect()(Input);

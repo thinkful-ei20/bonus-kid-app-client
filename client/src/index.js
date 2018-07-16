@@ -8,6 +8,8 @@ import Layout from './components/Layout';
 
 ReactDOM.render(
   <Provider store={store}>
-    <Layout />
+    <Router>
+      <Layout />
+    </Router>
   </Provider>,
   document.getElementById('root'));
