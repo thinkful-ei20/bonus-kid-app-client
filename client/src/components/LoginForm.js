@@ -11,7 +11,10 @@ export class LoginForm extends React.Component {
       error = (<div className='form-error'>{this.props.error}</div>);
     }
     return (
-      <form className='parent-login-form' onSubmit={this.props.handleSubmit(values => this.props.dispatch(loginParent(values.username, values.password)))}>
+      <form className='parent-login-form' onSubmit={this.props.handleSubmit(
+        values => this.props.dispatch(loginParent(values.username, values.password))
+        )
+        }>
         {error}
         <label htmlFor='username'>Username</label>
         <Field component={Input} name='username'

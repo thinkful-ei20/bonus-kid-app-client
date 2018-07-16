@@ -20,7 +20,8 @@ export const LandingPage = props => {
       </div>
       <div>
         <h2>Not a memeber, sign up</h2>
-        <Link to='/signup'>Signup</Link>
+        <Link to='/register'>Signup</Link>
+       
       </div>
     </div>
   );
