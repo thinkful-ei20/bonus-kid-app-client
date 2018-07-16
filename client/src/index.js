@@ -1,8 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import React from '../../../../Library/Caches/typescript/2.9/node_modules/@types/react';
+import ReactDOM from '../../../../Library/Caches/typescript/2.9/node_modules/@types/react-dom';
+import './styles/index.css';
+import Layout from './components/Layout';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+ReactDOM.render(
+  <Layout />,
+  document.getElementById('root'));
