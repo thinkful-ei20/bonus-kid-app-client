@@ -4,6 +4,8 @@ import {Route, withRouter} from 'react-router-dom';
 import {refreshAuthToken} from '../actions/auth';
 import LandingPage from '../components/LandingPage';
 
+import Dashboard from './Dashboard';
+
 const mapStateToProps = state => ({
   loggedIn: state.auth.authToken !== null,
   user: state.auth.user !== null
@@ -38,8 +40,8 @@ export class Layout extends React.Component {
       <div className='layout'>
         <h1> Testing </h1>
         <Route exact path='/' component={LandingPage} />
-        {/* <Route exact path='/signup' component={SignupPage} />
-        <Route exact path='/dashboard' component={Dashboard} /> */}
+        {/* <Route exact path='/signup' component={SignupPage} /> */}
+        <Route exact path='/dashboard' component={Dashboard} />
       </div>
     );
   }
