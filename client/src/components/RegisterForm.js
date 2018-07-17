@@ -21,37 +21,38 @@ export class RegistrationForm extends React.Component {
         onSubmit={this.props.handleSubmit(values =>
           this.onSubmit(values)
         )}>
-
-        <fieldset className="register-fieldset">
+           <label htmlFor='Name'> Name </label>
           <Field
-              label='Name'
               component={Input}
               type="name"
-              name="name" />
+              name="name" 
+              validate={[required, nonEmpty, isTrimmed]}
+              />
 
+           <label htmlFor='e-mail'> E-mail </label>
             <Field
-              label='Email Address'
               component={Input}
               type="email"
-              name="email" />
+              name="email"
+              validate={[required, nonEmpty, isTrimmed]}
+              />
 
+          <label htmlFor='username'> Username </label>
             <Field
-              label='Username'
               component={Input}
               type="text"
               name="username"
               validate={[required, nonEmpty, isTrimmed]}
             />
 
+          <label htmlFor='password'> Password </label>
             <Field
-              label='Password'
               component={Input}
               type="password"
               name="password"
               validate={[required, isTrimmed]}
             />
 
-        </fieldset>
         <button
           type="submit"
           disabled={this.props.pristine || this.props.submitting}>
