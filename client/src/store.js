@@ -16,7 +16,8 @@ const store = createStore(
 
 const authToken = loadAuthToken();
 if(authToken){
-  store.dispatch(setAuthToken(authToken));
+  let token = authToken
+  store.dispatch(setAuthToken(token));
   store.dispatch(refreshAuthToken());
 }
 

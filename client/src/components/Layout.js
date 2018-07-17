@@ -2,21 +2,21 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Route, withRouter} from 'react-router-dom';
 import {refreshAuthToken} from '../actions/auth';
-import LandingPage from '../components/LandingPage';
 
+import LandingPage from '../components/LandingPage';
 import Dashboard from './Dashboard';
-import RegisterForm from './RegisterForm';
+import RegistrationForm from './RegisterForm';
 
 const mapStateToProps = state => ({
-  loggedIn: state.auth.authToken !== null,
-  user: state.auth.user !== null
+  authToken: state.auth.authToken !== null,
+  loggedIn: state.auth.user !== null
 });
 
 export class Layout extends React.Component {
   componentDidUpdate(prevProps){
-    if(!prevProps.loggedIn && this.props.loggedIn){
+    if (!prevProps.loggedIn && this.props.loggedIn){
       this.startPeriodicRefresh();
-    } else if(prevProps.loggedIn && !this.props.loggedIn) {
+    } else if (prevProps.loggedIn && !this.props.loggedIn) {
       this.stopPeriodicRefresh();
     }
   }
@@ -41,7 +41,7 @@ export class Layout extends React.Component {
       <div className='layout'>
         <h1> Testing </h1>
         <Route exact path='/' component={LandingPage} />
-        <Route exact path='/register' component={RegisterForm} />
+        <Route exact path='/register' component={RegistrationForm} />
         <Route exact path='/dashboard' component={Dashboard} />
       </div>
     );

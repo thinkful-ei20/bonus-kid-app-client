@@ -9,8 +9,8 @@ import {Redirect} from 'react-router-dom';
 import { clearAuthToken } from '../local-storage';
 
 const mapStateToProps = state => ({
-  loggedIn: state.auth.authToken !== null,
-  user: state.auth.user !== null
+  authToken: state.auth.authToken !== null,
+  loggedIn: state.auth.user !== null
 });
 
 export class Dashboard extends React.Component{

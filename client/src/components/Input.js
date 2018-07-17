@@ -1,14 +1,15 @@
 import React from 'react';
-import {connect} from 'react-redux';
 
-export class Input extends React.Component{
+export default class Input extends React.Component{
   componentDidUpdate(prevProps){
     if(!prevProps.meta.active && this.props.meta.active){
       this.input.focus();
     }
   }
   render(){
-    let error; let warning;
+    let error; 
+    let warning;
+    
     if(this.props.meta.touched && this.props.meta.warning){
       warning = (<div className='form-warning'>{this.props.meta.warning}</div>);
     }
@@ -20,9 +21,13 @@ export class Input extends React.Component{
     const errStyle = {border: 'red 2px solid'};
     return(
       <div className='form-input'>
-        {error}
-        {warning}
-        <input {...this.props.input}
+        <label htmlFor={this.props.input.name}>
+          {this.props.label}
+          {error}
+          {warning}
+        </label>
+        <input 
+          {...this.props.input}
           id={this.props.input.name}
           type={this.props.type}
           style={error ? errStyle : null}
@@ -32,4 +37,3 @@ export class Input extends React.Component{
   }
 }
 
-export default connect()(Input);

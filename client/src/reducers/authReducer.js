@@ -7,7 +7,7 @@ const initState = {
   error: null
 };
 
-export default (state=initState, action) => {
+export default (state = initState, action) => {
   if(action.type === SET_AUTH_TOKEN){
     return {...state, authToken: action.authToken};
   } else if(action.type === CLEAR_AUTH){
