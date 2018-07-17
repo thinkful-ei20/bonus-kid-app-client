@@ -6,13 +6,13 @@ import LoginForm from './LoginForm';
 
 
 const mapStateToProps = state => ({
-  loggedIn: state.auth.currentUser !== null
+  loggedIn: state.auth.user !== null
 });
 
 export function LandingPage(props){
-  // if(props.loggedIn){
-  //   return <Redirect to='/dashboard' />;
-  // }
+  if(props.loggedIn){
+    return <Redirect to='/dashboard' />;
+  }
 
   return(
     <div>
@@ -23,10 +23,9 @@ export function LandingPage(props){
       <div>
         <h2>Not a memeber, sign up</h2>
         <Link to='/register'>Signup</Link>
-       
       </div>
     </div>
   );
-};
+}
 
 export default connect(mapStateToProps)(LandingPage);

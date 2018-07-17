@@ -21,7 +21,7 @@ export class Dashboard extends React.Component{
   }
 
   render(){
-  if(!this.props.loggedIn){
+    if(!this.props.loggedIn){
       return <Redirect to='/' />;
     }
     
@@ -32,7 +32,7 @@ export class Dashboard extends React.Component{
           Log Out
         </button>
       </div>
-    )
+    );
   }
 }
 

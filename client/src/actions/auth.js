@@ -33,27 +33,27 @@ export const loginParent = (username, password) => dispatch => {
   dispatch(authRequest());
   return (
     fetch(`${API_BASE_URL}/login`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      username, password
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        username, password
+      })
     })
-  })
-    .then(res => normalizeResponseErrors(res))
-    .then(res => res.json())
-    .then(({authToken}) => storeAuthInfo(authToken, dispatch))
-    .catch(err => {
-      const { code } = err;
-      const message = code===401 ? 'Wrong username or password':'Unable to log you in. Please check your username and password.';
-      dispatch(authError(err));
-      return Promise.reject(
-        new SubmissionError({
-          _error: message
-        })
-      );
-    })
+      .then(res => normalizeResponseErrors(res))
+      .then(res => res.json())
+      .then(({authToken}) => storeAuthInfo(authToken, dispatch))
+      .catch(err => {
+        const { code } = err;
+        const message = code===401 ? 'Wrong username or password':'Unable to log you in. Please check your username and password.';
+        dispatch(authError(err));
+        return Promise.reject(
+          new SubmissionError({
+            _error: message
+          })
+        );
+      })
   );
 };
 
@@ -86,19 +86,19 @@ export const refreshAuthToken = () => (dispatch, getState) => {
   dispatch(authRequest());
   const authToken = getState().auth.authToken;
   return fetch(`${API_BASE_URL}/refresh`, {
-      method: 'POST',
-      headers: {
-          Authorization: `Bearer ${authToken}`
-      }
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${authToken}`
+    }
   })
-      .then(res => normalizeResponseErrors(res))
-      .then(res => res.json())
-      .then(({authToken}) => storeAuthInfo(authToken, dispatch))
-      .catch(err => {
-          dispatch(authError(err));
-          dispatch(clearAuth());
-          clearAuthToken(authToken);
-      });
+    .then(res => normalizeResponseErrors(res))
+    .then(res => res.json())
+    .then(({authToken}) => storeAuthInfo(authToken, dispatch))
+    .catch(err => {
+      dispatch(authError(err));
+      dispatch(clearAuth());
+      clearAuthToken(authToken);
+    });
 };
 
 

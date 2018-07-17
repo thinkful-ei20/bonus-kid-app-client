@@ -21,38 +21,37 @@ export class RegistrationForm extends React.Component {
         onSubmit={this.props.handleSubmit(values =>
           this.onSubmit(values)
         )}>
-           <label htmlFor='Name'> Name </label>
-          <Field
-              component={Input}
-              type="name"
-              name="name" 
-              validate={[required, nonEmpty, isTrimmed]}
-              />
+        <label htmlFor='Name'> Name </label>
+        <Field
+          component={Input}
+          type="name"
+          name="name" 
+          validate={[required, nonEmpty, isTrimmed]}
+        />
 
-           <label htmlFor='e-mail'> E-mail </label>
-            <Field
-              component={Input}
-              type="email"
-              name="email"
-              validate={[required, nonEmpty, isTrimmed]}
-              />
+        <label htmlFor='e-mail'> E-mail </label>
+        <Field
+          component={Input}
+          type="email"
+          name="email"
+          validate={[required, nonEmpty, isTrimmed]}
+        />
 
-          <label htmlFor='username'> Username </label>
-            <Field
-              component={Input}
-              type="text"
-              name="username"
-              validate={[required, nonEmpty, isTrimmed]}
-            />
+        <label htmlFor='username'> Username </label>
+        <Field
+          component={Input}
+          type="text"
+          name="username"
+          validate={[required, nonEmpty, isTrimmed]}
+        />
 
-          <label htmlFor='password'> Password </label>
-            <Field
-              component={Input}
-              type="password"
-              name="password"
-              validate={[required, isTrimmed]}
-            />
-
+        <label htmlFor='password'> Password </label>
+        <Field
+          component={Input}
+          type="password"
+          name="password"
+          validate={[required, isTrimmed]}
+        />
         <button
           type="submit"
           disabled={this.props.pristine || this.props.submitting}>
