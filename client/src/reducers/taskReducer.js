@@ -9,13 +9,18 @@ const initState = {
 
 export default (state=initState, action) => {
   if(action.type===FETCH_TASKS_SUCCESS){
-    return {...state, loading: false, tasks: [...state.tasks, action.tasks]};
-  } else if(action.type===FETCH_TASKS_ERROR){
+    return {
+      ...state, 
+      loading: false, 
+      tasks: [...state.tasks, ...action.task]
+    };
+  } 
+  else if(action.type===FETCH_TASKS_ERROR){
     return {...state, error: action.err};
   } else if(action.type===POST_TASK_SUCCESS){
     return {...state, tasks: [...state.tasks, action.task]};
   } else if(action.type===POST_TASK_ERROR){
-    return {...state, error: action.error};
+    return {...state, error: action.err};
   } else if(action.type===DELETE_TASK_SUCCESS){
     return state;
   } else if(action.type===DELETE_TASK_ERROR){

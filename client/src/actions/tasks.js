@@ -3,7 +3,8 @@ import {normalizeResponseErrors} from './utils';
 
 export const FETCH_TASKS_SUCCESS = 'FETCH_TASKS_SUCCESS',
   fetchTasksSuccess = task => ({
-    type: FETCH_TASKS_SUCCESS, task
+    type: FETCH_TASKS_SUCCESS, 
+    task
   }),
   FETCH_TASKS_ERROR = 'FETCH_TASKS_ERROR',
   fetchTasksError = error => ({
