@@ -1,17 +1,51 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import { deleteRewards } from '../actions/rewards';
+import { fetchRewards } from '../actions/rewards';
 
-export default function RewardCard(props){
-  return(
-    <div className='card-conainter'>
-      {props.name}
-      {props.points}
-    </div>
-  )
+
+export class RewardCard extends React.Component{
+  //Edit Button
+
+  //Delete button
+  
+  render(){
+    console.log(this.props.name);
+    const _id = this.props.item_id;
+    console.log(this.props.item_id);
+    return (
+      <div className='card-conainter' id={this.props.id}>
+        <div className='card-name'>
+          <h3> Item: {this.props.name} </h3>
+        </div>
+
+        <div className='card-points'>
+          <h3> Points: {this.props.points} </h3>
+        </div>
+
+        <button 
+          className='delete-button' 
+          id='delete'
+          onClick={() => this.props.
+            dispatch(deleteRewards(this.props.item_id))}>
+
+          Delete
+        </button>
+      </div>
+      )
+  }
 }
 
+//onClick={()=>this.props.dispatch(deleteRewardsError())} for delete button use later
+
+
+
 RewardCard.defaultProps = {
-  text: ''
+  name: '',
+  points: '',
 };
+
+export default connect()(RewardCard);
 
 // [
 //   {

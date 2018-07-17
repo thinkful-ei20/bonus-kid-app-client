@@ -20,7 +20,7 @@ export default (state = initState, action) =>{
     return {
       ...state,
       loading: false,
-      rewards: [...state.rewards, ...action.rewards]
+      rewards: [...action.rewards]
     }
   } else if (action.type === FETCH_REWARDS_ERROR){
     return {

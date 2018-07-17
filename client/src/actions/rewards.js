@@ -17,8 +17,8 @@ export const fetchRewardsError = error => ({
 
 export const fetchRewards = () => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
-  //console.log('fetch launched');
-  // console.log('this is auth', authToken);
+  console.log('fetch launched');
+  console.log('this is auth', authToken);
   return fetch(`${API_BASE_URL}/rewards`, {
     method: 'GET',
     headers: {
@@ -49,6 +49,28 @@ export const postRewardsError = error => ({
   type: POST_REWARDS_ERROR,
   error
 })
+// export const postReward = (reward) => (dispatch, getState) => {
+//   const authToken = getState().auth.authToken;
+//   return fetch(`${API_BASE_URL}/rewards`, {
+//     method:'POST',
+//     headers: {
+//       Authorization: `Bearer ${authToken}`,
+//       'content-type' : 'application/json'
+//     },
+//     body: JSON.stringify({
+//       name: reward.name,
+//       points: reward.points
+//     })
+//   })
+//     .then(res => normalizeResponseErrors(res))
+//     .then(res => res.json())
+//     .then(data => {
+//       dispatch(postRewardsSuccess(data))
+//     })
+//     .catch(err => {
+//       dispatch(postRewardsError(err));
+//     });
+// };
 
 
 //PUT rewards
@@ -75,3 +97,25 @@ export const deleteRewardsError = error => ({
   type: DELETE_REWARDS_ERROR,
   error
 })
+
+export const deleteRewards = (_id) => (dispatch, getState) =>{
+  console.log('delete dispatched');
+  console.log('this is input id', _id);
+  const authToken = getState().auth.authToken;
+  return fetch(`${API_BASE_URL}/rewards/${_id}`,{
+    method:'DELETE',
+    headers: {
+      Authorization: `Bearer ${authToken}`,
+      'content-type': 'application/json'
+    },
+  }) 
+    .then(res=>normalizeResponseErrors(res))
+    .then(() => {
+      dispatch(deleteRewardsSuccess())
+      dispatch(fetchRewards());
+    })
+    .catch(err => {
+      dispatch(deleteRewardsError(err));
+    })
+
+}
