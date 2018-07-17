@@ -21,7 +21,7 @@ export class RegistrationForm extends React.Component {
         onSubmit={this.props.handleSubmit(values =>
           this.onSubmit(values)
         )}>
-        <label htmlFor='Name'> Name </label>
+        <label htmlFor='name'> Name </label>
         <Field
           component={Input}
           type="name"
@@ -29,7 +29,7 @@ export class RegistrationForm extends React.Component {
           validate={[required, nonEmpty, isTrimmed]}
         />
 
-        <label htmlFor='e-mail'> E-mail </label>
+        <label htmlFor='email'> E-mail </label>
         <Field
           component={Input}
           type="email"
@@ -52,6 +52,7 @@ export class RegistrationForm extends React.Component {
           name="password"
           validate={[required, isTrimmed]}
         />
+
         <button
           type="submit"
           disabled={this.props.pristine || this.props.submitting}>
