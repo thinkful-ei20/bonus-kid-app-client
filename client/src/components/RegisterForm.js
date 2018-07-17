@@ -48,7 +48,7 @@ export class RegistrationForm extends React.Component {
               component={Input}
               type="password"
               name="password"
-              validate={[required, passwordLength, isTrimmed]}
+              validate={[required, isTrimmed]}
             />
 
         </fieldset>
