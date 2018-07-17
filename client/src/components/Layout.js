@@ -6,6 +6,7 @@ import {refreshAuthToken} from '../actions/auth';
 import LandingPage from '../components/LandingPage';
 import Dashboard from './Dashboard';
 import RegistrationPage from './RegistrationPage';
+import RewardsPage from './RewardsPage';
 
 const mapStateToProps = state => ({
   authToken: state.auth.authToken !== null,
@@ -43,6 +44,7 @@ export class Layout extends React.Component {
         <Route exact path='/' component={LandingPage} />
         <Route exact path='/dashboard' component={Dashboard} />
         <Route exact path='/register' component={RegistrationPage} />
+        <Route exact path='/rewards' component={RewardsPage} />
       </div>
     );
   }

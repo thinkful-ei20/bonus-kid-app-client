@@ -1,12 +1,11 @@
 import React from 'react';
 
 import { connect } from 'react-redux';
+import {Redirect, Link} from 'react-router-dom';
+
 import { clearAuth } from '../actions/auth';
-
-import {Redirect} from 'react-router-dom';
-
-
 import { clearAuthToken } from '../local-storage';
+
 
 const mapStateToProps = state => ({
   authToken: state.auth.authToken !== null,
@@ -28,9 +27,12 @@ export class Dashboard extends React.Component{
     return(
       <div>
         <p>hello from dashboard</p>
+        <Link to='/rewards'>Rewards</Link>
+
         <button onClick={() => this.logOut()}>
           Log Out
         </button>
+
       </div>
     );
   }
