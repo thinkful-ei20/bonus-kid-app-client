@@ -19,7 +19,7 @@ export class Dashboard extends React.Component{
     this.props.dispatch(fetchTasks());
   }
 
-  logOut = () => {    
+  logOut(){    
     this.props.dispatch(clearAuth());
     clearAuthToken();
   }
@@ -29,18 +29,18 @@ export class Dashboard extends React.Component{
       return <Redirect to='/' />;
     }
     const tasksList = this.props.tasks.map((task, i) => 
-      <ul className='tasks-list'>
-        <li key={i}>
-          Task: {task.name}
-          Point Value: {task.pointValue}
-        </li>
-      </ul>
+      <li key={i}>
+        Task: {task.name}
+        Point Value: {task.pointValue}
+      </li>
     );
     return(
       <div>
         <p>hello from dashboard</p>
         <Link to='/rewards'>Rewards</Link>
-        {tasksList}
+        <ul className='tasks-list'>
+          {this.props.tasks===[] ? <li>No tasks to show!</li> : tasksList}
+        </ul>
         <button onClick={() => this.logOut()}>
           Log Out
         </button>

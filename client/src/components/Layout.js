@@ -40,7 +40,6 @@ export class Layout extends React.Component {
   render(){
     return(
       <div className='layout'>
-        <h1> Testing </h1>
         <Route exact path='/' component={LandingPage} />
         <Route exact path='/dashboard' component={Dashboard} />
         <Route exact path='/register' component={RegistrationPage} />
