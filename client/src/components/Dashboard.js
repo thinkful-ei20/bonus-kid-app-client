@@ -2,10 +2,12 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 import {Redirect, Link} from 'react-router-dom';
+import {Field, reduxForm, focus} from 'redux-form';
+import Input from './Input';
 
 import { clearAuth } from '../actions/auth';
 import { clearAuthToken } from '../local-storage';
-import { fetchTasks } from '../actions/tasks';
+import { fetchTasks, postTask } from '../actions/tasks';
 
 
 const mapStateToProps = state => ({
@@ -39,8 +41,24 @@ export class Dashboard extends React.Component{
         <p>hello from dashboard</p>
         <Link to='/rewards'>Rewards</Link>
         <ul className='tasks-list'>
-          {this.props.tasks===[] ? <li>No tasks to show!</li> : tasksList}
+          {tasksList}
         </ul>
+        <form className='add-task-form' onSubmit={this.props.handleSubmit(
+          values => {
+            console.log(values)
+            this.props.dispatch(postTask(values))
+          })}>
+          <label htmlFor='name'>Enter a task name: </label>
+          <Field component='input' name='name'
+            type='text' id='username' />
+          <label htmlFor='pointValue'>How many points is this task worth: </label>
+          <Field component='input' name='pointValue'
+            type='number' id='pointValue' />
+          <button 
+            disabled={this.props.pristine || this.props.submitting}>
+            Add a task!
+          </button>
+        </form>
         <button onClick={() => this.logOut()}>
           Log Out
         </button>
@@ -50,4 +68,7 @@ export class Dashboard extends React.Component{
   }
 }
 
-export default connect(mapStateToProps)(Dashboard);
+export default connect(mapStateToProps)(reduxForm({
+  form: 'add-task-form',
+  onSubmitFail: (errors, dispatch) => dispatch(focus('registration', Object.keys(errors)[0]))
+})(Dashboard));

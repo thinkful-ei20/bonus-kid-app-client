@@ -2,9 +2,9 @@ import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
 
 export const FETCH_TASKS_SUCCESS = 'FETCH_TASKS_SUCCESS',
-  fetchTasksSuccess = task => ({
+  fetchTasksSuccess = tasks => ({
     type: FETCH_TASKS_SUCCESS, 
-    task
+    tasks
   }),
   FETCH_TASKS_ERROR = 'FETCH_TASKS_ERROR',
   fetchTasksError = error => ({
@@ -46,6 +46,7 @@ export const POST_TASK_SUCCESS = 'POST_TASK_SUCCESS',
     })
       .then(res => normalizeResponseErrors(res))
       .then(task => dispatch(postTaskSuccess(task)))
+      .then(() => dispatch(fetchTasks()))
       .catch(err => {
         dispatch(postTaskError(err));
       });

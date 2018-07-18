@@ -12,7 +12,7 @@ export default (state=initState, action) => {
     return {
       ...state, 
       loading: false, 
-      tasks: [...state.tasks, ...action.task]
+      tasks: action.tasks
     };
   } 
   else if(action.type===FETCH_TASKS_ERROR){

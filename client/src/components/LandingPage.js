@@ -16,10 +16,10 @@ export function LandingPage(props){
 
   return(
     <div>
-      <div>
+      <header id='header' role='banner'>
         <h2>Welcome to BonusKid</h2>
         <LoginForm />
-      </div>
+      </header>
       <div>
         <h2>Not a memeber, sign up</h2>
         <Link to='/register'>Signup</Link>
