@@ -8,9 +8,9 @@ export class LoginForm extends React.Component {
 
   onSubmit(values){
     if(this.submittedButton === 'parentLogin'){
-      this.props.dispatch(loginParent(values.username, values.password))
+      this.props.dispatch(loginParent(values.username, values.password));
     } else if (this.submittedButton === 'childLogin'){
-      this.props.dispatch(loginChild(values.username, values.password))      
+      this.props.dispatch(loginChild(values.username, values.password));      
     }
   }
 
@@ -32,13 +32,13 @@ export class LoginForm extends React.Component {
         <button 
           disabled={this.props.pristine || this.props.submitting}
           onClick={() => this.submittedButton = 'childLogin'}
-          >
+        >
           LOG IN
         </button>
         <button 
           disabled={this.props.pristine || this.props.submitting}
           onClick={() => this.submittedButton = 'parentLogin'}
-          >
+        >
           Parent Log In
         </button>
 

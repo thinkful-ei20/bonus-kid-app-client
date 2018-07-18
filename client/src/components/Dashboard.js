@@ -44,10 +44,7 @@ export class Dashboard extends React.Component{
           {tasksList}
         </ul>
         <form className='add-task-form' onSubmit={this.props.handleSubmit(
-          values => {
-            console.log(values)
-            this.props.dispatch(postTask(values))
-          })}>
+          values => this.props.dispatch(postTask(values)))}>
           <label htmlFor='name'>Enter a task name: </label>
           <Field component='input' name='name'
             type='text' id='username' />
