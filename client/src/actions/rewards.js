@@ -18,7 +18,6 @@ export const fetchRewardsError = error => ({
 export const fetchRewards = () => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   console.log('fetch launched');
-  console.log('this is auth', authToken);
   return fetch(`${API_BASE_URL}/rewards`, {
     method: 'GET',
     headers: {
