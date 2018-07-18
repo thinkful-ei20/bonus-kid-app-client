@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import RewardCard from './RewardCard';
+import RewardForm from './RewardForm';
 import { fetchRewards } from '../actions/rewards';
 
 export class RewardPage extends React.Component{
@@ -10,8 +11,7 @@ export class RewardPage extends React.Component{
   }
   render () {
     console.log(this.props.rewards);
-    // Reward: {element.name}
-    // Points: {element.points}
+
       const rewards = this.props.rewards.map((element,i) => 
           <li className='rewards-list' key={i}>
             <RewardCard item_id={element.id} {...element} />
@@ -21,6 +21,7 @@ export class RewardPage extends React.Component{
     return(
       <div className='page-container'>
         <h1>Rewards will go here </h1>
+        <RewardForm />
         <ul className='reward-list'>
           {rewards}
         </ul>
