@@ -2,23 +2,36 @@ import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
 
 
+
 // ============ GET TASKS ==================
 
-export const FETCH_TASKS_SUCCESS = 'FETCH_TASKS_SUCCESS';
-export const fetchTasksSuccess = task => ({
+// export const FETCH_TASKS_SUCCESS = 'FETCH_TASKS_SUCCESS';
+// export const fetchTasksSuccess = task => ({
+//     type: FETCH_TASKS_SUCCESS, 
+//     task
+// });
+
+// export const FETCH_TASKS_ERROR = 'FETCH_TASKS_ERROR';
+// export const fetchTasksError = error => ({
+//     type: FETCH_TASKS_ERROR,
+//     error
+// });
+
+// export const fetchTasks = () => (dispatch, getState) => {
+//    const authToken = getState().auth.authToken;
+//    console.log('fetch launched');
+
+export const FETCH_TASKS_SUCCESS = 'FETCH_TASKS_SUCCESS',
+  fetchTasksSuccess = tasks => ({
     type: FETCH_TASKS_SUCCESS, 
-    task
-});
-
-export const FETCH_TASKS_ERROR = 'FETCH_TASKS_ERROR';
-export const fetchTasksError = error => ({
-    type: FETCH_TASKS_ERROR,
-    error
-});
-
-export const fetchTasks = () => (dispatch, getState) => {
-   const authToken = getState().auth.authToken;
-   console.log('fetch launched');
+    tasks
+  }),
+  FETCH_TASKS_ERROR = 'FETCH_TASKS_ERROR',
+  fetchTasksError = error => ({
+    type: FETCH_TASKS_ERROR, error
+  }),
+  fetchTasks = () => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
     fetch(`${API_BASE_URL}/tasks`, {
       method: 'GET',
       headers: {
@@ -64,11 +77,14 @@ export const POST_TASK_SUCCESS = 'POST_TASK_SUCCESS',
       })
     })
       .then(res => normalizeResponseErrors(res))
-      .then(res => res.json())
+      //.then(res => res.json())
       .then(data => {
         dispatch(postTaskSuccess(data))
         dispatch(fetchTasks())
       })
+
+//       .then(task => dispatch(postTaskSuccess(task)))
+//       .then(() => dispatch(fetchTasks()))
       .catch(err => {
         dispatch(postTaskError(err));
       });

@@ -1,10 +1,19 @@
 import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
 import Input from './Input';
-import {loginParent} from '../actions/auth';
+import {loginParent, loginChild} from '../actions/auth';
 import {required, nonEmpty} from '../validators';
 
 export class LoginForm extends React.Component {
+
+  onSubmit(values){
+    if(this.submittedButton === 'parentLogin'){
+      this.props.dispatch(loginParent(values.username, values.password));
+    } else if (this.submittedButton === 'childLogin'){
+      this.props.dispatch(loginChild(values.username, values.password));      
+    }
+  }
+
   render(){
     let error;
     if(this.props.error){
@@ -12,7 +21,7 @@ export class LoginForm extends React.Component {
     }
     return (
       <form className='parent-login-form' onSubmit={this.props.handleSubmit(
-        values => this.props.dispatch(loginParent(values.username, values.password)))}>
+        values => this.onSubmit(values))}>
         {error}
         <label htmlFor='username'>Username</label>
         <Field component={Input} name='username'
@@ -20,7 +29,19 @@ export class LoginForm extends React.Component {
         <label htmlFor='password'>Password</label>
         <Field component={Input} name='password'
           type='password' id='password' validate={[required, nonEmpty]} />
-        <button disabled={this.props.pristine || this.props.submitting}>LOG IN</button>
+        <button 
+          disabled={this.props.pristine || this.props.submitting}
+          onClick={() => this.submittedButton = 'childLogin'}
+        >
+          LOG IN
+        </button>
+        <button 
+          disabled={this.props.pristine || this.props.submitting}
+          onClick={() => this.submittedButton = 'parentLogin'}
+        >
+          Parent Log In
+        </button>
+
       </form>
     );
   }
@@ -28,5 +49,5 @@ export class LoginForm extends React.Component {
 
 export default reduxForm({
   form: 'parent-login-form',
-  onSubmitFail: (errors, dispatch) => dispatch(focus('parent-login-form', 'username'))
+  onSubmitFail: (error, dispatch) => dispatch(focus('parent-login-form', 'username'))
 })(LoginForm);
