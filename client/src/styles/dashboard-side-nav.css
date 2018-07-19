@@ -13,7 +13,7 @@
   width: 15em;
   z-index: 3;
   font-size: 1em;
-  background: #58c69e;
+  background-color: white;
   display: flex;
   flex-direction: column;
 }
@@ -21,6 +21,7 @@
 #menu i{
   cursor: pointer;
   align-self: flex-end;
+  color: #007c4f;
 }
 
 #menu.visible {
@@ -35,12 +36,15 @@
   text-decoration: none;
   color: inherit;
   text-transform: uppercase;
+  color: #007c4f;
 }
 
 .links p {
   text-align: right;
+  color: #007c4f;
 }
 
 .links p span {
   cursor: pointer;
+  color: #007c4f;
 }

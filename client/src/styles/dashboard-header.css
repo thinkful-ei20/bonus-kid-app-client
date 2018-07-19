@@ -1,11 +1,12 @@
 .dashboard-header {
   display: flex;
   justify-content: space-between;
+  background-color: #007c4f;
 }
 
 .left-header {
   display: flex;
-  padding: 0.5em;
+  padding: 1em;
 }
 .left-header i {
   align-self: center;
@@ -18,7 +19,7 @@
 }
 
 .right-header{
-  padding: 0.5em;
+  padding: 1em;
   align-self: center;
   cursor: pointer;
 }

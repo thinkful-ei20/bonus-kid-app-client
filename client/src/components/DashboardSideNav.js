@@ -8,7 +8,8 @@ import '../styles/dashboard-side-nav.css';
 
 const mapStateToProps = state => ({
   sideNavView: state.main.sideNavView,
-  username: state.auth.user.username
+  username: state.auth.user.username,
+  user: state.auth.user
 });
 
 export class DashboardSideNav extends React.Component{ 
@@ -17,10 +18,11 @@ export class DashboardSideNav extends React.Component{
       <nav id="menu" className={this.props.sideNavView ? 'visible' : ''}>
         <i className="fa fa-window-close fa-lg" aria-hidden="true"
           onClick={() => this.props.dispatch(toggleSideNav())}></i>
+        <p>Total Points: {this.props.user.totalPoints}</p>
         <ul className="links">
           <li>
             <a href="#create-tasks" 
-              onClick={() => this.props.dispatch(toggleSideNav())}>Create a Task
+              onClick={() => this.props.dispatch(toggleSideNav())}>Tasks
             </a>
           </li>
           <li>

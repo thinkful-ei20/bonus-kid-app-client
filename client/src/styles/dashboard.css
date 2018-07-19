@@ -4,12 +4,14 @@
   display: flex;
   flex-direction: column;
   margin: 0.5em 0.75em;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px#404d48;
 }
 
 .side-avatar {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 1em;
 }
 
@@ -27,6 +29,7 @@
   width: 100%;
   margin-bottom: 0.2em;
   padding: 0.2em;
+  background-color: #58c69e;
 }
 
 @media screen and (min-width: 600px) {
