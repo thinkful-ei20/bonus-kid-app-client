@@ -1,6 +1,7 @@
 import {createStore, applyMiddleware, combineReducers} from 'redux';
 import {reducer as formReducer} from 'redux-form';
 import authReducer from './reducers/authReducer';
+import mainReducer from './reducers';
 import rewardsReducer from './reducers/rewardReducer';
 import taskReducer from './reducers/taskReducer';
 import thunk from 'redux-thunk';
@@ -11,6 +12,7 @@ const store = createStore(
   combineReducers({
     auth: authReducer,
     form: formReducer,
+    main: mainReducer,
     rewards: rewardsReducer,
     tasks: taskReducer
   }),
