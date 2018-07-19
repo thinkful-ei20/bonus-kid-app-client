@@ -7,6 +7,7 @@ import LandingPage from '../components/LandingPage';
 import Dashboard from './Dashboard';
 import RegistrationPage from './RegistrationPage';
 import RewardsPage from './RewardsPage';
+import TasksPage from './TasksPage';
 
 const mapStateToProps = state => ({
   authToken: state.auth.authToken !== null,
@@ -44,6 +45,8 @@ export class Layout extends React.Component {
         <Route exact path='/dashboard' component={Dashboard} />
         <Route exact path='/register' component={RegistrationPage} />
         <Route exact path='/rewards' component={RewardsPage} />
+        <Route exact path='/tasks' component={TasksPage} />
+
       </div>
     );
   }
