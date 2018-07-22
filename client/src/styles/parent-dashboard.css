@@ -15,17 +15,18 @@
   padding: 1em;
 }
 
-.side-avatar i {
-  
-}
-
 .side-avatar hgroup {
   text-align: center;
   align-self: center;
 }
 
+.task-cards{
+  width: 100%;
+}
+
 .tasks-list li {
   border: 1px solid black;
+  border-radius: 5px;
   width: 100%;
   margin-bottom: 0.2em;
   padding: 0.2em;
@@ -43,8 +44,5 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-  .tasks-list {
-    width: 50%;
   }
 }

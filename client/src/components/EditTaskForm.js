@@ -14,7 +14,7 @@ const mapStateToProps = state => ({
   name: state.main.isEditing.name
 });
 
-export class LoginForm extends React.Component {
+export class EditTaskForm extends React.Component {
   render(){
     let error;
     if(this.props.error){
@@ -42,6 +42,11 @@ export class LoginForm extends React.Component {
             type='number' id='pointValue' validate={[required, nonEmpty]} />
           <button disabled={this.props.pristine || this.props.submitting}>SUBMIT CHANGES</button>
         </form>
+        <button onClick={() => {
+          this.props.reset();
+          this.props.dispatch(isEditing());
+        }
+        }>CANCEL</button>
       </div>
     );
   }
@@ -50,4 +55,4 @@ export class LoginForm extends React.Component {
 export default connect(mapStateToProps)(reduxForm({
   form: 'edit-task-form',
   onSubmitFail: (errors, dispatch) => dispatch(focus('edit-task-form', 'taskName'))
-})(LoginForm));
+})(EditTaskForm));

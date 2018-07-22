@@ -43,11 +43,12 @@ export const POST_TASK_SUCCESS = 'POST_TASK_SUCCESS',
     error
   }),
 
-  postTask = (task) => (dispatch, getState) => {
+  postTask = (id, task) => (dispatch, getState) => {
     console.log('post task ran');
     console.log(task);
+    console.log(id);
     const authToken = getState().auth.authToken;
-    fetch(`${API_BASE_URL}/tasks`, {
+    fetch(`${API_BASE_URL}/tasks/${id}`, {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${authToken}`,
@@ -61,12 +62,9 @@ export const POST_TASK_SUCCESS = 'POST_TASK_SUCCESS',
       .then(res => normalizeResponseErrors(res))
       //.then(res => res.json())
       .then(data => {
-        dispatch(postTaskSuccess(data))
-        dispatch(fetchTasks())
+        dispatch(postTaskSuccess(data));
+        dispatch(fetchTasks());
       })
-
-//       .then(task => dispatch(postTaskSuccess(task)))
-//       .then(() => dispatch(fetchTasks()))
       .catch(err => {
         dispatch(postTaskError(err));
       });
