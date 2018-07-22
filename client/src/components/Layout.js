@@ -1,49 +1,44 @@
+import ChildDashboard from './ChildDashboard';
+import LandingPage from './LandingPage';
+import ParentDashboard from './ParentDashboard';
 import React from 'react';
-import {connect} from 'react-redux';
-import {Route, withRouter} from 'react-router-dom';
-import {refreshAuthToken} from '../actions/auth';
+import SignUpPage from './SignUpPage';
 
-import LandingPage from '../components/LandingPage';
-import Dashboard from './Dashboard';
-import RegistrationPage from './RegistrationPage';
-import RewardsPage from './RewardsPage';
+import {connect} from 'react-redux';
+import {refreshAuthToken} from '../actions/auth';
+import {Route, withRouter} from 'react-router-dom';
 
 const mapStateToProps = state => ({
-  authToken: state.auth.authToken !== null,
   loggedIn: state.auth.user !== null
 });
 
 export class Layout extends React.Component {
   componentDidUpdate(prevProps){
-    if (!prevProps.loggedIn && this.props.loggedIn){
+    if(!prevProps.loggedIn && this.props.loggedIn){
       this.startPeriodicRefresh();
-    } else if (prevProps.loggedIn && !this.props.loggedIn) {
+    } else if(prevProps.loggedIn && !this.props.loggedIn){
       this.stopPeriodicRefresh();
     }
   }
-
   componentWillUnmount(){
     this.stopPeriodicRefresh();
   }
-
   startPeriodicRefresh(){
     this.refreshInterval = setInterval(() => this.props.dispatch(refreshAuthToken()), 60 * 60 * 1000);
   }
-
   stopPeriodicRefresh(){
     if(!this.refreshInterval){
       return;
     }
     clearInterval(this.refreshInterval);
   }
-
   render(){
     return(
       <div className='layout'>
         <Route exact path='/' component={LandingPage} />
-        <Route exact path='/dashboard' component={Dashboard} />
-        <Route exact path='/register' component={RegistrationPage} />
-        <Route exact path='/rewards' component={RewardsPage} />
+        <Route exact path='/parent_dashboard' component={ParentDashboard} />
+        <Route exact path='/child_dashboard' component={ChildDashboard} />
+        <Route exact path='/signup' component={SignUpPage} />
       </div>
     );
   }
