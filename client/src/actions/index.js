@@ -4,6 +4,6 @@ export const toggleSideNav = () => ({
 });
 
 export const IS_EDITING = 'IS_EDITING';
-export const isEditing = () => ({
-  type: IS_EDITING
+export const isEditing = (id=null, name=null) => ({
+  type: IS_EDITING, id, name
 });

@@ -1,9 +1,11 @@
+import EditForm from './EditForm';
 import ParentDashboardHeader from './ParentDashboardHeader';
 import React from 'react';
 
 import { clearAuth } from '../actions/auth';
 import { clearAuthToken } from '../local-storage';
 import { connect } from 'react-redux';
+import { isEditing } from '../actions';
 import { fetchTasks } from '../actions/tasks';
 import { Redirect } from 'react-router-dom';
 
@@ -12,7 +14,8 @@ import '../styles/parent-dashboard.css';
 const mapStateToProps = state => ({
   loggedIn: state.auth.user !== null,
   user: state.auth.user,
-  tasks: state.tasks.tasks
+  tasks: state.tasks.tasks,
+  isEditing: state.main.isEditing.editing
 });
 
 export class ParentDashboard extends React.Component{
@@ -52,12 +55,15 @@ export class ParentDashboard extends React.Component{
           <p>{childId}</p>
         </div>
         <ul className='tasks-list'>
-          {childTasks[childId].map((childTask, i) => 
+          {childTasks[childId].map((childTask, i) =>
             <li className='task' key={`${childTask.id}`}>
               <p>Task: {childTask.name}</p>
               <p>Point Value: {childTask.pointValue}</p>
               <button type='button' name='task-edit-btn' 
-                className='task-edit-btn' onClick={() => console.log('Details coming soon!')}>Edit Task</button>
+                id={`${childTask.id}-edit-btn`} disabled={this.props.isEditing} 
+                className='task-edit-btn' 
+                onClick={() => this.props.dispatch(isEditing(childTask.id, childTask.name))}>
+                Edit Task</button>
             </li>
           )}
         </ul>
@@ -68,6 +74,7 @@ export class ParentDashboard extends React.Component{
         <ParentDashboardHeader />
         <h2>Hi {this.props.user.name}!</h2>
         {taskCards}
+        <EditForm />
       </div>
     );
   }

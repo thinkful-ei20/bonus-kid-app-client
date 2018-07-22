@@ -1,9 +1,11 @@
 import {
-  TOGGLE_SIDE_NAV
+  TOGGLE_SIDE_NAV, 
+  IS_EDITING
 } from '../actions';
 
 const initState = {
-  sideNavView: false
+  sideNavView: false,
+  isEditing: {editing: false, id: null, name: null}
 };
 
 export default (state=initState, action) => {
@@ -11,6 +13,15 @@ export default (state=initState, action) => {
     return {
       ...state,
       sideNavView: !state.sideNavView
+    };
+  } else if(action.type === IS_EDITING){
+    return {
+      ...state,
+      isEditing: {
+        editing: !state.isEditing.editing, 
+        id: action.id, 
+        name: action.name
+      }
     };
   }
   return state;
