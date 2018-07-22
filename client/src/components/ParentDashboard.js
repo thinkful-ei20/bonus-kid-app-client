@@ -55,6 +55,9 @@ export class ParentDashboard extends React.Component{
           {childTasks[childId].map((childTask, i) => 
             <li className='task' key={`${childTask.id}`}>
               <p>Task: {childTask.name}</p>
+              <p>Point Value: {childTask.pointValue}</p>
+              <button type='button' name='task-edit-btn' 
+                className='task-edit-btn' onClick={() => console.log('Details coming soon!')}>Edit Task</button>
             </li>
           )}
         </ul>
@@ -63,7 +66,7 @@ export class ParentDashboard extends React.Component{
     return(
       <div>
         <ParentDashboardHeader />
-        <h2>Hi {this.props.user.name}</h2>
+        <h2>Hi {this.props.user.name}!</h2>
         {taskCards}
       </div>
     );
