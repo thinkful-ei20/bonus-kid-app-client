@@ -2,13 +2,16 @@ import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
 import {connect} from 'react-redux';
 import Input from './Input';
-import {loginParent} from '../actions/auth';
 import {required, nonEmpty} from '../validators';
 
 import '../styles/edit-menu.css';
+import { editTask } from '../actions/tasks';
+import { isEditing } from '../actions';
 
 const mapStateToProps = state => ({
-  isEditing: state.main.isEditing.editing
+  isEditing: state.main.isEditing.editing,
+  id: state.main.isEditing.id,
+  name: state.main.isEditing.name
 });
 
 export class LoginForm extends React.Component {
@@ -17,10 +20,17 @@ export class LoginForm extends React.Component {
     if(this.props.error){
       error = (<div className='form-error'>{this.props.error}</div>);
     }
-    console.log(this.props);
     return (
       <div className={this.props.isEditing ? 'visible edit-menu' : 'edit-menu'}
-        onSubmit={this.props.handleSubmit(values => console.log(values))}>
+        onSubmit={this.props.handleSubmit(values => {
+          this.props.dispatch(isEditing());
+          const {taskName, pointValue} = values;
+          const newTask = {
+            name: taskName, 
+            points: pointValue
+          };
+          return this.props.dispatch(editTask(this.props.id, newTask));
+        })}>
         <form className='edit-task-form'>
           {error}
           <label htmlFor='taskName'>Edit Task: </label>

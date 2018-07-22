@@ -31,46 +31,46 @@ export const fetchTasks = () => (dispatch, getState) => {
 
 // ============ POST TASKS ==================
 
-// export const POST_TASK_SUCCESS = 'POST_TASK_SUCCESS',
-//   postTaskSuccess = task => ({
-//     type: POST_TASK_SUCCESS,
-//     task
-//   }),
+export const POST_TASK_SUCCESS = 'POST_TASK_SUCCESS',
+  postTaskSuccess = task => ({
+    type: POST_TASK_SUCCESS,
+    task
+  }),
 
-//   POST_TASK_ERROR = 'POST_TASK_ERROR',
-//   postTaskError = error => ({
-//     type: POST_TASK_ERROR, 
-//     error
-//   }),
+  POST_TASK_ERROR = 'POST_TASK_ERROR',
+  postTaskError = error => ({
+    type: POST_TASK_ERROR, 
+    error
+  }),
 
-//   postTask = (task) => (dispatch, getState) => {
-//     console.log('post task ran');
-//     console.log(task);
-//     const authToken = getState().auth.authToken;
-//     fetch(`${API_BASE_URL}/tasks`, {
-//       method: 'POST',
-//       headers: {
-//         Authorization: `Bearer ${authToken}`,
-//         'content-type': 'application/json'
-//       },
-//       body: JSON.stringify({
-//         name: task.name,
-//         pointValue: task.points
-//       })
-//     })
-//       .then(res => normalizeResponseErrors(res))
-//       //.then(res => res.json())
-//       .then(data => {
-//         dispatch(postTaskSuccess(data))
-//         dispatch(fetchTasks())
-//       })
+  postTask = (task) => (dispatch, getState) => {
+    console.log('post task ran');
+    console.log(task);
+    const authToken = getState().auth.authToken;
+    fetch(`${API_BASE_URL}/tasks`, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${authToken}`,
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify({
+        name: task.name,
+        pointValue: task.points
+      })
+    })
+      .then(res => normalizeResponseErrors(res))
+      //.then(res => res.json())
+      .then(data => {
+        dispatch(postTaskSuccess(data))
+        dispatch(fetchTasks())
+      })
 
-// //       .then(task => dispatch(postTaskSuccess(task)))
-// //       .then(() => dispatch(fetchTasks()))
-//       .catch(err => {
-//         dispatch(postTaskError(err));
-//       });
-//   };
+//       .then(task => dispatch(postTaskSuccess(task)))
+//       .then(() => dispatch(fetchTasks()))
+      .catch(err => {
+        dispatch(postTaskError(err));
+      });
+  };
 
 
 // ============ PUT TASKS ==================
