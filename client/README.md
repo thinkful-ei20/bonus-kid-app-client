@@ -10,8 +10,10 @@ Create an account and start earning! It's that simple! finish tasks, get rewarde
 If your task is complete on time, you'll get full points towards awesome rewards!
 
 ## Features
-<!-- - Learn 10 Spanish words!
-- App will help you learn the words you don't know -->
+- Give your children rewards for being productive!
+- Add tasks for them to complete.
+- Verify if your child has completed their tasks and reward them with points.
+- Children will be able to buy from the parents store!
 
 ## Code style
 Standard/Thinkful-style
