@@ -8,6 +8,7 @@ import {Redirect} from 'react-router-dom';
 
 const mapStateToProps = state => ({
   authToken: state.auth.authToken !== null,
+  user: state.auth.user,
   loggedIn: state.auth.user !== null,
 });
 
@@ -30,7 +31,7 @@ export class ChildDashboard extends React.Component{
           <div className='side-avatar'>
             <i className='fa fa-id-card fa-5x' aria-hidden="true"></i>
             <hgroup>
-              <h2>Hi</h2>
+              <h2>{this.props.user.name}</h2>
             </hgroup>
           </div>
           <ul className='tasks-list'>
@@ -45,3 +46,39 @@ export class ChildDashboard extends React.Component{
 }
 
 export default connect(mapStateToProps)(ChildDashboard);
+
+
+// Dummy Data
+
+/*auth:{
+  authToken: ####,
+  loading: false,
+  error: null,
+    user: {
+      "totalPoints": 100,
+      "currentPoints": 50,
+        "tasks": [
+          {
+            "complete": false,
+            "childComplete": false,
+            "expiryDate": "",
+            "currentTime": "",
+            "name": "New task3",
+            "pointValue": 54,
+            "childId": "5b523369d43bd96dd2e6fe79",
+            "parentId": "5b523368d43bd96dd2e6fe75",
+            "createdAt": "2018-07-20T19:09:30.143Z",
+            "updatedAt": "2018-07-23T14:19:28.494Z",
+            "id": "5b52336ad43bd96dd2e6fe81"
+          }
+        ],
+        "username": "some other kid",
+        "name": "some other kid",
+        "parentId": "5b523368d43bd96dd2e6fe75",
+        "id": "5b523369d43bd96dd2e6fe79"
+    },
+  }
+}
+
+               
+*/
