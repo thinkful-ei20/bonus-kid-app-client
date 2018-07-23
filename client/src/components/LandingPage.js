@@ -32,7 +32,7 @@ export function LandingPage(props){
       </div>
       <section className='login-forms'>
         <ParentLoginForm />
-        <ChildLoginForm />
+        {/* <ChildLoginForm /> */}
       </section>
       <div className='non-members'>
         <h2>Not a memeber, <Link to='/signup'>sign up here</Link></h2>

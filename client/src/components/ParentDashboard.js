@@ -90,7 +90,7 @@ export class ParentDashboard extends React.Component{
     return(
       <div>
         <ParentDashboardHeader />
-        <h2>Hi {this.props.user.name}!</h2>
+        <h2 className='greeting'>Hi {this.props.user.name}!</h2>
         <div className='task-cards'>
           {taskCards}
         </div>
