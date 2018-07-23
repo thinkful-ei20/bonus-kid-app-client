@@ -42,7 +42,7 @@ Standard/Thinkful-style
 ### Live server!
 https://bonuskid.herokuapp.com/
 
-### Endpoints
+<!-- ### Endpoints -->
 <!-- - /api/login (for user creation)
 - /api/users (to see all the users) -->
 
