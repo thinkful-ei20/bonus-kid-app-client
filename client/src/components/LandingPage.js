@@ -20,7 +20,7 @@ export function LandingPage(props){
     return <Redirect to='/child_dashboard' />;
   }
   return(
-    <div>
+    <div className='landing-page'>
       <LandingHeader />
       <div className='jumbotron'>
         <hgroup className='typer'>
