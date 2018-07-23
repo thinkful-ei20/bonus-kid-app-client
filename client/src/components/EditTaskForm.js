@@ -35,11 +35,10 @@ export class EditTaskForm extends React.Component {
           {error}
           <label htmlFor='taskName'>Edit Task: </label>
           <Field component={Input} name='taskName'
-            type='text' id='taskName'
-            validate={[required, nonEmpty]} />
+            type='text' id='taskName' />
           <label htmlFor='pointValue'>Edit Point Value: </label>
           <Field component={Input} name='pointValue'
-            type='number' id='pointValue' validate={[required, nonEmpty]} />
+            type='number' id='pointValue' />
           <button disabled={this.props.pristine || this.props.submitting}>SUBMIT CHANGES</button>
         </form>
         <button onClick={() => {
