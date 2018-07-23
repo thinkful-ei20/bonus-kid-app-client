@@ -1,7 +1,7 @@
 # Bonus Kid Client
 
 ### Live client!
-https://protected-ridge-99600.herokuapp.com/
+https://dashboard.heroku.com/apps/bonus-kid-client
 
 <!-- Create an account and start learning! It's that simple! Input an answer, hit submit!
 If your guess is correct, you'll see a message saying so and your score tally increment!
@@ -36,7 +36,7 @@ Standard/Thinkful-style
 <!--![alt text](https://gdurl.com/5tlQ) -->
 
 ### Live server!
-https://spaced-repetition-server-ic.herokuapp.com 
+https://bonuskid.herokuapp.com/
 
 ## The Algorithm: Spaced Repetition
 <!-- Given a list of questions with corresponding "memory values", M, starting at 1:
