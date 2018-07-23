@@ -1,5 +1,6 @@
 import authReducer from './reducers/authReducer';
 import mainReducer from './reducers';
+import rewardsReducer from './reducers/rewardReducer';
 import taskReducer from './reducers/taskReducer';
 import thunk from 'redux-thunk';
 
@@ -12,6 +13,7 @@ const store = createStore (
   combineReducers({
     auth: authReducer,
     main: mainReducer,
+    rewards: rewardsReducer,
     form: formReducer,
     tasks: taskReducer
   }),
@@ -26,3 +28,11 @@ if(authToken){
 }
 
 export default store;
+
+
+// const authToken = loadAuthToken();
+// if(authToken){
+//   let token = authToken;
+//   store.dispatch(setAuthToken(token));
+//   store.dispatch(refreshAuthToken());
+// }
