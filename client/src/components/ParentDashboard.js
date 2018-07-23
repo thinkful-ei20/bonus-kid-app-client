@@ -7,7 +7,7 @@ import { clearAuthToken } from '../local-storage';
 import { connect } from 'react-redux';
 import { isEditing, isAdding } from '../actions';
 import { fetchTasks, deleteTask } from '../actions/tasks';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 import '../styles/parent-dashboard.css';
 import AddTaskForm from './AddTaskForm';

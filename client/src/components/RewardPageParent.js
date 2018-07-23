@@ -23,7 +23,6 @@ const mapStateToProps = state => ({
 
 export class RewardPageParent extends React.Component{
   componentDidMount(){
-    // this.props.dispatch(toggleSideNav())
     this.props.dispatch(fetchRewards());
   }
   logOut(){    
@@ -33,9 +32,9 @@ export class RewardPageParent extends React.Component{
 
   render(){
     console.log(this.props);
-  // if(!this.props.loggedIn || !this.props.user.isParent){
-    //   return <Redirect to='/' />;
-    // }
+  if(!this.props.loggedIn || !this.props.user.isParent){
+      return <Redirect to='/reward_page_parent' />;
+    }
 
     const rewardsCard = this.props.rewards.map((reward,i) => 
     <div className='feature-card' key={i}>
