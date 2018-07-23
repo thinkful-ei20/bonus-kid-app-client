@@ -1,11 +1,13 @@
 # Bonus Kid Client
+Did she get all A's in school?
+Did he do all his chores?
+Those kids deserve a bonus!
 
 ### Live client!
 https://dashboard.heroku.com/apps/bonus-kid-client
 
-<!-- Create an account and start learning! It's that simple! Input an answer, hit submit!
-If your guess is correct, you'll see a message saying so and your score tally increment!
-If your guess is incorrect, you'll see a message saying so, and your score will remain unchanged! -->
+Create an account and start earning! It's that simple! finish tasks, get rewarded!
+If your task is complete on time, you'll get full points towards awesome rewards!
 
 ## Features
 <!-- - Learn 10 Spanish words!
