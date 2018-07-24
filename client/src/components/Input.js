@@ -8,7 +8,7 @@ export default class Input extends React.Component {
   }
   render(){
     let error; let warning;
-    const errStyle = { border: 'red 2px solid' };
+    const errStyle = { borderColor: '#c78181' };
     if(this.props.meta.touched && this.props.meta.error){
       error = (<div className='form-warning'>{this.props.meta.error}</div>);
     }

@@ -12,3 +12,8 @@ export const IS_ADDING = 'IS_ADDING';
 export const isAdding = id => ({
   type: IS_ADDING, id
 });
+
+export const TOGGLE_LOGIN_FORM = 'TOGGLE_LOGIN_FORM';
+export const toggleLoginForm = () => ({
+  type: TOGGLE_LOGIN_FORM
+});
