@@ -1,51 +1,33 @@
 import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
 
+export const FETCH_TASKS_SUCCESS = 'FETCH_TASKS_SUCCESS';
+export const fetchTasksSuccess = tasks => ({
+  type: FETCH_TASKS_SUCCESS, 
+  tasks
+});
 
+export const FETCH_TASKS_ERROR = 'FETCH_TASKS_ERROR';
+export const fetchTasksError = error => ({
+  type: FETCH_TASKS_ERROR, 
+  error
+});
 
-// ============ GET TASKS ==================
-
-// export const FETCH_TASKS_SUCCESS = 'FETCH_TASKS_SUCCESS';
-// export const fetchTasksSuccess = task => ({
-//     type: FETCH_TASKS_SUCCESS, 
-//     task
-// });
-
-// export const FETCH_TASKS_ERROR = 'FETCH_TASKS_ERROR';
-// export const fetchTasksError = error => ({
-//     type: FETCH_TASKS_ERROR,
-//     error
-// });
-
-// export const fetchTasks = () => (dispatch, getState) => {
-//    const authToken = getState().auth.authToken;
-//    console.log('fetch launched');
-
-export const FETCH_TASKS_SUCCESS = 'FETCH_TASKS_SUCCESS',
-  fetchTasksSuccess = tasks => ({
-    type: FETCH_TASKS_SUCCESS, 
-    tasks
-  }),
-  FETCH_TASKS_ERROR = 'FETCH_TASKS_ERROR',
-  fetchTasksError = error => ({
-    type: FETCH_TASKS_ERROR, error
-  }),
-  fetchTasks = () => (dispatch, getState) => {
-    const authToken = getState().auth.authToken;
-    fetch(`${API_BASE_URL}/tasks`, {
-      method: 'GET',
-      headers: {
-        Authorization: `Bearer ${authToken}`
-      }
-    })
-      .then(res => normalizeResponseErrors(res))
-      .then(res => res.json())
-      .then(data => dispatch(fetchTasksSuccess(data)))
-      .catch(err => {
-        dispatch(fetchTasksError(err));
-      });
-  };
-
+export const fetchTasks = () => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  return (fetch(`${API_BASE_URL}/tasks`, {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${authToken}`
+    }
+  })
+    .then(res => normalizeResponseErrors(res))
+    .then(res => res.json())
+    .then(tasks => dispatch(fetchTasksSuccess(tasks)))
+    .catch(err => {
+      dispatch(fetchTasksError(err));
+    }));
+};
 
 // ============ POST TASKS ==================
 
@@ -61,11 +43,12 @@ export const POST_TASK_SUCCESS = 'POST_TASK_SUCCESS',
     error
   }),
 
-  postTask = (task) => (dispatch, getState) => {
+  postTask = (id, task) => (dispatch, getState) => {
     console.log('post task ran');
     console.log(task);
+    console.log(id);
     const authToken = getState().auth.authToken;
-    fetch(`${API_BASE_URL}/tasks`, {
+    fetch(`${API_BASE_URL}/tasks/${id}`, {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${authToken}`,
@@ -73,18 +56,15 @@ export const POST_TASK_SUCCESS = 'POST_TASK_SUCCESS',
       },
       body: JSON.stringify({
         name: task.name,
-        pointValue: task.points
+        pointValue: task.pointValue
       })
     })
       .then(res => normalizeResponseErrors(res))
       //.then(res => res.json())
       .then(data => {
-        dispatch(postTaskSuccess(data))
-        dispatch(fetchTasks())
+        dispatch(postTaskSuccess(data));
+        dispatch(fetchTasks());
       })
-
-//       .then(task => dispatch(postTaskSuccess(task)))
-//       .then(() => dispatch(fetchTasks()))
       .catch(err => {
         dispatch(postTaskError(err));
       });
@@ -101,7 +81,6 @@ export const PUT_TASK_SUCCESS = 'PUT_TASK_SUCCESS',
     type: PUT_TASK_ERROR, error
   }),
   editTask = (id, task) => (dispatch, getState) => {
-    console.log('edit task ran');
     const authToken = getState().auth.authToken;
     fetch(`${API_BASE_URL}/tasks/${id}`, {
       method: 'PUT',
@@ -115,10 +94,8 @@ export const PUT_TASK_SUCCESS = 'PUT_TASK_SUCCESS',
       })
     })
       .then(res => normalizeResponseErrors(res))
-      .then(data => {
-        dispatch(putTaskSuccess(data))
-        dispatch(fetchTasks())
-      })
+      .then(data => dispatch(putTaskSuccess(data)))
+      .then(() =>  dispatch(fetchTasks()))
       .catch(err => {
         dispatch(putTaskError(err));
       });
@@ -127,9 +104,16 @@ export const PUT_TASK_SUCCESS = 'PUT_TASK_SUCCESS',
 // ============ DELETE TASKS ==================
 
 export const DELETE_TASK_SUCCESS = 'DELETE_TASK_SUCCESS',
-  deleteTaskSuccess = () => ({type: DELETE_TASK_SUCCESS}),
+  deleteTaskSuccess = () => ({
+    type: DELETE_TASK_SUCCESS
+  }),
+
   DELETE_TASK_ERROR = 'DELETE_TASK_ERROR',
-  deleteTaskError = error => ({type: DELETE_TASK_ERROR, error}),
+  deleteTaskError = error => ({
+    type: DELETE_TASK_ERROR,
+     error
+  }),
+
   deleteTask = (id) => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     fetch(`${API_BASE_URL}/tasks/${id}`, {

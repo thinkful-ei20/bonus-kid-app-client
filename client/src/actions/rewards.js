@@ -61,7 +61,7 @@ export const postReward = (reward) => (dispatch, getState) => {
     },
     body: JSON.stringify({
       name: reward.name,
-      points: reward.points
+      pointValue: reward.pointValue
     })
   })
     .then(res => normalizeResponseErrors(res))
@@ -79,9 +79,9 @@ export const postReward = (reward) => (dispatch, getState) => {
 
 //==================== PUT rewards ==============================
 export const PUT_REWARDS_SUCCESS = 'PUT_REWARDS_SUCCESS';
-export const putRewardsSuccess = reward => ({
+export const putRewardsSuccess = rewards => ({
   type: PUT_REWARDS_SUCCESS,
-  reward
+  rewards
 })
 
 export const PUT_REWARDS_ERROR = 'PUT_REWARDS_ERROR';
@@ -103,7 +103,7 @@ export const editRewards = (_id, reward) => (dispatch, getState) => {
     },
     body: JSON.stringify({
       name: reward.name,
-      points: reward.points
+      pointValue: reward.pointValue
     })
   })
     .then(res => normalizeResponseErrors(res))
