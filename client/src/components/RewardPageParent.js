@@ -31,9 +31,8 @@ export class RewardPageParent extends React.Component{
   }
 
   render(){
-    console.log(this.props);
   if(!this.props.loggedIn || !this.props.user.isParent){
-      return <Redirect to='/reward_page_parent' />;
+      return <Redirect to='/' />; // FIX LATER logout should send to dashbaord but page refresh should stay at reward_page_parent
     }
 
     const rewardsCard = this.props.rewards.map((reward,i) => 
