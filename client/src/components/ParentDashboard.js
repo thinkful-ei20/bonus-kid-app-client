@@ -5,12 +5,13 @@ import React from 'react';
 import { clearAuth } from '../actions/auth';
 import { clearAuthToken } from '../local-storage';
 import { connect } from 'react-redux';
-import { isEditing, isAdding } from '../actions';
+import { isEditing, isAdding, toggleModal } from '../actions';
 import { fetchTasks, deleteTask } from '../actions/tasks';
 import { Redirect } from 'react-router-dom';
 
 import '../styles/parent-dashboard.css';
 import AddTaskForm from './AddTaskForm';
+import ParentTaskModal from './ParentTaskModal';
 
 const mapStateToProps = state => ({
   loggedIn: state.auth.user !== null,
@@ -59,7 +60,8 @@ export class ParentDashboard extends React.Component{
         <div className='task-cards'>
           <ul className='tasks-list'>
             {childTasks[childId].map((childTask, i) =>
-              <li className='task' key={`${childTask.id}`}>
+              <li className='task' key={`${childTask.id}`}
+                onClick={() => this.props.dispatch(toggleModal())}>
                 <div className='task-details'>
                   <p>Task: {childTask.name}</p>
                   <p>Point Value: {childTask.pointValue}</p>
@@ -96,6 +98,7 @@ export class ParentDashboard extends React.Component{
         </div>
         <EditTaskForm />
         <AddTaskForm />
+        <ParentTaskModal />
       </div>
     );
   }

@@ -3,6 +3,11 @@ export const toggleSideNav = () => ({
   type: TOGGLE_SIDE_NAV
 });
 
+export const TOGGLE_MODAL = 'TOGGLE_MODAL';
+export const toggleModal = () => ({
+  type: TOGGLE_MODAL
+});
+
 export const IS_EDITING = 'IS_EDITING';
 export const isEditing = (id=null, name=null) => ({
   type: IS_EDITING, id, name

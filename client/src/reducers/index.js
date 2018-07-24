@@ -1,6 +1,7 @@
 import {
   TOGGLE_SIDE_NAV,
-  TOGGLE_LOGIN_FORM, 
+  TOGGLE_LOGIN_FORM,
+  TOGGLE_MODAL, 
   IS_EDITING,
   IS_ADDING
 } from '../actions';
@@ -9,7 +10,8 @@ const initState = {
   sideNavView: false,
   isEditing: {editing: false, id: null, name: null},
   isAdding: {adding: false, id: null},
-  loginChoice: {parent: true, child: false}
+  loginChoice: {parent: true, child: false},
+  modalView: {tasks: false, rewards: false}
 };
 
 export default (state=initState, action) => {
@@ -42,6 +44,11 @@ export default (state=initState, action) => {
         parent: !state.loginChoice.parent,
         child: !state.loginChoice.child
       }
+    };
+  } else if(action.type === TOGGLE_MODAL) {
+    return {
+      ...state,
+      modalView: {...state.modalView, tasks: !state.modalView.tasks}
     };
   }
   return state;
