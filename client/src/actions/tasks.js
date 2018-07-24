@@ -56,7 +56,7 @@ export const POST_TASK_SUCCESS = 'POST_TASK_SUCCESS',
       },
       body: JSON.stringify({
         name: task.name,
-        pointValue: task.points
+        pointValue: task.pointValue
       })
     })
       .then(res => normalizeResponseErrors(res))
