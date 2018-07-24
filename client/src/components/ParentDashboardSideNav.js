@@ -4,6 +4,8 @@ import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
 import {connect} from 'react-redux';
 import {toggleSideNav} from '../actions';
+import { Link } from 'react-router-dom';
+
 
 const mapStateToProps = state => ({
   sideNavView: state.main.sideNavView,
@@ -24,17 +26,21 @@ export class ParentDashboardSideNav extends React.Component{
         <ul className="links">
           <li>
             <a href="#create-tasks" 
-              onClick={() => this.props.dispatch(toggleSideNav())}>Tasks
+              onClick={() => this.props.dispatch(toggleSideNav())}>
+              <Link to='/'>Tasks</Link>
+
             </a>
           </li>
           <li>
-            <a href="#rewards" 
-              onClick={() => this.props.dispatch(toggleSideNav())}>Rewards
+            <a onClick={() => this.props.dispatch(toggleSideNav())} >
+              <Link to='/reward_page_parent'>Rewards</Link>
             </a>
+            
           </li>
           <li>
             <a href="#settings" 
-              onClick={() => this.props.dispatch(toggleSideNav())}>Settings
+              onClick={() => this.props.dispatch(toggleSideNav())}>
+              <Link to='/settings'>Settings</Link>
             </a>
           </li>
           <li>

@@ -104,9 +104,16 @@ export const PUT_TASK_SUCCESS = 'PUT_TASK_SUCCESS',
 // ============ DELETE TASKS ==================
 
 export const DELETE_TASK_SUCCESS = 'DELETE_TASK_SUCCESS',
-  deleteTaskSuccess = () => ({type: DELETE_TASK_SUCCESS}),
+  deleteTaskSuccess = () => ({
+    type: DELETE_TASK_SUCCESS
+  }),
+
   DELETE_TASK_ERROR = 'DELETE_TASK_ERROR',
-  deleteTaskError = error => ({type: DELETE_TASK_ERROR, error}),
+  deleteTaskError = error => ({
+    type: DELETE_TASK_ERROR,
+     error
+  }),
+
   deleteTask = (id) => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     fetch(`${API_BASE_URL}/tasks/${id}`, {

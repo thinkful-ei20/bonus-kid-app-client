@@ -3,15 +3,15 @@ import React from 'react';
 
 import {Field, focus, reduxForm} from 'redux-form';
 import {isTrimmed, matches, nonEmpty, required} from '../validators';
-import {loginParent, registerUser}  from '../actions/auth';
+import { registerChild }  from '../actions/auth';
 
 const matchesPassword = matches('signupPassword');
 
-export class SignUpForm extends React.Component {
+export class SignUpFormChild extends React.Component {
   render() {
     return (
       <form
-        className='signup-form'
+        className='signup-form-child'
         onSubmit={this.props.handleSubmit(values => {
           const { signupUsername, signupPassword, signupName, signupEmail } = values;
           const user = { 
@@ -20,39 +20,41 @@ export class SignUpForm extends React.Component {
             name: signupName, 
             email: signupEmail 
           };
-          return this.props.dispatch(registerUser(user))
-            .then(() => this.props.dispatch(loginParent(signupUsername, signupPassword)));
+          console.log('user: ', user);
+          
+          return this.props.dispatch(registerChild(user)); 
+                     
         }
         )}>
-        <label htmlFor='signupName'> Name </label>
+        <label htmlFor='signupName'> Child's Name </label>
         <Field component={Input} type='text'
           name='signupName' id='signupName'
           validate={[required, nonEmpty, isTrimmed]}
         />
-        <label htmlFor='signupEmail'> E-mail </label>
+        {/* <label htmlFor='signupEmail'> Child's E-mail </label>
         <Field component={Input} type='signupEmail'
           name='signupEmail' id='signupEmail'
           validate={[required, nonEmpty, isTrimmed]}
-        />
-        <label htmlFor='signupUsername'> Username </label>
+        /> */}
+        <label htmlFor='signupUsername'> Child's Username </label>
         <Field component={Input} type='text'
           name='signupUsername' id='signupUsername'
           validate={[required, nonEmpty, isTrimmed]}
         />
 
-        <label htmlFor='signupPassword'> Password </label>
+        <label htmlFor='signupPassword'> Child's Password </label>
         <Field component={Input} type='password'
           name='signupPassword' id='signupPassword'
           validate={[required, isTrimmed]}
         />
-        <label htmlFor='signupConfirmPassword' aria-label='signupConfirmPassword'>Confirm Password</label>
+        <label htmlFor='signupConfirmPassword' aria-label='signupConfirmPassword'>Confirm Child's Password</label>
         <Field type='password' component={Input}
           name='signupConfirmPassword' id='signupConfirmPassword'
           validate={[required, nonEmpty, matchesPassword]}/>
         <button
           type="submit"
           disabled={this.props.pristine || this.props.submitting}>
-          Register
+          Register Child
         </button>
       </form>
     );
@@ -60,7 +62,7 @@ export class SignUpForm extends React.Component {
 }
 
 export default reduxForm({
-  form: 'signup-form',
+  form: 'signup-form-child',
   onSubmitFail: (errors, dispatch) =>
-    dispatch(focus('signup-form', Object.keys(errors)[0]))
-})(SignUpForm);
+    dispatch(focus('signup-form-child', Object.keys(errors)[0]))
+})(SignUpFormChild);

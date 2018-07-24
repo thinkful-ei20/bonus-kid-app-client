@@ -30,6 +30,16 @@ export const authError = err => ({
   type: AUTH_ERROR, err
 });
 
+export const AUTH_CHILD_SUCCESS_MESSAGE = 'AUTH_CHILD_SUCCESS_MESSAGE';
+export const authChildSuccessMessage = () => ({
+  type: AUTH_CHILD_SUCCESS_MESSAGE
+});
+
+export const CLEAR_CHILD_SUCCESS_MESSAGE = 'CLEAR_CHILD_SUCCESS_MESSAGE';
+export const clearChildSuccessMessage = () => ({
+  type: CLEAR_CHILD_SUCCESS_MESSAGE
+});
+
 const storeAuthInfo = (authToken, dispatch) => {
   const decodedToken = jwtDecode(authToken);
   dispatch(setAuthToken(authToken));
@@ -104,6 +114,35 @@ export const registerUser = user => dispatch => {
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
     .catch(err =>{
+      const {reason, message, location} = err;
+      if (reason === 'ValidationError'){
+        return Promise.reject(
+          new SubmissionError({
+            [location]:message
+          }) 
+        );
+      }
+    });
+};
+
+export const registerChild = user => (dispatch,getState) => {
+
+  const authToken = getState().auth.authToken;
+
+  return fetch(`${API_BASE_URL}/parent/child`,{
+    method: 'POST',
+    headers:{
+      'content-type': 'application/json',
+      Authorization: `Bearer ${authToken}` 
+    },
+    body: JSON.stringify(user)
+  })
+    .then(res => normalizeResponseErrors(res))
+    .then(res => res.json())
+    .then(() => dispatch(authChildSuccessMessage()))
+    .catch(err =>{
+      console.log('err hit in auth', err);
+      
       const {reason, message, location} = err;
       if (reason === 'ValidationError'){
         return Promise.reject(

@@ -3,14 +3,17 @@ import {
   CLEAR_AUTH,
   AUTH_REQUEST,
   AUTH_ERROR,
-  AUTH_SUCCESS
+  AUTH_SUCCESS,
+  AUTH_CHILD_SUCCESS_MESSAGE,
+  CLEAR_CHILD_SUCCESS_MESSAGE
 } from '../actions/auth';
 
 const initState = {
   authToken: null,
   loading: false,
   error: null,
-  user: null
+  user: null,
+  childSuccessMessage: null
 };
 
 export default (state=initState, action) => {
@@ -43,6 +46,19 @@ export default (state=initState, action) => {
       loading: false,
       user: action.user
     };
+  }
+  else if(action.type === AUTH_CHILD_SUCCESS_MESSAGE){
+    return {
+      ...state,
+      loading: false,
+      childSuccessMessage: "child account created!"
+    }
+  }
+  else if(action.type === CLEAR_CHILD_SUCCESS_MESSAGE){
+    return {
+      ...state,
+      childSuccessMessage: null
+    }
   }
   return state;
 };

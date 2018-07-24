@@ -1,0 +1,50 @@
+#menu {
+  transform: translateX(100%);
+  transition: transform 0.5s ease, box-shadow 0.5s ease, visibility 0.5s;
+  box-shadow: none;
+  height: 100%;
+  max-width: 50%;
+  overflow-y: auto;
+  padding: 1em;
+  position: fixed;
+  right: 0;
+  top: 0;
+  visibility: hidden;
+  width: 15em;
+  z-index: 3;
+  font-size: 1em;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+#menu i{
+  cursor: pointer;
+  align-self: flex-end;
+  color: #007c4f;
+}
+
+#menu.visible {
+  transform: translateX(0);
+  box-shadow: 0 0 1.5em 0 rgba(0, 0, 0, 0.2);
+  visibility: visible;
+}
+
+.links a {
+  border-bottom: solid 1px rgba(255, 255, 255, 0.25);
+  line-height: 3em;
+  text-decoration: none;
+  color: inherit;
+  text-transform: uppercase;
+  color: #007c4f;
+}
+
+.links p {
+  text-align: right;
+  color: #007c4f;
+}
+
+.links p span {
+  cursor: pointer;
+  color: #007c4f;
+}

@@ -34,10 +34,10 @@ export function LandingPage(props){
       <LandingHeader />
       <div className='jumbotron'>
         <hgroup className='typer'>
-          <h3>Did she get all A's in school?</h3>
-          <h3>Did he do all his chores?</h3>
-          <h3>Those kids deserve a <span>bonus!</span></h3>
-          <h2><a href='/signup'>Try BonusKid</a><br/>and give your kids what they deserve.</h2>
+          <h2>Did she get all A's in school?</h2>
+          <h2>Did he do all his chores?</h2>
+          <h2>Those kids deserve a <span>bonus!</span></h2>
+          <h3><a href='/signup'>Try BonusKid</a> and give your kids what they deserve.</h3>
         </hgroup>
       </div>
       <section className='login-forms'>
