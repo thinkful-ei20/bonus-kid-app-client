@@ -1,5 +1,6 @@
 import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
+import { storeAuthInfo } from './auth';
 
 export const FETCH_TASKS_SUCCESS = 'FETCH_TASKS_SUCCESS';
 export const fetchTasksSuccess = tasks => ({
@@ -60,11 +61,11 @@ export const POST_TASK_SUCCESS = 'POST_TASK_SUCCESS',
       })
     })
       .then(res => normalizeResponseErrors(res))
-      //.then(res => res.json())
-      .then(data => {
-        dispatch(postTaskSuccess(data));
-        dispatch(fetchTasks());
-      })
+      .then(res => res.json())
+      .then(({authToken}) => storeAuthInfo(authToken, dispatch)
+        // dispatch(postTaskSuccess(data));
+        // dispatch(fetchTasks());
+      )
       .catch(err => {
         dispatch(postTaskError(err));
       });
