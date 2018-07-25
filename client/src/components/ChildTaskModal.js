@@ -6,20 +6,20 @@ import { childSubmitTask } from '../actions/tasks';
 
 const mapStateToProps = state => ({
   taskModal: state.main.modalView.tasks,
-  // authToken: state.auth.authToken !== null,
-  // user: state.auth.user,
-  // tasks: state.tasks.tasks
+  taskDetails: state.main.showDetails.taskDetails
 });
 export const ChildTaskModal = props => (
   //need a if statement to close 
 
   <div className={`modal ${props.taskModal ? 'visible': ''}`}>
     <div className='modal-content'>
-    {console.log('this is props in modal', props.id)}
-      <p>Taskname: {props.taskName}</p>
-      <p>PointValue: {props.pointValue}</p>
-      <p>expiration date: {Date(props.expiryDate)}</p>
-      <p> id: {props.id}</p>
+    {console.log('showDetails: ',props.taskDetails)
+    }
+
+      <p>Taskname: hello modal</p>
+      {/* <p>PointValue: {props.taskDetails.pointValue}</p> */}
+      {/* <p>expiration date: {Date(props.showDetails.taskDetails.expiryDate)}</p> */}
+      {/* <p> id: {props.id}</p> */}
       <button className="submitTask" onClick={ () => props.dispatch(childSubmitTask(props.id))}> Submit Task </button>
       <button onClick={() => props.dispatch(toggleModal())}>Close</button>
     </div>

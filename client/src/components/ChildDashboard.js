@@ -5,7 +5,7 @@ import { clearAuth } from '../actions/auth';
 import { clearAuthToken } from '../local-storage';
 import { connect } from 'react-redux';
 import {Redirect, Link} from 'react-router-dom';
-import { toggleModal } from '../actions';
+import { toggleModal, showDetails } from '../actions';
 
 import ChildTaskModal from './ChildTaskModal';
 
@@ -13,7 +13,6 @@ import ChildTaskModal from './ChildTaskModal';
 const mapStateToProps = state => ({
   authToken: state.auth.authToken !== null,
   user: state.auth.user,
-  tasks: state.auth.user.tasks,
   loggedIn: state.auth.user !== null,
 });
 
@@ -29,6 +28,25 @@ export class ChildDashboard extends React.Component{
     if(!this.props.loggedIn){
       return <Redirect to='/' />;
     }
+    const childTaskCards = this.props.user.tasks.map((task) => 
+      <li className='task' 
+        key={`${task.id}`}
+        onClick={() => {
+          console.log('task: ', task)
+
+          this.props.dispatch(toggleModal())
+          this.props.dispatch(showDetails(task))
+          }
+        }
+        >
+        <div className='task-details'>
+          <p>Task: {task.name}</p>
+          <p>Point Value: {task.pointValue}</p>
+          
+        </div>
+      </li>    
+    );   
+
     return(
       //I was going to check if the task props was connected by logging it
       <div>
@@ -45,25 +63,11 @@ export class ChildDashboard extends React.Component{
             </hgroup>
           </div>
           <ul className='tasks-list'>
-         
-            {this.props.tasks.map((task) =>
-              <li className='task' 
-              key={`${task.id}`}
-              onClick={() => this.props.dispatch(toggleModal())}
-              >
-                <div className='task-details'>
-                  <p>Task: {task.name}</p>
-                  <p>Point Value: {task.pointValue}</p>
-                  
-                </div>
-                <ChildTaskModal 
-                
-              />
-              </li>              
-            )}
+            {childTaskCards}      
           </ul>
         </div>
 
+          <ChildTaskModal />
 
       </div>
     );
