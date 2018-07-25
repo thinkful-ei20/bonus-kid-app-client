@@ -40,7 +40,7 @@ export const clearChildSuccessMessage = () => ({
   type: CLEAR_CHILD_SUCCESS_MESSAGE
 });
 
-const storeAuthInfo = (authToken, dispatch) => {
+export const storeAuthInfo = (authToken, dispatch) => {
   const decodedToken = jwtDecode(authToken);
   dispatch(setAuthToken(authToken));
   dispatch(authSuccess(decodedToken.user));
@@ -139,7 +139,7 @@ export const registerChild = user => (dispatch,getState) => {
   })
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
-    .then(() => dispatch(authChildSuccessMessage()))
+    .then(({authToken}) => storeAuthInfo(authToken, dispatch))
     .catch(err =>{
       console.log('err hit in auth', err);
       
