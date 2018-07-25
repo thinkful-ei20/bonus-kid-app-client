@@ -1,17 +1,17 @@
-import EditRewardForm from './EditRewardForm';
-import ParentDashboardHeader from './ParentDashboardHeader';
+import ChildDashboardHeader from './ChildDashboardHeader';
 import React from 'react';
 
 import { clearAuth } from '../actions/auth';
 import { clearAuthToken } from '../local-storage';
 import { connect } from 'react-redux';
 
-import { childGetRewards } from '../actions/rewards';
+import { childGetRewards, childBuyReward } from '../actions/rewards';
 // import { toggleSideNav } from '../actions';
 import { Redirect } from 'react-router-dom';
 
 import '../styles/parent-dashboard.css';
-import AddRewardForm from './AddRewardForm';
+import { toggleRewardModal, showRewardDetails } from '../actions';
+import ChildConfirmRewardModal from './ChildConfirmRewardModal';
 
 const mapStateToProps = state => ({
   loggedIn: state.auth.user !== null,
@@ -28,7 +28,10 @@ export class RewardPageChild extends React.Component{
     this.props.dispatch(clearAuth());
     clearAuthToken();
   }
-  //need to make a purchase button that opens a comfirmation message
+  confirmBuy(reward){
+    this.props.dispatch(toggleRewardModal());
+    this.props.dispatch(showRewardDetails(reward));
+  }
   render(){
   if(!this.props.loggedIn){
       return <Redirect to='/' />; // FIX LATER logout should send to dashbaord but page refresh should stay at reward_page_parent
@@ -40,6 +43,7 @@ export class RewardPageChild extends React.Component{
         <div className='reward-details'>
           <p>{reward.name}</p>
           <p>Point Value: {reward.pointValue}</p>
+          <button className='buy-reward-button' onClick={() => this.confirmBuy(reward)}>BUY</button>
         
         </div> 
       </div> 
@@ -48,11 +52,12 @@ export class RewardPageChild extends React.Component{
 
     return(
       <div>
-        <ParentDashboardHeader />
+        <ChildDashboardHeader />
         <h2>RewardPageChild</h2>
         <div className='reward-cards'>
           {rewardsCard}
         </div>
+        <ChildConfirmRewardModal/>
       </div>
     );
   }

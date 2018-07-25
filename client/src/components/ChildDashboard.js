@@ -1,4 +1,4 @@
-import ChildDashboardHeader from './ParentDashboardHeader';
+import ChildDashboardHeader from './ChildDashboardHeader';
 import React from 'react';
 
 import { clearAuth } from '../actions/auth';

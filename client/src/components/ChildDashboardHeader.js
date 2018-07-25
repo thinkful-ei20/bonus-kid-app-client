@@ -1,4 +1,4 @@
-import ChildDashboardSideNav from './LandingHeadingSideNav';
+import ChildDashboardSideNav from './ChildDashboardSideNav';
 import React from 'react';
 
 import {connect} from 'react-redux';

@@ -168,3 +168,26 @@ export const childGetRewards = () => (dispatch, getState) => {
       dispatch(fetchRewardsError(err))
     });
 };
+
+// ================= PURCHASE REWARD AS A CHILD =========================
+
+export const childBuyReward = (_id) => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+
+  return fetch(`${API_BASE_URL}/rewards/child/${_id}`, {
+    method: 'PUT',
+    headers: {
+      Authorization: `Bearer ${authToken}`,
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify({
+      purchased: true
+    })
+  })
+  .then (res => normalizeResponseErrors(res))
+  .then (res => res.json())
+  .then(({authToken}) => storeAuthInfo(authToken, dispatch))
+  .catch(err =>{
+    dispatch(fetchRewardsError(err))
+  });
+}
