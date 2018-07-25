@@ -45,9 +45,6 @@ export const POST_TASK_SUCCESS = 'POST_TASK_SUCCESS',
   }),
 
   postTask = (id, task) => (dispatch, getState) => {
-    console.log('post task ran');
-    console.log(task);
-    console.log(id);
     const authToken = getState().auth.authToken;
     fetch(`${API_BASE_URL}/tasks/${id}`, {
       method: 'POST',
@@ -62,10 +59,7 @@ export const POST_TASK_SUCCESS = 'POST_TASK_SUCCESS',
     })
       .then(res => normalizeResponseErrors(res))
       .then(res => res.json())
-      .then(({authToken}) => storeAuthInfo(authToken, dispatch)
-        // dispatch(postTaskSuccess(data));
-        // dispatch(fetchTasks());
-      )
+      .then(({authToken}) => storeAuthInfo(authToken, dispatch))
       .catch(err => {
         dispatch(postTaskError(err));
       });

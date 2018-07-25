@@ -5,7 +5,6 @@
 }
 
 .feature-card {
-  border: 1px solid black;
   padding: 1em;
   display: flex;
   flex-direction: column;
@@ -33,29 +32,31 @@
 }
 
 .tasks-list li {
-  border: 1px solid black;
   border-radius: 5px;
   width: 100%;
   margin-bottom: 0.2em;
   padding: 0.2em;
   background-color: #58c69e;
+  cursor: pointer;
 }
 
 .task {
   display: flex;
-  border: 3px solid rgb(43, 0, 128);
 }
 
 .task .task-details {
   width: 60%;
 }
 
-.task .task-btns {
+.task .task-status {
   display: flex;
   flex-direction: column;
   width: 40%;
   justify-content: center;
   align-items: flex-end;
+  text-align: center;
+  border: 2px black solid;
+  background-color: white;
 }
 
 @media screen and (min-width: 600px) {
