@@ -6,7 +6,7 @@ import {required, nonEmpty} from '../validators';
 
 import '../styles/edit-menu.css';
 import { editTask } from '../actions/tasks';
-import { isEditing } from '../actions';
+import { isEditing, toggleModal } from '../actions';
 
 const mapStateToProps = state => ({
   isEditing: state.main.isEditing.editing,
@@ -24,6 +24,7 @@ export class EditTaskForm extends React.Component {
       <div className={this.props.isEditing ? 'visible edit-menu' : 'edit-menu'}
         onSubmit={this.props.handleSubmit(values => {
           this.props.dispatch(isEditing());
+          this.props.dispatch(toggleModal());
           const {taskName, pointValue} = values;
           const newTask = {
             name: taskName, 
@@ -41,11 +42,6 @@ export class EditTaskForm extends React.Component {
             type='number' id='pointValue' />
           <button disabled={this.props.pristine || this.props.submitting}>SUBMIT CHANGES</button>
         </form>
-        <button onClick={() => {
-          this.props.reset();
-          this.props.dispatch(isEditing());
-        }
-        }>CANCEL</button>
       </div>
     );
   }

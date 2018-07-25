@@ -6,14 +6,14 @@ import {required, nonEmpty} from '../validators';
 
 import '../styles/edit-menu.css';
 import { postTask } from '../actions/tasks';
-import { isAdding } from '../actions';
+import { isAdding, toggleModal } from '../actions';
 
 const mapStateToProps = state => ({
   isAdding: state.main.isAdding.adding,
-  id: state.main.isAdding.id
+  id: state.main.isAdding.id.childId
 });
 
-export class EditTaskForm extends React.Component {
+export class AddTaskForm extends React.Component {
   render(){
     let error;
     if(this.props.error){
@@ -28,6 +28,7 @@ export class EditTaskForm extends React.Component {
             name: taskName, 
             pointValue
           };
+          this.props.dispatch(toggleModal());
           return this.props.dispatch(postTask(this.props.id, newTask));
         })}>
         <form className='add-task-form'>
@@ -41,11 +42,6 @@ export class EditTaskForm extends React.Component {
             type='number' id='addPointValue' validate={[required, nonEmpty]} />
           <button disabled={this.props.pristine || this.props.submitting}>SUBMIT NEW TASK</button>
         </form>
-        <button onClick={() => {
-          this.props.reset();
-          this.props.dispatch(isAdding());
-        }
-        }>CANCEL</button>
       </div>
     );
   }
@@ -54,4 +50,4 @@ export class EditTaskForm extends React.Component {
 export default connect(mapStateToProps)(reduxForm({
   form: 'add-task-form',
   onSubmitFail: (errors, dispatch) => dispatch(focus('add-task-form', 'taskName'))
-})(EditTaskForm));
+})(AddTaskForm));
