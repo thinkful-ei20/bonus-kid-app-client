@@ -3,7 +3,8 @@ import {
   TOGGLE_LOGIN_FORM,
   TOGGLE_MODAL, 
   IS_EDITING,
-  IS_ADDING
+  IS_ADDING,
+  SHOW_DETAILS
 } from '../actions';
 
 const initState = {
@@ -11,7 +12,8 @@ const initState = {
   isEditing: {editing: false, id: null, name: null},
   isAdding: {adding: false, id: null},
   loginChoice: {parent: true, child: false},
-  modalView: {tasks: false, rewards: false}
+  modalView: {tasks: false, rewards: false},
+  showDetails: {detailView: false, taskDetails: null}
 };
 
 export default (state=initState, action) => {
@@ -48,8 +50,19 @@ export default (state=initState, action) => {
   } else if(action.type === TOGGLE_MODAL) {
     return {
       ...state,
-      modalView: {...state.modalView, tasks: !state.modalView.tasks}
+      modalView: {tasks: !state.modalView.tasks, rewards: false}, 
+      isEditing: {editing: false, id: null, name: null},
+      isAdding: {adding: false, id: null},
+      showDetails: {detailView: false, taskDetails: null}
     };
+  } else if(action.type === SHOW_DETAILS) {
+    return {
+      ...state,
+      showDetails: {
+        detailView: !state.showDetails.detailView,
+        taskDetails: action.taskDetails
+      }
+    }
   }
   return state;
 };

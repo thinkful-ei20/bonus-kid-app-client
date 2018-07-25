@@ -14,11 +14,16 @@ export const isEditing = (id=null, name=null) => ({
 });
 
 export const IS_ADDING = 'IS_ADDING';
-export const isAdding = id => ({
+export const isAdding = (id=null) => ({
   type: IS_ADDING, id
 });
 
 export const TOGGLE_LOGIN_FORM = 'TOGGLE_LOGIN_FORM';
 export const toggleLoginForm = () => ({
   type: TOGGLE_LOGIN_FORM
+});
+
+export const SHOW_DETAILS = 'SHOW_DETAILS';
+export const showDetails = (taskDetails=null) => ({
+  type: SHOW_DETAILS, taskDetails
 });

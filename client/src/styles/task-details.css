@@ -1,0 +1,77 @@
+.details-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: fit-content;
+}
+
+.details-page .task-name {
+  border: 2px black solid;
+  padding: 0.3em;
+  text-align: center;
+  width: fit-content;
+  margin: 0.2em auto;
+  background-color: #fff9f9;
+  font-size: 1.5em;
+}
+
+.details-page .status {
+  padding: 0.8em 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.details-page .status span {
+  border: 2px black solid;
+  padding: 0.4em;
+  background-color: #fff9f9;
+  width: 50%;
+  text-align: center;
+}
+
+.approval-btns {
+  display: flex;
+  margin: 0.3em;
+  justify-content: space-around;
+}
+
+.approval-btns .approve, .approval-btns .deny {
+  border: 2px solid black;
+  padding: 0.5em;
+  font-size: 1em;
+  width: 40%;
+  cursor: pointer;
+  color: white;
+  text-align: center;
+}
+
+.approval-btns .approve {
+  background-color: rgb(34, 118, 253);
+}
+
+.approval-btns .deny {
+  background-color: red;
+}
+
+.details-page .points, 
+.details-page .create-date,
+.details-page .expiry {
+  padding: 0.8em 0.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1em 0;
+  border: 1px black solid;
+  background-color: #fff9f9;
+}
+
+.details-page .points span,
+.details-page .create-date span,
+.details-page .expiry span {
+  border: 2px black solid;
+  padding: 0.4em;
+  background-color: #d5d5d5;
+  width: 45%;
+  text-align: center; 
+}

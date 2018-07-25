@@ -2,6 +2,7 @@
   z-index: 3;
   position: fixed;
   display: flex;
+  flex-direction: column;
   left: 0;
   top: 0;
   width: 100%;
@@ -12,17 +13,35 @@
   visibility: hidden;
 }
 
+.modal .task-options {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.modal .task-options button {
+  width: calc(100% /3);
+  color: rgb(58, 170, 129);
+  border: none;
+  padding: 0.5em;
+  font-size: 0.8em;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  font-family: 'Raleway';
+}
+
 .modal-content {
-  background-color: rgb(10, 232, 180);
+  background-color: rgb(100, 201, 33);
   display: flex;
   flex-direction: column;
   position: relative;
   overflow: auto;
   padding: 1em;
   outline: 0;
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
-  border-radius: 5%;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 .modal.visible {
