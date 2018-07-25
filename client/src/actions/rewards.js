@@ -103,11 +103,7 @@ export const editRewards = (_id, reward) => (dispatch, getState) => {
   })
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
-    .then(data => {
-      console.log(data)
-      dispatch(putRewardsSuccess(data))
-      dispatch(fetchRewards());
-    })
+    .then(({authToken}) => storeAuthInfo(authToken, dispatch))
     .catch(err => {
       dispatch(putRewardsError(err));
     });
@@ -137,10 +133,8 @@ export const deleteRewards = (_id) => (dispatch, getState) =>{
     },
   }) 
     .then(res=>normalizeResponseErrors(res))
-    .then(() => {
-      dispatch(deleteRewardsSuccess())
-      dispatch(fetchRewards());
-    })
+    .then(res => res.json())
+    .then(({authToken}) => storeAuthInfo(authToken, dispatch))
     .catch(err => {
       dispatch(deleteRewardsError(err));
     })
