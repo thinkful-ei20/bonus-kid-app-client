@@ -1,5 +1,6 @@
 import {API_BASE_URL} from '../config';
 import{normalizeResponseErrors} from './utils';
+import { storeAuthInfo } from './auth';
 
 //========================== GET rewards =======================
 export const FETCH_REWARDS_SUCCESS = 'FETCH_REWARDS_REQUEST';
@@ -27,9 +28,7 @@ export const fetchRewards = () => (dispatch, getState) => {
   })
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
-    .then(data =>{
-      dispatch(fetchRewardsSucces(data));
-    })
+    .then(({authToken}) => storeAuthInfo(authToken, dispatch))
     .catch(err => {
       dispatch(fetchRewardsError(err));
     });
@@ -66,11 +65,7 @@ export const postReward = (reward) => (dispatch, getState) => {
   })
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
-    .then(data => {
-      console.log(data)
-      dispatch(postRewardsSuccess(data))
-      dispatch(fetchRewards())
-    })
+    .then(({authToken}) => storeAuthInfo(authToken, dispatch))
     .catch(err => {
       dispatch(postRewardsError(err));
     });

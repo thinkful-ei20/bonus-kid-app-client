@@ -24,7 +24,7 @@ const mapStateToProps = state => ({
 
 export class ParentDashboard extends React.Component {
   componentDidMount() {
-    this.props.dispatch(fetchTasks());
+    // this.props.dispatch(fetchTasks());
   }
   logOut() {
     this.props.dispatch(clearAuth());

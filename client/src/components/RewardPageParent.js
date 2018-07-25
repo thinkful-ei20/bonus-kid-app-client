@@ -23,7 +23,7 @@ const mapStateToProps = state => ({
 
 export class RewardPageParent extends React.Component{
   componentDidMount(){
-    this.props.dispatch(fetchRewards());
+    // this.props.dispatch(fetchRewards());
   }
   logOut(){    
     this.props.dispatch(clearAuth());
@@ -34,8 +34,8 @@ export class RewardPageParent extends React.Component{
   if(!this.props.loggedIn || !this.props.user.isParent){
       return <Redirect to='/' />; // FIX LATER logout should send to dashbaord but page refresh should stay at reward_page_parent
     }
-
-    const rewardsCard = this.props.rewards.map((reward,i) => 
+    console.log(this.props.user.rewards);
+    const rewardsCard = this.props.user.rewards.map((reward,i) => 
     <div className='feature-card' key={i}>
       <div className='reward-cards'>
         <div className='reward-details'>
