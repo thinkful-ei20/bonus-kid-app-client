@@ -139,7 +139,7 @@ export const registerChild = user => (dispatch,getState) => {
   })
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
-    .then(() => dispatch(authChildSuccessMessage()))
+    .then(({authToken}) => storeAuthInfo(authToken, dispatch))
     .catch(err =>{
       console.log('err hit in auth', err);
       

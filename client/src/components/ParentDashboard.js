@@ -40,7 +40,7 @@ export class ParentDashboard extends React.Component {
       <div className='feature-card' key={child.id}>
         <div className='side-avatar'>
           <i className='fa fa-id-card fa-5x' aria-hidden="true"></i>
-          <p>{child.id}</p>
+          <p>{child.name}</p>
         </div>
         <div className='task-cards'>
           <ul className='tasks-list'>
