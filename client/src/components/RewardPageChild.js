@@ -5,8 +5,8 @@ import React from 'react';
 import { clearAuth } from '../actions/auth';
 import { clearAuthToken } from '../local-storage';
 import { connect } from 'react-redux';
-import { isEditing, isAdding } from '../actions';
-import { fetchRewards, deleteRewards } from '../actions/rewards';
+
+import { childGetRewards } from '../actions/rewards';
 // import { toggleSideNav } from '../actions';
 import { Redirect } from 'react-router-dom';
 
@@ -16,31 +16,31 @@ import AddRewardForm from './AddRewardForm';
 const mapStateToProps = state => ({
   loggedIn: state.auth.user !== null,
   user: state.auth.user,
-  isEditing: state.main.isEditing.editing,
-  isAdding: state.main.isAdding.adding,
   rewards: state.rewards.rewards
+
 });
 
 export class RewardPageChild extends React.Component{
   componentDidMount(){
-    // this.props.dispatch(fetchRewards());
+    this.props.dispatch(childGetRewards());
   }
   logOut(){    
     this.props.dispatch(clearAuth());
     clearAuthToken();
   }
-
+  //need to make a purchase button that opens a comfirmation message
   render(){
   if(!this.props.loggedIn){
       return <Redirect to='/' />; // FIX LATER logout should send to dashbaord but page refresh should stay at reward_page_parent
     }
-
+    console.log(this.props.rewards)
     const rewardsCard = this.props.rewards.map((reward,i) => 
     <div className='feature-card' key={i}>
       <div className='reward-cards'>
         <div className='reward-details'>
           <p>{reward.name}</p>
           <p>Point Value: {reward.pointValue}</p>
+        
         </div> 
       </div> 
     </div>

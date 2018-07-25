@@ -13,6 +13,7 @@ import ChildTaskModal from './ChildTaskModal';
 const mapStateToProps = state => ({
   authToken: state.auth.authToken !== null,
   user: state.auth.user,
+  tasks: state.auth.user.tasks,
   loggedIn: state.auth.user !== null,
 });
 
@@ -25,12 +26,11 @@ export class ChildDashboard extends React.Component{
   }
 
   render(){
-    console.log(this.props.tasks);
     if(!this.props.loggedIn){
       return <Redirect to='/' />;
     }
     return(
-
+      //I was going to check if the task props was connected by logging it
       <div>
 
         <ChildDashboardHeader />
@@ -45,7 +45,8 @@ export class ChildDashboard extends React.Component{
             </hgroup>
           </div>
           <ul className='tasks-list'>
-            {this.props.user.tasks.map((task) =>
+         
+            {this.props.tasks.map((task) =>
               <li className='task' 
               key={`${task.id}`}
               onClick={() => this.props.dispatch(toggleModal())}
@@ -56,9 +57,7 @@ export class ChildDashboard extends React.Component{
                   
                 </div>
                 <ChildTaskModal 
-                taskName={task.name}
-                pointValue={task.pointValue}
-                expiryDate={task.expiryDate}
+                
               />
               </li>              
             )}

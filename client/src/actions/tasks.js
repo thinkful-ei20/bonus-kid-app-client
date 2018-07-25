@@ -126,3 +126,31 @@ export const DELETE_TASK_SUCCESS = 'DELETE_TASK_SUCCESS',
       .then(({authToken}) =>  storeAuthInfo(authToken, dispatch))
       .catch(err => dispatch(deleteTaskError(err)));
   };
+
+  // =========== CHILD SUBMIT TASK FOR APPROVAL ==========
+
+  export const CHILD_SUBMIT_TASK = 'CHILD_SUBMIT_TASK';
+  export const childSubmitSuccess = () => ({
+    type: CHILD_SUBMIT_TASK
+  });
+
+  export const childSubmitTask = (id) => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    fetch(`${API_BASE_URL}/tasks/child/${id}`, {
+      method: 'PUT',
+      headers: {
+        Authorization: `Bearer ${authToken}`,
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify({
+        childComplete: true,
+      })
+    })
+    .then(res => normalizeResponseErrors(res))
+    .then(res => res.json())
+    .then(({authToken}) => storeAuthInfo(authToken, dispatch))
+    .catch(err => {
+      dispatch(putTaskError(err));
+      //Uses the PUT error from the parent PUT task error
+    })
+  };
