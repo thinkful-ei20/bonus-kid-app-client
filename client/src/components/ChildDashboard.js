@@ -55,11 +55,16 @@ export class ChildDashboard extends React.Component{
                   <p>Point Value: {task.pointValue}</p>
                   
                 </div>
-              </li>
+                <ChildTaskModal 
+                taskName={task.name}
+                pointValue={task.pointValue}
+                expiryDate={task.expiryDate}
+              />
+              </li>              
             )}
           </ul>
         </div>
-        <ChildTaskModal />
+
 
       </div>
     );
