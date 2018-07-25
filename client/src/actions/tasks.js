@@ -121,7 +121,9 @@ export const DELETE_TASK_SUCCESS = 'DELETE_TASK_SUCCESS',
       method: 'DELETE',
       headers: {Authorization: `Bearer ${authToken}`}
     })
-      .then(() => dispatch(deleteTaskSuccess()))
-      .then(() => dispatch(fetchTasks()))
+      // .then(() => dispatch(deleteTaskSuccess()))
+      .then(res => normalizeResponseErrors(res))
+      .then(res => res.json())
+      .then(({authToken}) =>  storeAuthInfo(authToken, dispatch))
       .catch(err => dispatch(deleteTaskError(err)));
   };
