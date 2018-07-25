@@ -95,8 +95,8 @@ export const PUT_TASK_SUCCESS = 'PUT_TASK_SUCCESS',
       })
     })
       .then(res => normalizeResponseErrors(res))
-      .then(data => dispatch(putTaskSuccess(data)))
-      .then(() =>  dispatch(fetchTasks()))
+      .then(res => res.json())
+      .then(({authToken}) =>  storeAuthInfo(authToken, dispatch))
       .catch(err => {
         dispatch(putTaskError(err));
       });
