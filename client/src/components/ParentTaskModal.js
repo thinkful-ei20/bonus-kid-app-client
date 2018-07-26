@@ -11,6 +11,7 @@ const mapStateToProps = state => ({
   isEditing: state.main.isEditing.editing,
   isAdding: state.main.isAdding.adding,
   showDetails: state.main.showDetails,
+  childId: state.main.showDetails.childId, 
   task: state.main.showDetails.taskDetails
 });
 
@@ -31,7 +32,7 @@ export const ParentTaskModal = props => {
             className='details-tab' 
             disabled={props.showDetails.detailView}
             onClick={() => {
-              props.dispatch(showDetails(props.task));
+              props.dispatch(showDetails(props.childId, props.task));
               return props.isAdding ? props.dispatch(isAdding()) :
                 props.isEditing ? props.dispatch(isEditing()) : null;
             }
@@ -43,7 +44,7 @@ export const ParentTaskModal = props => {
             disabled={props.isAdding}
             onClick={() => {
               props.dispatch(isAdding(props.task));
-              return props.showDetails.detailView ? props.dispatch(showDetails(props.task)) :
+              return props.showDetails.detailView ? props.dispatch(showDetails(props.showDetails.childId, props.task)) :
                 props.isEditing ? props.dispatch(isEditing()) : null;}
             }
             style={props.isAdding ? highlight : null}
@@ -53,7 +54,7 @@ export const ParentTaskModal = props => {
             disabled={props.isEditing}
             onClick={() => {
               props.dispatch(isEditing(props.task.id, props.task.name));
-              return props.showDetails.detailView ? props.dispatch(showDetails(props.task)) :
+              return props.showDetails.detailView ? props.dispatch(showDetails(props.showDetails.childId, props.task)) :
                 props.isAdding ? props.dispatch(isAdding()) : null;
             }
             }

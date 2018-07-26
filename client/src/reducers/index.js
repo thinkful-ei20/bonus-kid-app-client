@@ -13,7 +13,7 @@ const initState = {
   isAdding: {adding: false, id: null},
   loginChoice: {parent: true, child: false},
   modalView: {tasks: false, rewards: false},
-  showDetails: {detailView: false, taskDetails: null}
+  showDetails: {detailView: false, taskDetails: null, childId: null}
 };
 
 export default (state=initState, action) => {
@@ -53,14 +53,15 @@ export default (state=initState, action) => {
       modalView: {tasks: !state.modalView.tasks, rewards: false}, 
       isEditing: {editing: false, id: null, name: null},
       isAdding: {adding: false, id: null},
-      showDetails: {detailView: false, taskDetails: null}
+      showDetails: {detailView: false, taskDetails: null, childId: null}
     };
   } else if(action.type === SHOW_DETAILS) {
     return {
       ...state,
       showDetails: {
         detailView: !state.showDetails.detailView,
-        taskDetails: action.taskDetails
+        taskDetails: action.taskDetails,
+        childId: action.childId
       }
     }
   }

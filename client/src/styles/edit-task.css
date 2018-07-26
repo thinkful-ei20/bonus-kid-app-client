@@ -21,11 +21,11 @@
   width: 100%;
 }
 
-.edit-menu .edit-task-form .edit-task-btn {
+.edit-menu .edit-task-form .edit-task-btn, .edit-menu .delete-task-btn {
   padding: 0.7em;
   font-size: 0.7em;
   width: fit-content;
-  margin: 1em auto;
+  margin: 1em auto 0 auto;
   cursor: pointer;
   border: none;
   text-align: center;
@@ -36,6 +36,27 @@
 
 .edit-menu .edit-task-form .edit-task-btn:hover {
   background-color: green;
+  color: white;
+  border: 2px solid black;
+}
+
+.edit-menu #delete-task-btn {
+  display: flex;
+  font-size: 0.7em;
+  width: fit-content;
+  margin: 0 auto;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+  font-family: 'Raleway';
+  letter-spacing: 0.1em;
+  border-radius: 10px;
+  align-self: center;
+}
+
+
+.edit-menu .delete-task-btn:hover {
+  background-color: red;
   color: white;
   border: 2px solid black;
 }

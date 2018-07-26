@@ -10,7 +10,8 @@ import { isAdding, toggleModal } from '../actions';
 
 const mapStateToProps = state => ({
   isAdding: state.main.isAdding.adding,
-  id: state.main.isAdding.id.childId
+  id: state.main.isAdding.id.childId,
+  task: state.main.showDetails.taskDetails,
 });
 
 export class AddTaskForm extends React.Component {
@@ -19,6 +20,7 @@ export class AddTaskForm extends React.Component {
     if(this.props.error){
       error = (<div className='form-error'>{this.props.error}</div>);
     }
+    console.log(this.props.task.name)
     return (
       <div className={this.props.isAdding ? 'visible add-menu' : 'add-menu'}>
         <form className='add-task-form'
@@ -31,8 +33,7 @@ export class AddTaskForm extends React.Component {
           {error}
           <label htmlFor='taskName'>Add Task: </label>
           <Field component={Input} name='taskName'
-            type='text' id='addTaskName'
-            validate={[required, nonEmpty]} />
+            type='text' id='addTaskName' validate={[required, nonEmpty]} />
           <label htmlFor='pointValue'>Add Point Value: </label>
           <Field component={Input} name='pointValue'
             type='number' id='addPointValue' validate={[required, nonEmpty]} />

@@ -5,13 +5,14 @@ import Input from './Input';
 // import {required, nonEmpty} from '../validators';
 
 import '../styles/edit-task.css';
-import { editTask } from '../actions/tasks';
+import { editTask, deleteTask } from '../actions/tasks';
 import { isEditing, toggleModal } from '../actions';
 
 const mapStateToProps = state => ({
   isEditing: state.main.isEditing.editing,
   id: state.main.isEditing.id,
-  name: state.main.isEditing.name
+  name: state.main.isEditing.name,
+  task: state.main.showDetails.taskDetails
 });
 
 export class EditTaskForm extends React.Component {
@@ -35,13 +36,18 @@ export class EditTaskForm extends React.Component {
           })}>
           {error}
           <label htmlFor='taskName'>Edit Task: </label>
-          <Field component={Input} name='taskName'
+          <Field component={Input} name='taskName' placeholder={this.props.task.name}
             type='text' id='taskName' />
           <label htmlFor='pointValue'>Edit Point Value: </label>
-          <Field component={Input} name='pointValue'
+          <Field component={Input} name='pointValue' placeholder={this.props.task.pointValue} 
             type='number' id='pointValue' />
           <button className='edit-task-btn' disabled={this.props.pristine || this.props.submitting}>SUBMIT CHANGES</button>
         </form>
+        <button id='delete-task-btn' onClick={() => {
+          this.props.dispatch(deleteTask(this.props.id))
+          this.props.dispatch(toggleModal());
+        }
+        }>DELETE TASK</button>
       </div>
     );
   }

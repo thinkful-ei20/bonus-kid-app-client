@@ -24,6 +24,6 @@ export const toggleLoginForm = () => ({
 });
 
 export const SHOW_DETAILS = 'SHOW_DETAILS';
-export const showDetails = (taskDetails=null) => ({
+export const showDetails = (childId=null, taskDetails=null) => ({
   type: SHOW_DETAILS, taskDetails
 });
