@@ -42,6 +42,7 @@ export class ChildDashboard extends React.Component{
         <div className='task-details'>
           <p>Task: {task.name}</p>
           <p>Point Value: {task.pointValue}</p>
+          <p>{task.childComplete ? 'complete' : 'not complete'}</p>
           
         </div>
       </li>    

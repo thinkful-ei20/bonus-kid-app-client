@@ -6,25 +6,51 @@ import { childBuyReward } from '../actions/rewards';
 
 const mapStateToProps = state => ({
   rewardModal: state.main.modalView.rewards,
-  rewardDetails: state.main.showDetails.rewardDetails
+  rewardDetails: state.main.showDetails.rewardDetails,
+  user: state.auth.user
 });
-export const ChildConfirmRewardModal = props => (
-  //need a if statement to close 
 
-  <div className={`modal ${props.rewardModal ? 'visible': ''}`}>
-    <div className='modal-content'>
-    {console.log('showDetails: ',props.taskDetails)
-    }
+export const ChildConfirmRewardModal = props => {
+let notEnoughPoints;
+const finalConfirm = () => {
+  if(props.rewardModal && props.user.currentPoints >= props.rewardDetails.pointValue){
+    console.log('has enough points');    
+    props.dispatch(childBuyReward(props.rewardDetails.id))
+  } else {
+    console.log('not enough points');
+    notEnoughPoints = (
+      <p>Not Enough POints</p>
+    );   
+  }
+  // props.rewardModal ? props.dispatch(childBuyReward(props.rewardDetails.id)) : null
+  }
 
-      <p>Are you sure you want to buy X and remove XXX points from your account?</p>
-      {/* HI DOM HERE ARE SOME NOTES */}
-      {/* X = {props.rewardDetails.name} XXX= {props.rewardDetails.pointValue} */}
-      {/* We also need to pass props.rewardDetails.id into childBuyReward(GOES HERE) which happens on next line  ;) */}
-      <button className="submit-reward-purchase" onClick={() => this.props.dispatch(childBuyReward())
-      }> Submit Reward Purchase </button>
-      <button onClick={() => props.dispatch(toggleRewardModal())}>Close</button>
+  return ( 
+
+    <div className={`modal ${props.rewardModal ? 'visible': ''}`}>
+      <div className='modal-content'>
+
+        <p className='child-confirm-reward-message'>
+          Are you sure you want to buy 
+          <span> "{props.rewardModal ? props.rewardDetails.name : null}" </span> 
+          and remove 
+          <span> {props.rewardModal ? props.rewardDetails.pointValue : null} </span>
+          points from your account?
+        </p>  
+        {notEnoughPoints}          
+        <button 
+          className="submit-reward-purchase" 
+          onClick={() => {
+            finalConfirm()
+            props.dispatch(toggleRewardModal())
+          }
+          }> 
+            Submit Reward Purchase 
+        </button>
+        <button onClick={() => props.dispatch(toggleRewardModal())}>CANCEL</button>
+      </div>
     </div>
-  </div>
-);
+  );
+}
 
 export default connect(mapStateToProps)(ChildConfirmRewardModal);

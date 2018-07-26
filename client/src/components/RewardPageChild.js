@@ -43,8 +43,17 @@ export class RewardPageChild extends React.Component{
         <div className='reward-details'>
           <p>{reward.name}</p>
           <p>Point Value: {reward.pointValue}</p>
-          <button className='buy-reward-button' onClick={() => this.confirmBuy(reward)}>BUY</button>
-        
+          <p>Purchased: {reward.purchased ? 'true' : 'false'}</p>
+
+          <button 
+          className='buy-reward-button' 
+          onClick={() => this.confirmBuy(reward)}
+          disabled={reward.purchased}
+          >
+          BUY
+          </button>
+
+
         </div> 
       </div> 
     </div>
