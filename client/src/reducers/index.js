@@ -2,9 +2,12 @@ import {
   TOGGLE_SIDE_NAV,
   TOGGLE_LOGIN_FORM,
   TOGGLE_MODAL, 
+  TOGGLE_REWARD_MODAL,
   IS_EDITING,
   IS_ADDING,
-  SHOW_DETAILS
+  SHOW_DETAILS,
+  SHOW_REWARD_DETAILS
+  
 } from '../actions';
 
 const initState = {
@@ -55,6 +58,11 @@ export default (state=initState, action) => {
       isAdding: {adding: false, id: null},
       showDetails: {detailView: false, taskDetails: null, rewardDetails: null, childId: null}
     };
+  } else if(action.type === TOGGLE_REWARD_MODAL) {
+    return {
+      ...state,
+      modalView: {tasks: false, rewards: !state.modalView.rewards} 
+    };
   } else if(action.type === SHOW_DETAILS) {
     return {
       ...state,
@@ -63,6 +71,14 @@ export default (state=initState, action) => {
         taskDetails: action.taskDetails,
         rewardDetails: action.rewardDetails,
         childId: action.childId
+      }
+    }
+  } else if(action.type === SHOW_REWARD_DETAILS) {
+    return {
+      ...state,
+      showDetails: {
+        detailView: !state.showDetails.detailView,
+        rewardDetails: action.rewardDetails
       }
     }
   }

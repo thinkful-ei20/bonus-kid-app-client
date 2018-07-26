@@ -1,4 +1,4 @@
-import ChildDashboardHeader from './ParentDashboardHeader';
+import ChildDashboardHeader from './ChildDashboardHeader';
 import React from 'react';
 
 import { clearAuth } from '../actions/auth';
@@ -25,6 +25,7 @@ export class ChildDashboard extends React.Component{
     if(!this.props.loggedIn){
       return <Redirect to='/' />;
     }
+
     const taskCard = this.props.user.tasks.map((task, i) => 
       <li className='task' key={task.id} onClick={() => {
         this.props.dispatch(toggleModal());
@@ -43,6 +44,7 @@ export class ChildDashboard extends React.Component{
       </li>
     );
     return(
+
       <div>
         <ChildDashboardHeader />
         <div className='feature-card'>
@@ -55,10 +57,12 @@ export class ChildDashboard extends React.Component{
             </hgroup>
           </div>
           <ul className='tasks-list'>
+
             {taskCard}
           </ul>
         </div>
         <ChildTaskModal />
+
       </div>
     );
   }

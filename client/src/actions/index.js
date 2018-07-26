@@ -8,6 +8,11 @@ export const toggleModal = () => ({
   type: TOGGLE_MODAL
 });
 
+export const TOGGLE_REWARD_MODAL = 'TOGGLE_REWARD_MODAL';
+export const toggleRewardModal = () => ({
+  type: TOGGLE_REWARD_MODAL
+});
+
 export const IS_EDITING = 'IS_EDITING';
 export const isEditing = (id=null, name=null) => ({
   type: IS_EDITING, id, name
@@ -26,4 +31,9 @@ export const toggleLoginForm = () => ({
 export const SHOW_DETAILS = 'SHOW_DETAILS';
 export const showDetails = (childId=null, taskDetails=null, rewardDetails=null) => ({
   type: SHOW_DETAILS, taskDetails
+});
+
+export const SHOW_REWARD_DETAILS = 'SHOW_REWARD_DETAILS';
+export const showRewardDetails = (rewardDetails=null) => ({
+  type: SHOW_REWARD_DETAILS, rewardDetails
 });
