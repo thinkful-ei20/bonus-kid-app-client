@@ -1,11 +1,23 @@
-.details-page {
+.child-details-heading {
+  width: 90%;
+  margin: 0 auto;
+  background-color: #007c4f;
+  color: white;
+  padding: 0.5em;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.details-page, .child-detail {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: fit-content;
 }
 
-.details-page .status {
+.details-page .status, .child-detail .status {
   padding: 0.8em 0;
   display: flex;
   justify-content: space-around;
@@ -13,7 +25,7 @@
   margin-bottom: 1em;
 }
 
-.details-page .status span {
+.details-page .status span, .child-detail .status span {
   background-color: rgb(136, 136, 11);
   padding: 0.6em 0 0.6em 2em;
   width: 100%;
@@ -24,7 +36,7 @@
   letter-spacing: 0.1em;
 }
 
-.details-page .task-name {
+.details-page .task-name, .child-detail .task-name {
   padding: 0.3em;
   text-align: left;
   margin: 0.3em 0.5em;
@@ -35,7 +47,7 @@
   color: green;
 }
 
-.details-page .task-name span {
+.details-page .task-name span, .child-detail .task-name span {
   border-bottom: 1px green solid;
   color: black;
   padding: 0.5em 0 0.3em 0;
@@ -49,7 +61,6 @@
 }
 
 .approval-btns .approve, .approval-btns .deny {
-  
   padding: 0.4em;
   font-size: 1em;
   width: 40%;
@@ -58,7 +69,17 @@
   text-align: center;
 }
 
-.approval-btns .approve:hover {
+.modal-content .complete-task {
+  width: fit-content;
+  padding: 0.4em;
+  font-size: 1em;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+  margin: 1em auto;
+}
+
+.approval-btns .approve:hover, .modal-content .complete-task:hover {
   background-color: rgb(34, 118, 253);
   color: white;
   border: 2px solid black;
@@ -70,7 +91,7 @@
   border: 2px solid black;
 }
 
-.details-page .points {
+.details-page .points, .child-detail .points {
   padding: 0.3em;
   text-align: left;
   margin: 0.3em 0.5em;
@@ -81,14 +102,14 @@
   color: green;
 }
 
-.details-page .points span {
+.details-page .points span, .child-detail .points span {
   border-bottom: 1px green solid;
   color: black;
   padding: 0.5em 0 0.3em 0;
   font-size: 0.8em;
 }
 
-.details-page .expiry {
+.details-page .expiry, .child-detail .expiry {
   padding: 0.3em;
   text-align: left;
   margin: 0.3em 0.5em;
@@ -98,12 +119,12 @@
   flex-direction: column;
   color: green;
 }
-.details-page .expiry .date-time {
+.details-page .expiry .date-time, .child-detail .expiry .date-time {
   display: flex;
   justify-content: space-between;
 }
 
-.details-page .expiry .date-time span {
+.details-page .expiry .date-time span, .child-detail .expiry .date-time span {
   border-bottom: 1px green solid;
   color: black;
   padding: 0.5em 0 0.3em 0;

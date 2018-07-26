@@ -2,7 +2,7 @@ import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
 import {connect} from 'react-redux';
 import Input from './Input';
-import {required, nonEmpty} from '../validators';
+// import {required, nonEmpty} from '../validators';
 
 import '../styles/edit-task.css';
 import { editTask } from '../actions/tasks';

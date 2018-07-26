@@ -25,22 +25,22 @@ export class ParentDashboardSideNav extends React.Component{
           onClick={() => this.props.dispatch(toggleSideNav())}></i>
         <ul className="links">
           <li>
-            <a href="/" 
+            <Link to="/" 
               onClick={() => this.props.dispatch(toggleSideNav())}>
               Tasks
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/reward_page_parent" onClick={() => this.props.dispatch(toggleSideNav())} >
+            <Link to="/reward_page_parent" onClick={() => this.props.dispatch(toggleSideNav())} >
                 Rewards
-            </a>
+            </Link>
             
           </li>
           <li>
-            <a href="/settings" 
+            <Link to="/settings" 
               onClick={() => this.props.dispatch(toggleSideNav())}>
               Settings
-            </a>
+            </Link>
           </li>
           <li>
             <p onClick={() => this.logOut()}>LOG OUT <span>{this.props.user.username}</span>

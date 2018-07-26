@@ -1,17 +1,17 @@
-import EditRewardForm from './EditRewardForm';
+// import EditRewardForm from './EditRewardForm';
 import ParentDashboardHeader from './ParentDashboardHeader';
 import React from 'react';
 
 import { clearAuth } from '../actions/auth';
 import { clearAuthToken } from '../local-storage';
 import { connect } from 'react-redux';
-import { isEditing, isAdding } from '../actions';
-import { fetchRewards, deleteRewards } from '../actions/rewards';
+// import { isEditing, isAdding } from '../actions';
+// import { fetchRewards, deleteRewards } from '../actions/rewards';
 // import { toggleSideNav } from '../actions';
 import { Redirect } from 'react-router-dom';
 
 import '../styles/parent-dashboard.css';
-import AddRewardForm from './AddRewardForm';
+// import AddRewardForm from './AddRewardForm';
 
 const mapStateToProps = state => ({
   loggedIn: state.auth.user !== null,

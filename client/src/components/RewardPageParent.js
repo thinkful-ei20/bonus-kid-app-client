@@ -6,7 +6,7 @@ import { clearAuth } from '../actions/auth';
 import { clearAuthToken } from '../local-storage';
 import { connect } from 'react-redux';
 import { isEditing, isAdding } from '../actions';
-import { fetchRewards, deleteRewards } from '../actions/rewards';
+import { deleteRewards } from '../actions/rewards';
 // import { toggleSideNav } from '../actions';
 import { Redirect } from 'react-router-dom';
 

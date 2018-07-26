@@ -8,7 +8,6 @@ const mapStateToProps = state => ({
 });
 
 export const TaskDetails = props => {
-  const dateCreated = new Date(Number(props.taskDetail.currentTime));
   const dateExpired = new Date(Number(props.taskDetail.expiryDate));
   return(
     <section className='details-page'>
