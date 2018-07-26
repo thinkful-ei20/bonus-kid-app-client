@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import '../styles/modals.css';
 import { toggleModal } from '../actions';
+
 import '../styles/task-details.css';
 
 const mapStateToProps = state => ({
@@ -35,6 +36,7 @@ export const ChildTaskModal = props => {
     <button className='close' onClick={() => props.dispatch(toggleModal())}>Close</button>
   </div>
 );
+
 }
 
 export default connect(mapStateToProps)(ChildTaskModal);
