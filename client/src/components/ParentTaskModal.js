@@ -65,8 +65,9 @@ export const ParentTaskModal = props => {
         {props.showDetails.detailView ? <TaskDetails /> : 
           props.isAdding ? <AddTaskForm /> : 
             props.isEditing ? <EditTaskForm /> : null}
-        <button onClick={() => props.dispatch(toggleModal())}>Close</button>
+        
       </div>
+      <button className='close' onClick={() => props.dispatch(toggleModal())}>Close</button>
     </div>
   );
 };

@@ -52,10 +52,7 @@ export const POST_TASK_SUCCESS = 'POST_TASK_SUCCESS',
         Authorization: `Bearer ${authToken}`,
         'content-type': 'application/json'
       },
-      body: JSON.stringify({
-        name: task.name,
-        pointValue: task.pointValue
-      })
+      body: JSON.stringify(task)
     })
       .then(res => normalizeResponseErrors(res))
       .then(res => res.json())

@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import Input from './Input';
 import {required, nonEmpty} from '../validators';
 
-import '../styles/edit-menu.css';
+import '../styles/add-task.css';
 import { postTask } from '../actions/tasks';
 import { isAdding, toggleModal } from '../actions';
 
@@ -20,18 +20,14 @@ export class AddTaskForm extends React.Component {
       error = (<div className='form-error'>{this.props.error}</div>);
     }
     return (
-      <div className={this.props.isAdding ? 'visible add-menu' : 'add-menu'}
-        onSubmit={this.props.handleSubmit(values => {
-          this.props.dispatch(isAdding());
-          const {taskName, pointValue} = values;
-          const newTask = {
-            name: taskName, 
-            pointValue
-          };
-          this.props.dispatch(toggleModal());
-          return this.props.dispatch(postTask(this.props.id, newTask));
-        })}>
-        <form className='add-task-form'>
+      <div className={this.props.isAdding ? 'visible add-menu' : 'add-menu'}>
+        <form className='add-task-form'
+          onSubmit={this.props.handleSubmit(values => {
+            this.props.dispatch(isAdding());
+            this.props.dispatch(toggleModal());
+            console.log(values);
+            return this.props.dispatch(postTask(this.props.id, values));
+          })}>
           {error}
           <label htmlFor='taskName'>Add Task: </label>
           <Field component={Input} name='taskName'
@@ -40,7 +36,7 @@ export class AddTaskForm extends React.Component {
           <label htmlFor='pointValue'>Add Point Value: </label>
           <Field component={Input} name='pointValue'
             type='number' id='addPointValue' validate={[required, nonEmpty]} />
-          <button disabled={this.props.pristine || this.props.submitting}>SUBMIT NEW TASK</button>
+          <button className='add-task-btn' disabled={this.props.pristine || this.props.submitting}>ADD NEW TASK</button>
         </form>
       </div>
     );
