@@ -7,7 +7,6 @@ import { clearAuth } from '../actions/auth';
 import { clearAuthToken } from '../local-storage';
 import { connect } from 'react-redux';
 
-
 import { childGetRewards, childBuyReward } from '../actions/rewards';
 
 // import { toggleSideNav } from '../actions';

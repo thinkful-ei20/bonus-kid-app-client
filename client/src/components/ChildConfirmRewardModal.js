@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import '../styles/modals.css';
+
 import { toggleRewardModal } from '../actions';
 import { childBuyReward } from '../actions/rewards';
 
