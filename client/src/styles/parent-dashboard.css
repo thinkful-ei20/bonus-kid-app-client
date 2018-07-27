@@ -5,9 +5,16 @@
 }
 
 .feature-card {
-  padding: 1em;
   display: flex;
   flex-direction: column;
+}
+
+.feature-card .main-card {
+  padding: 1em;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   margin: 0.5em 0.75em;
   border-radius: 5px;
   box-shadow: 5px 5px 5px#404d48;
@@ -29,15 +36,19 @@
 
 .task-cards{
   width: 100%;
+  overflow: scroll;
+  margin: 1em 0 1.5em 0;
 }
 
 .tasks-list li {
   border-radius: 5px;
   width: 100%;
   margin-bottom: 0.2em;
-  padding: 0.2em;
+  padding: 0.5em;
   background-color: #58c69e;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .task {
@@ -45,18 +56,42 @@
 }
 
 .task .task-details {
-  width: 60%;
+  width: 100%;
+}
+
+.task .task-details p {
+  padding-left: 0.5em;
+  width: 100%
 }
 
 .task .task-status {
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 10%;
   justify-content: center;
   align-items: flex-end;
+  border-radius: 100px;
   text-align: center;
   border: 2px black solid;
   background-color: white;
+  height: 1.5em;
+}
+
+.add-task-btn {
+  /* align-self: flex-end; */
+  /* justify-content: flex-end; */
+  z-index: 5;
+  padding: 0.2em;
+  align-self: flex-end;
+  text-align: right;
+  color: rgb(35, 112, 84);
+  margin-top: -0.8em;
+  margin-right: 0.2em;
+  /* border: 1px solid black; */
+  border-radius: 100px;
+  background-color: rgba(36, 177, 102, 0.815);
+  width: fit-content;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 600px) {

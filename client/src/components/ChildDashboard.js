@@ -29,7 +29,7 @@ export class ChildDashboard extends React.Component{
     const taskCard = this.props.user.tasks.map((task, i) => 
       <li className='task' key={task.id} onClick={() => {
         this.props.dispatch(toggleModal());
-        this.props.dispatch(showDetails(task));
+        this.props.dispatch(showDetails(null, task));
       }
       }>
         <div className='task-details'>

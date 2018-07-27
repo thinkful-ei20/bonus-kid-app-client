@@ -33,29 +33,17 @@ export const ParentTaskModal = props => {
             disabled={props.showDetails.detailView}
             onClick={() => {
               props.dispatch(showDetails(props.childId, props.task));
-              return props.isAdding ? props.dispatch(isAdding()) :
-                props.isEditing ? props.dispatch(isEditing()) : null;
+              return props.isEditing ? props.dispatch(isEditing()) : null;
             }
             }
             style={props.showDetails.detailView ? highlight : null}
           >DETAILS</button>
           <button 
-            className='add-task-tab' 
-            disabled={props.isAdding}
-            onClick={() => {
-              props.dispatch(isAdding(props.task));
-              return props.showDetails.detailView ? props.dispatch(showDetails(props.showDetails.childId, props.task)) :
-                props.isEditing ? props.dispatch(isEditing()) : null;}
-            }
-            style={props.isAdding ? highlight : null}
-          >ADD TASK</button>
-          <button 
             className='edit-task-tab' 
             disabled={props.isEditing}
             onClick={() => {
               props.dispatch(isEditing(props.task.id, props.task.name));
-              return props.showDetails.detailView ? props.dispatch(showDetails(props.showDetails.childId, props.task)) :
-                props.isAdding ? props.dispatch(isAdding()) : null;
+              return props.showDetails.detailView ? props.dispatch(showDetails(props.showDetails.childId, props.task)) : null;
             }
             }
             style={props.isEditing ? highlight : null}
@@ -64,7 +52,6 @@ export const ParentTaskModal = props => {
       </section>
       <div className='modal-content'>
         {props.showDetails.detailView ? <TaskDetails /> : 
-          props.isAdding ? <AddTaskForm /> : 
             props.isEditing ? <EditTaskForm /> : null}
         
       </div>

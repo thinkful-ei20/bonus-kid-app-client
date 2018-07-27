@@ -4,6 +4,7 @@ import '../styles/modals.css';
 import { toggleModal } from '../actions';
 
 import '../styles/task-details.css';
+import { childSubmitTask } from '../actions/tasks';
 
 const mapStateToProps = state => ({
   taskModal: state.main.modalView.tasks,
@@ -30,7 +31,10 @@ export const ChildTaskModal = props => {
           </span>
         </p>
         <button className='complete-task'
-            onClick={() => console.log('task complete button clicked')}>TASK COMPLETE</button>
+            onClick={() => {
+              props.dispatch(childSubmitTask(props.task.id));
+              props.dispatch(toggleModal());
+            }}>TASK COMPLETE</button>
       </div>
     </div>
     <button className='close' onClick={() => props.dispatch(toggleModal())}>Close</button>

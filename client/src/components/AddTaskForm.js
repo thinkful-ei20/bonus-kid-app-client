@@ -6,11 +6,11 @@ import {required, nonEmpty} from '../validators';
 
 import '../styles/add-task.css';
 import { postTask } from '../actions/tasks';
-import { isAdding, toggleModal } from '../actions';
+import { isAdding, toggleAddModal } from '../actions';
 
 const mapStateToProps = state => ({
   isAdding: state.main.isAdding.adding,
-  id: state.main.isAdding.id.childId,
+  id: state.main.isAdding.id,
   task: state.main.showDetails.taskDetails,
 });
 
@@ -20,13 +20,12 @@ export class AddTaskForm extends React.Component {
     if(this.props.error){
       error = (<div className='form-error'>{this.props.error}</div>);
     }
-    console.log(this.props.task.name)
     return (
       <div className={this.props.isAdding ? 'visible add-menu' : 'add-menu'}>
         <form className='add-task-form'
           onSubmit={this.props.handleSubmit(values => {
             this.props.dispatch(isAdding());
-            this.props.dispatch(toggleModal());
+            this.props.dispatch(toggleAddModal());
             console.log(values);
             return this.props.dispatch(postTask(this.props.id, values));
           })}>

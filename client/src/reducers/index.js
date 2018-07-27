@@ -6,8 +6,8 @@ import {
   IS_EDITING,
   IS_ADDING,
   SHOW_DETAILS,
-  SHOW_REWARD_DETAILS
-  
+  SHOW_REWARD_DETAILS,
+  TOGGLE_ADD_MODAL
 } from '../actions';
 
 const initState = {
@@ -16,7 +16,8 @@ const initState = {
   isAdding: {adding: false, id: null},
   loginChoice: {parent: true, child: false},
   modalView: {tasks: false, rewards: false},
-  showDetails: {detailView: false, taskDetails: null, rewardDetails: null, childId: null}
+  showDetails: {detailView: false, taskDetails: null, rewardDetails: null, childId: null},
+  addModal: false
 };
 
 export default (state=initState, action) => {
@@ -80,6 +81,11 @@ export default (state=initState, action) => {
         detailView: !state.showDetails.detailView,
         rewardDetails: action.rewardDetails
       }
+    }
+  } else if(action.type === TOGGLE_ADD_MODAL) {
+    return {
+      ...state,
+      addModal: !state.addModal
     }
   }
   return state;

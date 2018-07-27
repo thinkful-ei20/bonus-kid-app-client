@@ -2,6 +2,8 @@ import React from 'react';
 
 import {connect} from 'react-redux';
 import '../styles/task-details.css';
+import { toggleModal } from '../actions';
+import { parentApproveTask } from '../actions/tasks';
 
 const mapStateToProps = state => ({
   taskDetail: state.main.showDetails.taskDetails
@@ -25,9 +27,12 @@ export const TaskDetails = props => {
         </p>
         <div className='approval-btns'>
           <button className='approve'
-            onClick={() => console.log('approved button clicked')}>Approve</button>
+            onClick={() => {
+              props.dispatch(parentApproveTask(props.taskDetail.id));
+              props.dispatch(toggleModal());
+            }}>Approve</button>
           <button className='deny'
-            onClick={() => console.log('denied button clicked')}>Deny</button>
+            onClick={() => props.dispatch(toggleModal())}>Deny</button>
         </div>
       </div>  
     </section>

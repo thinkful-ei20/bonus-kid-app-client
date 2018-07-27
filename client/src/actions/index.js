@@ -8,6 +8,12 @@ export const toggleModal = () => ({
   type: TOGGLE_MODAL
 });
 
+export const TOGGLE_ADD_MODAL = 'TOGGLE_ADD_MODAL';
+export const toggleAddModal = () => ({
+  type: TOGGLE_ADD_MODAL
+});
+
+
 export const TOGGLE_REWARD_MODAL = 'TOGGLE_REWARD_MODAL';
 export const toggleRewardModal = () => ({
   type: TOGGLE_REWARD_MODAL

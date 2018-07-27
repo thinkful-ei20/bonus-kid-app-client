@@ -123,9 +123,9 @@ export const DELETE_TASK_SUCCESS = 'DELETE_TASK_SUCCESS',
 
   // =========== CHILD SUBMIT TASK FOR APPROVAL ==========
 
-  export const CHILD_SUBMIT_TASK = 'CHILD_SUBMIT_TASK';
+  export const CHILD_SUBMIT_TASK_SUCCESS = 'CHILD_SUBMIT_TASK_SUCCESS';
   export const childSubmitSuccess = () => ({
-    type: CHILD_SUBMIT_TASK
+    type: CHILD_SUBMIT_TASK_SUCCESS
   });
 
   export const childSubmitTask = (id) => (dispatch, getState) => {
@@ -143,6 +143,36 @@ export const DELETE_TASK_SUCCESS = 'DELETE_TASK_SUCCESS',
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
     .then(({authToken}) => storeAuthInfo(authToken, dispatch))
+    .then(() => dispatch(childSubmitSuccess()))
+    .catch(err => {
+      dispatch(putTaskError(err));
+      //Uses the PUT error from the parent PUT task error
+    })
+  };
+
+  // =========== PARENT SUBMIT TASK FOR APPROVAL ==========
+
+  export const PARENT_APPROVE_TASK_SUCCESS = 'PARENT_APPROVE_TASK_SUCCESS';
+  export const parentApproveTaskSuccess = () => ({
+    type: PARENT_APPROVE_TASK_SUCCESS
+  });
+
+  export const parentApproveTask = (taskId) => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    fetch(`${API_BASE_URL}/tasks/${taskId}`, {
+      method: 'PUT',
+      headers: {
+        Authorization: `Bearer ${authToken}`,
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify({
+        complete: true
+      })
+    })
+    .then(res => normalizeResponseErrors(res))
+    .then(res => res.json())
+    .then(({authToken}) => storeAuthInfo(authToken, dispatch))
+    .then(() => dispatch(parentApproveTaskSuccess()))
     .catch(err => {
       dispatch(putTaskError(err));
       //Uses the PUT error from the parent PUT task error
