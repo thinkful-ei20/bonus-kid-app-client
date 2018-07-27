@@ -21,7 +21,9 @@ export class SignUpForm extends React.Component {
             email: signupEmail 
           };
           return this.props.dispatch(registerUser(user))
-            .then(() => this.props.dispatch(loginParent(signupUsername, signupPassword)));
+            .then(() => this.props.dispatch(loginParent(signupUsername, signupPassword)))
+            .catch(err => console.log('error in catch:',err)
+            )
         }
         )}>
         <label htmlFor='signupName'> Name </label>

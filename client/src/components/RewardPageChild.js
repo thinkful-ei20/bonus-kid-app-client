@@ -7,7 +7,6 @@ import { clearAuth } from '../actions/auth';
 import { clearAuthToken } from '../local-storage';
 import { connect } from 'react-redux';
 
-
 import { childGetRewards, childBuyReward } from '../actions/rewards';
 
 // import { toggleSideNav } from '../actions';
@@ -21,9 +20,7 @@ import ChildConfirmRewardModal from './ChildConfirmRewardModal';
 
 const mapStateToProps = state => ({
   loggedIn: state.auth.user !== null,
-  user: state.auth.user,
-  rewards: state.rewards.rewards
-
+  user: state.auth.user
 });
 
 export class RewardPageChild extends React.Component{
@@ -43,13 +40,15 @@ export class RewardPageChild extends React.Component{
       return <Redirect to='/' />; // FIX LATER logout should send to dashbaord but page refresh should stay at reward_page_parent
     }
     console.log(this.props.rewards)
-    const rewardsCard = this.props.rewards.map((reward,i) => 
-    <div className='feature-card' key={i}>
+    const rewardsCard = this.props.user.rewards.map((reward,i) => 
+    <div className='feature-card' key={reward.id}>
       <div className='reward-cards'>
         <div className='reward-details'>
           <p>{reward.name}</p>
           <p>Point Value: {reward.pointValue}</p>
-          <p>Purchased: {reward.purchased ? 'true' : 'false'}</p>
+          <p>
+            {reward.purchased ? 'Already purchased' : 'Available for purchase'}
+          </p>
 
           <button 
           className='buy-reward-button' 

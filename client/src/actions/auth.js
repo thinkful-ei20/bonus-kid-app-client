@@ -115,6 +115,7 @@ export const registerUser = user => dispatch => {
     .then(res => res.json())
     .catch(err =>{
       const {reason, message, location} = err;
+      dispatch(authError(err));
       if (reason === 'ValidationError'){
         return Promise.reject(
           new SubmissionError({

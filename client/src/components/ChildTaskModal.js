@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import '../styles/modals.css';
 import { toggleModal } from '../actions';
 
-import '../styles/task-details.css';
+import '../styles/task-details-child.css';
 import { childSubmitTask } from '../actions/tasks';
 
 const mapStateToProps = state => ({
@@ -30,11 +30,17 @@ export const ChildTaskModal = props => {
             <span className='date'>{props.taskModal ? dateExpired.toLocaleDateString() : null}</span>
           </span>
         </p>
-        <button className='complete-task'
-            onClick={() => {
-              props.dispatch(childSubmitTask(props.task.id));
-              props.dispatch(toggleModal());
-            }}>TASK COMPLETE</button>
+        <button 
+          className={props.taskModal ? !props.task.childComplete ? 'incomplete-task-child' : 'complete-task-child' : null}
+          disabled={props.taskModal ? props.task.childComplete ? true : false : null }
+          onClick={() => {
+            props.dispatch(childSubmitTask(props.task.id));
+            props.dispatch(toggleModal());
+          }}>
+          {props.taskModal ? props.task.complete ? 
+          <span>APPROVED</span> : props.task.childComplete ? 
+            <span>PENDING APPROVAL</span> : <span>COMPLETE TASK</span> : null}
+        </button>
       </div>
     </div>
     <button className='close' onClick={() => props.dispatch(toggleModal())}>Close</button>
