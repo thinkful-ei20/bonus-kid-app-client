@@ -26,6 +26,7 @@ export class AddTaskForm extends React.Component {
           onSubmit={this.props.handleSubmit(values => {
             this.props.dispatch(isAdding());
             this.props.dispatch(toggleAddModal());
+            this.props.reset();
             console.log(values);
             return this.props.dispatch(postTask(this.props.id, values));
           })}>

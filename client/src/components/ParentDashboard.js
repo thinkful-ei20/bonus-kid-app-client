@@ -28,6 +28,9 @@ export class ParentDashboard extends React.Component {
     if (!this.props.loggedIn || !this.props.user.isParent) {
       return <Redirect to='/' />;
     }
+    const statusBackground = {
+      backgroundColor: 'blue'
+    }
     const taskCards = this.props.user.child.map((child, i) =>
       <div className='feature-card' key={child.id}>
         <div className='main-card'>
@@ -43,13 +46,11 @@ export class ParentDashboard extends React.Component {
                   this.props.dispatch(showDetails(child.id, task))
                 }
                 }>
-                  <div className='task-status'>
-                    
+                  <div className='task-status' style={statusBackground}>
                   </div>
                   <div className='task-details'>
                     <p>{task.name}</p>
                   </div>
-                  
                 </li>
               )}
             </ul>
