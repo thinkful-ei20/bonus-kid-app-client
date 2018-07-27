@@ -31,10 +31,12 @@ export const ChildTaskModal = props => {
           </span>
         </p>
         <button className='complete-task'
+            disabled={props.taskModal ? props.task.childComplete ? true : false : null }
             onClick={() => {
               props.dispatch(childSubmitTask(props.task.id));
               props.dispatch(toggleModal());
-            }}>TASK COMPLETE</button>
+            }}>{props.taskModal ? props.task.childComplete ? 'PENDING APPROVAL' : 'COMPLETE TASK' : null}
+            </button>
       </div>
     </div>
     <button className='close' onClick={() => props.dispatch(toggleModal())}>Close</button>
