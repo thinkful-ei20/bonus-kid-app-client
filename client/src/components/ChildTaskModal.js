@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import '../styles/modals.css';
 import { toggleModal } from '../actions';
 
-import '../styles/task-details.css';
+import '../styles/task-details-child.css';
 import { childSubmitTask } from '../actions/tasks';
 
 const mapStateToProps = state => ({
@@ -31,7 +31,7 @@ export const ChildTaskModal = props => {
           </span>
         </p>
         <button 
-          className={props.taskModal ? !props.task.childComplete ? 'incomplete-task' : 'complete-task' : null}
+          className={props.taskModal ? !props.task.childComplete ? 'incomplete-task-child' : 'complete-task-child' : null}
           disabled={props.taskModal ? props.task.childComplete ? true : false : null }
           onClick={() => {
             props.dispatch(childSubmitTask(props.task.id));
