@@ -2,16 +2,17 @@ import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
 import {connect} from 'react-redux';
 import Input from './Input';
-import {required, nonEmpty} from '../validators';
+// import {required, nonEmpty} from '../validators';
 
-import '../styles/edit-menu.css';
-import { editTask } from '../actions/tasks';
-import { isEditing } from '../actions';
+import '../styles/edit-task.css';
+import { editTask, deleteTask } from '../actions/tasks';
+import { isEditing, toggleModal } from '../actions';
 
 const mapStateToProps = state => ({
   isEditing: state.main.isEditing.editing,
   id: state.main.isEditing.id,
-  name: state.main.isEditing.name
+  name: state.main.isEditing.name,
+  task: state.main.showDetails.taskDetails
 });
 
 export class EditTaskForm extends React.Component {
@@ -21,31 +22,32 @@ export class EditTaskForm extends React.Component {
       error = (<div className='form-error'>{this.props.error}</div>);
     }
     return (
-      <div className={this.props.isEditing ? 'visible edit-menu' : 'edit-menu'}
-        onSubmit={this.props.handleSubmit(values => {
-          this.props.dispatch(isEditing());
-          const {taskName, pointValue} = values;
-          const newTask = {
-            name: taskName, 
-            points: pointValue
-          };
-          return this.props.dispatch(editTask(this.props.id, newTask));
-        })}>
-        <form className='edit-task-form'>
+      <div className={this.props.isEditing ? 'visible edit-menu' : 'edit-menu'}>
+        <form className='edit-task-form'
+          onSubmit={this.props.handleSubmit(values => {
+            this.props.dispatch(isEditing());
+            this.props.dispatch(toggleModal());
+            const {taskName, pointValue} = values;
+            const newTask = {
+              name: taskName, 
+              points: pointValue
+            };
+            return this.props.dispatch(editTask(this.props.id, newTask));
+          })}>
           {error}
           <label htmlFor='taskName'>Edit Task: </label>
-          <Field component={Input} name='taskName'
+          <Field component={Input} name='taskName' placeholder={this.props.task.name}
             type='text' id='taskName' />
           <label htmlFor='pointValue'>Edit Point Value: </label>
-          <Field component={Input} name='pointValue'
+          <Field component={Input} name='pointValue' placeholder={this.props.task.pointValue} 
             type='number' id='pointValue' />
-          <button disabled={this.props.pristine || this.props.submitting}>SUBMIT CHANGES</button>
+          <button className='edit-task-btn' disabled={this.props.pristine || this.props.submitting}>SUBMIT CHANGES</button>
         </form>
-        <button onClick={() => {
-          this.props.reset();
-          this.props.dispatch(isEditing());
+        <button id='delete-task-btn' onClick={() => {
+          this.props.dispatch(deleteTask(this.props.id))
+          this.props.dispatch(toggleModal());
         }
-        }>CANCEL</button>
+        }>DELETE TASK</button>
       </div>
     );
   }

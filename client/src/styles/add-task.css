@@ -1,0 +1,42 @@
+.add-menu .add-task-form {
+  padding: 0.3em;
+  text-align: left;
+  margin: 1em 1.5em;
+  font-size: 1.5em;
+  display: flex;
+  flex-direction: column;
+  color: green;
+}
+
+.add-menu .add-task-form label {
+  margin: 0.3em 0;
+}
+
+.add-menu .add-task-form input {
+  border: none;
+  border-bottom: 1px green solid;
+  color: black;
+  padding: 0.5em;
+  font-size: 0.8em;
+  margin-bottom: 1em;
+  width: 100%;
+}
+
+.add-menu .add-task-form .add-task-btn {
+  padding: 0.7em;
+  font-size: 0.7em;
+  width: fit-content;
+  margin: 1em auto;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+  font-family: 'Raleway';
+  letter-spacing: 0.1em;
+  border-radius: 10px;
+}
+
+.add-menu .add-task-form .add-task-btn:hover {
+  background-color: green;
+  color: white;
+  border: 2px solid black;
+}

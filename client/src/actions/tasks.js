@@ -1,6 +1,6 @@
 import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
-import { storeAuthInfo } from './auth';
+import { storeAuthInfo, refreshAuthToken } from './auth';
 
 export const FETCH_TASKS_SUCCESS = 'FETCH_TASKS_SUCCESS';
 export const fetchTasksSuccess = tasks => ({
@@ -45,27 +45,21 @@ export const POST_TASK_SUCCESS = 'POST_TASK_SUCCESS',
   }),
 
   postTask = (id, task) => (dispatch, getState) => {
-    console.log('post task ran');
-    console.log(task);
-    console.log(id);
     const authToken = getState().auth.authToken;
+    const newTask = {name: task.taskName, pointValue: task.pointValue}
+    console.log(id, newTask);
     fetch(`${API_BASE_URL}/tasks/${id}`, {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${authToken}`,
         'content-type': 'application/json'
       },
-      body: JSON.stringify({
-        name: task.name,
-        pointValue: task.pointValue
-      })
+      body: JSON.stringify(newTask)
     })
       .then(res => normalizeResponseErrors(res))
       .then(res => res.json())
-      .then(({authToken}) => storeAuthInfo(authToken, dispatch)
-        // dispatch(postTaskSuccess(data));
-        // dispatch(fetchTasks());
-      )
+      .then(({authToken}) => storeAuthInfo(authToken, dispatch))
+      .then(() => dispatch(refreshAuthToken()))
       .catch(err => {
         dispatch(postTaskError(err));
       });
@@ -125,4 +119,62 @@ export const DELETE_TASK_SUCCESS = 'DELETE_TASK_SUCCESS',
       .then(res => res.json())
       .then(({authToken}) =>  storeAuthInfo(authToken, dispatch))
       .catch(err => dispatch(deleteTaskError(err)));
+  };
+
+  // =========== CHILD SUBMIT TASK FOR APPROVAL ==========
+
+  export const CHILD_SUBMIT_TASK_SUCCESS = 'CHILD_SUBMIT_TASK_SUCCESS';
+  export const childSubmitSuccess = () => ({
+    type: CHILD_SUBMIT_TASK_SUCCESS
+  });
+
+  export const childSubmitTask = (id) => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    fetch(`${API_BASE_URL}/tasks/child/${id}`, {
+      method: 'PUT',
+      headers: {
+        Authorization: `Bearer ${authToken}`,
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify({
+        childComplete: true,
+      })
+    })
+    .then(res => normalizeResponseErrors(res))
+    .then(res => res.json())
+    .then(({authToken}) => storeAuthInfo(authToken, dispatch))
+    .then(() => dispatch(childSubmitSuccess()))
+    .catch(err => {
+      dispatch(putTaskError(err));
+      //Uses the PUT error from the parent PUT task error
+    })
+  };
+
+  // =========== PARENT SUBMIT TASK FOR APPROVAL ==========
+
+  export const PARENT_APPROVE_TASK_SUCCESS = 'PARENT_APPROVE_TASK_SUCCESS';
+  export const parentApproveTaskSuccess = () => ({
+    type: PARENT_APPROVE_TASK_SUCCESS
+  });
+
+  export const parentApproveTask = (taskId) => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    fetch(`${API_BASE_URL}/tasks/${taskId}`, {
+      method: 'PUT',
+      headers: {
+        Authorization: `Bearer ${authToken}`,
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify({
+        complete: true
+      })
+    })
+    .then(res => normalizeResponseErrors(res))
+    .then(res => res.json())
+    .then(({authToken}) => storeAuthInfo(authToken, dispatch))
+    .then(() => dispatch(parentApproveTaskSuccess()))
+    .catch(err => {
+      dispatch(putTaskError(err));
+      //Uses the PUT error from the parent PUT task error
+    })
   };

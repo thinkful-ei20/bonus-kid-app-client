@@ -4,7 +4,6 @@ import {connect} from 'react-redux';
 import Input from './Input';
 import {required, nonEmpty} from '../validators';
 
-import '../styles/edit-menu.css';
 import { postReward } from '../actions/rewards';
 import { isAdding } from '../actions';
 

@@ -1,0 +1,63 @@
+.edit-menu .edit-task-form {
+  padding: 0.3em;
+  text-align: left;
+  margin: 1em 1.5em;
+  font-size: 1.5em;
+  display: flex;
+  flex-direction: column;
+  color: green;
+}
+
+.edit-menu .edit-task-form label {
+  margin: 0.3em 0;
+}
+.edit-menu .edit-task-form input {
+  border: none;
+  border-bottom: 1px green solid;
+  color: black;
+  padding: 0.5em;
+  font-size: 0.8em;
+  margin-bottom: 1em;
+  width: 100%;
+}
+
+.edit-menu .edit-task-form .edit-task-btn, .edit-menu .delete-task-btn {
+  padding: 0.7em;
+  font-size: 0.7em;
+  width: fit-content;
+  margin: 1em auto 0 auto;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+  font-family: 'Raleway';
+  letter-spacing: 0.1em;
+  border-radius: 10px;
+}
+
+.edit-menu .edit-task-form .edit-task-btn:hover {
+  background-color: green;
+  color: white;
+  border: 2px solid black;
+}
+
+.edit-menu #delete-task-btn {
+  display: flex;
+  font-size: 0.7em;
+  width: fit-content;
+  margin: 0 auto;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+  font-family: 'Raleway';
+  letter-spacing: 0.1em;
+  border-radius: 10px;
+  align-self: center;
+}
+
+
+.edit-menu .delete-task-btn:hover {
+  background-color: red;
+  color: white;
+  border: 2px solid black;
+}
+

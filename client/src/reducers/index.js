@@ -2,8 +2,12 @@ import {
   TOGGLE_SIDE_NAV,
   TOGGLE_LOGIN_FORM,
   TOGGLE_MODAL, 
+  TOGGLE_REWARD_MODAL,
   IS_EDITING,
-  IS_ADDING
+  IS_ADDING,
+  SHOW_DETAILS,
+  SHOW_REWARD_DETAILS,
+  TOGGLE_ADD_MODAL
 } from '../actions';
 
 const initState = {
@@ -11,7 +15,9 @@ const initState = {
   isEditing: {editing: false, id: null, name: null},
   isAdding: {adding: false, id: null},
   loginChoice: {parent: true, child: false},
-  modalView: {tasks: false, rewards: false}
+  modalView: {tasks: false, rewards: false},
+  showDetails: {detailView: false, taskDetails: null, rewardDetails: null, childId: null},
+  addModal: false
 };
 
 export default (state=initState, action) => {
@@ -48,8 +54,39 @@ export default (state=initState, action) => {
   } else if(action.type === TOGGLE_MODAL) {
     return {
       ...state,
-      modalView: {...state.modalView, tasks: !state.modalView.tasks}
+      modalView: {tasks: !state.modalView.tasks, rewards: false}, 
+      isEditing: {editing: false, id: null, name: null},
+      isAdding: {adding: false, id: null},
+      showDetails: {detailView: false, taskDetails: null, rewardDetails: null, childId: null}
     };
+  } else if(action.type === TOGGLE_REWARD_MODAL) {
+    return {
+      ...state,
+      modalView: {tasks: false, rewards: !state.modalView.rewards} 
+    };
+  } else if(action.type === SHOW_DETAILS) {
+    return {
+      ...state,
+      showDetails: {
+        detailView: !state.showDetails.detailView,
+        taskDetails: action.taskDetails,
+        rewardDetails: action.rewardDetails,
+        childId: action.childId
+      }
+    }
+  } else if(action.type === SHOW_REWARD_DETAILS) {
+    return {
+      ...state,
+      showDetails: {
+        detailView: !state.showDetails.detailView,
+        rewardDetails: action.rewardDetails
+      }
+    }
+  } else if(action.type === TOGGLE_ADD_MODAL) {
+    return {
+      ...state,
+      addModal: !state.addModal
+    }
   }
   return state;
 };

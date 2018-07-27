@@ -45,9 +45,7 @@ export class Layout extends React.Component {
         <Route exact path='/child_dashboard' component={ChildDashboard} />
         <Route exact path='/reward_page_parent' component={RewardPageParent} />
         <Route exact path='/reward_page_child' component={RewardPageChild} />
-
         <Route exact path='/settings' component={Settings} />
-
         <Route exact path='/signup' component={SignUpPage} />
       </div>
     );

@@ -27,14 +27,14 @@ export class ChildDashboardSideNav extends React.Component{
         <p>Total Points: {this.props.user.totalPoints}</p>
         <ul className="links">
           <li>
-            <a href="#create-tasks" 
-              onClick={() => this.props.dispatch(toggleSideNav())}>Tasks
-            </a>
+          <a onClick={() => this.props.dispatch(toggleSideNav())} >
+            <Link to='/'>Tasks</Link>
+          </a>
           </li>
           <li>
-            <a onClick={() => this.props.dispatch(toggleSideNav())} >
-              <Link to='/reward_page_child'>Rewards</Link>
-            </a>
+          <a onClick={() => this.props.dispatch(toggleSideNav())} >
+            <Link to='/reward_page_child'>Rewards</Link>
+          </a>
             
           </li>
           <li>

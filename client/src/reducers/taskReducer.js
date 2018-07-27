@@ -6,7 +6,9 @@ import {
   PUT_TASK_SUCCESS,
   PUT_TASK_ERROR,
   DELETE_TASK_SUCCESS,
-  DELETE_TASK_ERROR
+  DELETE_TASK_ERROR,
+  CHILD_SUBMIT_TASK_SUCCESS,
+  PARENT_APPROVE_TASK_SUCCESS
 } from '../actions/tasks';
 
 const initState = {
@@ -59,6 +61,14 @@ export default (state=initState, action) => {
       ...state, 
       error: action.err
     };
+  } else if (action.type === CHILD_SUBMIT_TASK_SUCCESS){
+    return {
+      ...state
+    }
+  } else if (action.type === PARENT_APPROVE_TASK_SUCCESS){
+    return {
+      ...state
+    }
   }
   return state;
 };

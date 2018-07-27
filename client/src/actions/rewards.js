@@ -140,3 +140,54 @@ export const deleteRewards = (_id) => (dispatch, getState) =>{
     })
 
 }
+
+// ================= GET REWARDS AS A CHILD =========================
+
+// export const CHILD_GET_REWARDS = 'CHILD_GET_REWARDS';
+// export const getChildRewardsSuccess = (rewards) => ({
+//   type: CHILD_GET_REWARDS,
+//   rewards
+// })
+
+//reuse the failed get request from parent
+export const childGetRewards = () => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  console.log(authToken)
+  return fetch(`${API_BASE_URL}/rewards/child`, {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${authToken}`,
+      'content-type': 'appilication/json'
+    },
+  })
+    .then (res => normalizeResponseErrors(res))
+    .then (res => res.json())
+    .then (data => dispatch(fetchRewardsSucces(data)))
+    //.then(({authToken}) => storeAuthInfo(authToken, dispatch))
+    .catch(err =>{
+      dispatch(fetchRewardsError(err))
+    });
+};
+
+// ================= PURCHASE REWARD AS A CHILD =========================
+
+export const childBuyReward = (_id) => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+
+  return fetch(`${API_BASE_URL}/rewards/child/${_id}`, {
+    method: 'PUT',
+    headers: {
+      Authorization: `Bearer ${authToken}`,
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify({
+      purchased: true
+    })
+  })
+  .then (res => normalizeResponseErrors(res))
+  .then (res => res.json())
+  .then(({authToken}) => storeAuthInfo(authToken, dispatch))
+  .catch(err =>{
+    dispatch(fetchRewardsError(err))
+  });
+}
