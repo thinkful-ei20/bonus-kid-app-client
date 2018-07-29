@@ -22,40 +22,32 @@ export function LandingPage(props){
     return <Redirect to='/child_dashboard' />;
   }
   const highlight = { 
-    // borderRight: props.parentChoice ? 'none' : '#36f8b1 1px dashed',
-    // borderLeft: !props.parentChoice ? 'none' : '#36f8b1 1px dashed',
-    //boxShadow: '5px 5px 2px 1px rgba(0, 122, 77, 0.5)',
-    // backgroundColor: '#5db662',
     borderTop: '#36f8b1 1px dashed',
-    boxShadow: props.parentChoice ? '0px 5px 2px 1px rgba(0, 122, 77, 0.5)' :
-      '0px 5px 2px 1px rgba(0, 122, 77, 0.5)',
+    boxShadow: props.parentChoice ? '-5px 5px 2px 1px rgba(0, 122, 77, 0.5)' :
+      '5px 5px 2px 1px rgba(0, 122, 77, 0.5)',
     backgroundColor: '#006060',
-    color: '#ffffff',
+    color: '#ffffff'
   };
   return(
     <div className='landing-page'>
       <LandingHeader />
-    
       <section className='login-forms'>
-        <div className='login-component'>
-          <div className='login-choice'>
-            <button
-              className='parent-choice' 
-              disabled={props.parentChoice}
-              onClick={() => props.dispatch(toggleLoginForm())}
-              style={props.parentChoice ? highlight : null}>PARENT</button>
-            <button 
-              className='child-choice' 
-              disabled={!props.parentChoice}
-              onClick={() => props.dispatch(toggleLoginForm())}
-              style={!props.parentChoice ? highlight : null}>CHILD</button>
-          </div>
-          {props.parentChoice ? <ParentLoginForm /> : <ChildLoginForm />}
+        <div className='login-choice'>
+          <button
+            className='parent-choice' 
+            disabled={props.parentChoice}
+            onClick={() => props.dispatch(toggleLoginForm())}
+            style={props.parentChoice ? highlight : null}>PARENT</button>
+          <button 
+            className='child-choice' 
+            disabled={!props.parentChoice}
+            onClick={() => props.dispatch(toggleLoginForm())}
+            style={!props.parentChoice ? highlight : null}>CHILD</button>
         </div>
+        {props.parentChoice ? <ParentLoginForm /> : <ChildLoginForm />}
       </section>
       <div className='non-members'>
-        {/* <span className='register-text'>Not a memeber? <Link to='/signup'>sign up here</Link></span> */}
-        <p className='register-text'>Not a member...<br /><Link to='/signup'>sign up here</Link></p>
+        <h3>Not a member...<br /><Link to='/signup'>sign up here</Link></h3>
       </div>
     </div>
   );
