@@ -45,4 +45,3 @@ https://bonuskid.herokuapp.com/
 <!-- ### Endpoints -->
 <!-- - /api/login (for user creation)
 - /api/users (to see all the users) -->
-
