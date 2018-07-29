@@ -1,13 +1,18 @@
 import { 
   TOGGLE_LOGIN_FORM, 
   TOGGLE_SIDE_NAV, 
-  TOGGLE_ADD_TASK_FORM 
+  TOGGLE_ADD_TASK_FORM, 
+  TOGGLE_PARENT_TASK_DETAIL
 } from '../actions/toggles';
 
 const initState = {
   loginChoice: { parent: true, child: false },
   sideNavView: false,
-  addTaskView: { adding: false, id: null }
+  addTaskView: { adding: false, id: null },
+  chosenTask: {
+    views: { details: false, editing: false },
+    task: null
+  }
 };
 
 export default (state=initState, action) => {
@@ -28,6 +33,14 @@ export default (state=initState, action) => {
       addTaskView: {
         adding: !state.addTaskView.adding,
         id: action.childId
+      }
+    }
+  case TOGGLE_PARENT_TASK_DETAIL:
+    return {
+      ...state,
+      chosenTask: {
+        views: { details: action.details, editing: action.editing },
+        task: action.task
       }
     }
   default:

@@ -5,6 +5,12 @@ export const TOGGLE_SIDE_NAV = 'TOGGLE_SIDE_NAV';
 export const toggleSideNav = () => ({ type: TOGGLE_SIDE_NAV });
 
 export const TOGGLE_ADD_TASK_FORM = 'TOGGLE_ADD_TASK_FORM';
-export const toggleAddTaskForm = (childId=null) => ({
-  type: TOGGLE_ADD_TASK_FORM, childId
-});
+export const toggleAddTaskForm = (childId=null) => ({ type: TOGGLE_ADD_TASK_FORM, childId });
+
+export const TOGGLE_PARENT_TASK_DETAIL = 'TOGGLE_PARENT_TASK_DETAIL';
+export const toggleParentTaskDetail = (details=false, editing=false, task=null) => ({ 
+  type: TOGGLE_PARENT_TASK_DETAIL,
+  details,
+  editing, 
+  task 
+})

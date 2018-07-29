@@ -9,7 +9,7 @@ import ChildSignupForm from '../Forms/ChildSignupForm';
 import ParentHeader from './ParentHeader';
 
 import '../../styles/parent-task-cards.css';
-import { toggleAddTaskForm } from '../../actions/toggles';
+import { toggleAddTaskForm, toggleParentTaskDetail } from '../../actions/toggles';
 import AddTaskForm from '../Forms/AddTaskForm';
 import AddTaskModal from './AddTaskModal';
 
@@ -17,47 +17,52 @@ import AddTaskModal from './AddTaskModal';
 const mapStateToProps = state => ({
   loggedIn: state.auth.user !== null,
   user: state.auth.user,
-  addTaskView: state.toggles.addTaskView
+  addTaskView: state.toggles.addTaskView,
 });
 
 export const ParentTaskCards = props => {
-    const childCards = props.user.child.map((child, i) =>
-      <div className='feature-card' key={child.id}>
-        <div className='main-card'>
-          <div className='side-avatar'>
-            <i className='fas fa-user-ninja fa-5x' aria-hidden="true"></i>
-            <p>{child.name}</p>
-          </div>
-          <div className='task-cards'>
-            <ul className='tasks-list'>
-              {child.tasks.map((task, i) =>
-                <li className='task' key={task.id} onClick={() => {
-                  // this.props.dispatch(toggleModal());
-                  // this.props.dispatch(showDetails(child.id, task))
-                }
-                }>
-                  <div className='task-status'>
-                  </div>
-                  <div className='task-details'>
-                    <p>{task.name}</p>
-                  </div>
-                </li>
-              )}
-            </ul>
-          </div>
+  const statusSent = { color: 'orange' }
+  const statusPending = { color: 'blue' }
+  const statusApproved = { color: 'green' }
+  const completed = { textDecoration: 'line-through', alignSelf: 'flex-end' };
+  const childCards = props.user.child.map((child, i) =>
+    <div className='feature-card' key={child.id}>
+      <div className='main-card'>
+        <div className='side-avatar'>
+          <i className='fas fa-user-ninja fa-3x' aria-hidden="true"></i>
+          <p>{child.name}</p>
         </div>
-        <button className='add-task-btn'
-          onClick={() => {
-            props.dispatch(toggleAddTaskForm(child.id));
-          }}>Add A Task</button>
+        <div className='task-cards'>
+          <ul className='tasks-list'>
+            {child.tasks.map((task, i) =>
+              <li className='task' key={task.id} 
+                onClick={() => props.dispatch(toggleParentTaskDetail(true, false, task))}>
+                <div className='task-status'>
+                {task.complete ? 
+                    <i className='fas fa-check-double' style={statusApproved}></i> : 
+                      task.childComplete ? <i className='fas fa-stopwatch' style={statusPending}></i> : 
+                      <i className='fas fa-tasks' style={statusSent}></i>}
+                </div>
+                <div className='task-details'>
+                  <p>{task.name}</p>
+                </div>
+              </li>
+            )}
+          </ul>
+        </div>
       </div>
-    );
-    return (
-      <div className='child-cards'>
-        {childCards}
-        <AddTaskModal />
-      </div>
-    );
+      <button className='add-task-btn'
+        onClick={() => {
+          props.dispatch(toggleAddTaskForm(child.id));
+        }}>Add A Task</button>
+    </div>
+  );
+  return (
+    <div className='child-cards'>
+      {childCards}
+      <AddTaskModal />
+    </div>
+  );
 }
 
 export default connect(mapStateToProps)(ParentTaskCards);
