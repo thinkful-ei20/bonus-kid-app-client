@@ -1,3 +1,4 @@
+
 .landing-page {
   display: flex;
   flex-direction: column;
@@ -27,7 +28,7 @@
 
 .parent-login-form button, .child-login-form button {
   border: none;
-  background-color: #5db662;
+  background-color: #006060;
   padding: 0.5em;
   padding-left: 1.0em;
   padding-right: 1.0em;
@@ -49,10 +50,7 @@
 
 .parent-choice {
   border-top-left-radius: 10px;
-  color: #60834f;
   box-shadow: '5px 5px 2px 1px rgba(0, 122, 77, 0.5)'
-
-
 }
 
 .child-choice {
@@ -63,22 +61,12 @@
 
 .login-forms input {
   width: 95%;
-  /* margin: 0.8em 0;
-  margin-top: .5em;
   margin-bottom: 1em;
-  font-size: 1.1em;
-  color: #424242;
-  text-align: left;
-  border: 0;
-  outline: 0;
-  background: transparent;
-  border-bottom: 1px solid #5db662 */
-  margin-bottom: 1em;
-  font-size: 1.1em;
+  font-size: .85em;
   padding: 0.3em;
   text-align: left;
   border: none;
-  border-bottom: #1f672e 2px inset;
+  border-bottom: #006060 1px inset;
 }
 
 
@@ -86,17 +74,16 @@
   /* font-size: 1.0em;
   text-align: left;
   color: #424242; */
-  font-size: 1em;
+  font-size: .90em;
   padding: 0;
   margin: 0;
-  text-transform: capitalize;
   text-align: left;
-  color: #1f672e;
+  color: #006060;
 }
 
 .login-forms .login-btn {
   border-radius: 10px;
-  background-color: #93c37b;
+  background-color: #006060;
   color: white;
   width: 70%;
   margin: 0.8em auto 0 auto;
@@ -114,7 +101,7 @@
 }
 
 .non-members .register-text a{
-  color: #ffc400;
+  color: #006060;
 }
 
 @media screen and (min-width: 450px){
@@ -159,10 +146,17 @@
 
 @media screen and (min-width: 850px){
   .login-forms .login-component {
+    margin-left: auto;
+    margin-right: auto;
+    width:500px;
     z-index: 7;
     margin-top: -7.5em;
   }
   .login-forms{
     padding: 5em 14em;
   }
+  .login-forms .login-btn {
+    width: 250px;
+  }
+
 }

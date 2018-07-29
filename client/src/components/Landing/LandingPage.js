@@ -27,10 +27,10 @@ export function LandingPage(props){
     //boxShadow: '5px 5px 2px 1px rgba(0, 122, 77, 0.5)',
     // backgroundColor: '#5db662',
     borderTop: '#36f8b1 1px dashed',
-    boxShadow: props.parentChoice ? '-5px 5px 2px 1px rgba(0, 122, 77, 0.5)' :
-      '5px 5px 2px 1px rgba(0, 122, 77, 0.5)',
-    backgroundColor: '#93c37b',
-    color: '#ffffff'
+    boxShadow: props.parentChoice ? '0px 5px 2px 1px rgba(0, 122, 77, 0.5)' :
+      '0px 5px 2px 1px rgba(0, 122, 77, 0.5)',
+    backgroundColor: '#006060',
+    color: '#ffffff',
   };
   return(
     <div className='landing-page'>
@@ -55,7 +55,7 @@ export function LandingPage(props){
       </section>
       <div className='non-members'>
         {/* <span className='register-text'>Not a memeber? <Link to='/signup'>sign up here</Link></span> */}
-        <h3>Not a member...<br /><Link to='/signup'>sign up here</Link></h3>
+        <p className='register-text'>Not a member...<br /><Link to='/signup'>sign up here</Link></p>
       </div>
     </div>
   );
