@@ -1,7 +1,7 @@
 .header {
   display: flex;
   justify-content: space-between;
-  background-color: #007a4d;
+  background-color: #177a49;
 }
 
 .left-header {
@@ -11,15 +11,24 @@
 .left-header i {
   align-self: center;
 }
+
+.fa-child {
+  color:white;
+}
 .left-header h1 {
   align-self: center;
   margin-left: 5px;
   cursor: pointer;
   font-size: 1em;
+  color: white;
 }
 
 .right-header{
   padding: 1em;
   align-self: center;
   cursor: pointer;
+}
+
+.fa-bars{
+  color:white;
 }

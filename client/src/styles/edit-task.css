@@ -5,7 +5,8 @@
   font-size: 1.5em;
   display: flex;
   flex-direction: column;
-  color: green;
+  color: #93C37B;
+
 }
 
 .edit-menu .edit-task-form label {
@@ -13,7 +14,7 @@
 }
 .edit-menu .edit-task-form input {
   border: none;
-  border-bottom: 1px green solid;
+  border-bottom: 1px #93C37B solid;
   color: black;
   padding: 0.5em;
   font-size: 0.8em;
@@ -35,7 +36,7 @@
 }
 
 .edit-menu .edit-task-form .edit-task-btn:hover {
-  background-color: green;
+  background-color: #93C37B;
   color: white;
   border: 2px solid black;
 }

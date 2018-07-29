@@ -22,11 +22,10 @@ export function LandingPage(props){
     return <Redirect to='/child_dashboard' />;
   }
   const highlight = { 
-    borderTop: '#36f8b1 1px dashed',
-    borderRight: props.parentChoice ? 'none' : '#36f8b1 1px dashed',
-    borderLeft: !props.parentChoice ? 'none' : '#36f8b1 1px dashed',
-    boxShadow: '5px 5px 2px 1px rgba(0, 122, 77, 0.5)',
-    backgroundColor: '#007c4f',
+    // borderRight: props.parentChoice ? 'none' : '#36f8b1 1px dashed',
+    // borderLeft: !props.parentChoice ? 'none' : '#36f8b1 1px dashed',
+    //boxShadow: '5px 5px 2px 1px rgba(0, 122, 77, 0.5)',
+    backgroundColor: '#5db662',
     color: '#ffffff'
   };
   return(
@@ -34,29 +33,31 @@ export function LandingPage(props){
       <LandingHeader />
       <div className='jumbotron'>
         <hgroup className='typer'>
-          <h2>Did she get all A's in school?</h2>
-          <h2>Did he do all his chores?</h2>
-          <h2>Those kids deserve a <span>bonus!</span></h2>
-          <h3><a href='/signup'>Try BonusKid</a> and give your kids what they deserve.</h3>
+          <p> <span className='typer-text'>Walk the dog?</span></p>
+          <p> <span className='typer-text'>Do the chores?</span></p>
+          <p><span className='typer-text'>Kids deserve a BONUS!</span></p>
+          {/* <h3><a href='/signup'>Try BonusKid</a> and give your kids what they deserve.</h3> */}
         </hgroup>
       </div>
       <section className='login-forms'>
-        <div className='login-choice'>
-          <button
-            className='parent-choice' 
-            disabled={props.parentChoice}
-            onClick={() => props.dispatch(toggleLoginForm())}
-            style={props.parentChoice ? highlight : null}>PARENT</button>
-          <button 
-            className='child-choice' 
-            disabled={!props.parentChoice}
-            onClick={() => props.dispatch(toggleLoginForm())}
-            style={!props.parentChoice ? highlight : null}>CHILD</button>
+        <div className='login-component'>
+          <div className='login-choice'>
+            <button
+              className='parent-choice' 
+              disabled={props.parentChoice}
+              onClick={() => props.dispatch(toggleLoginForm())}
+              style={props.parentChoice ? highlight : null}>PARENT</button>
+            <button 
+              className='child-choice' 
+              disabled={!props.parentChoice}
+              onClick={() => props.dispatch(toggleLoginForm())}
+              style={!props.parentChoice ? highlight : null}>CHILD</button>
+          </div>
+          {props.parentChoice ? <ParentLoginForm /> : <ChildLoginForm />}
         </div>
-        {props.parentChoice ? <ParentLoginForm /> : <ChildLoginForm />}
       </section>
       <div className='non-members'>
-        <h2>Not a memeber, <Link to='/signup'>sign up here</Link></h2>
+        <span className='register-text'>Not a memeber? <Link to='/signup'>sign up here</Link></span>
       </div>
     </div>
   );

@@ -16,10 +16,10 @@ export class ParentLoginForm extends React.Component {
         onSubmit={this.props.handleSubmit(
           values => this.props.dispatch(loginParent(values.parentUsername, values.parentPassword)))}>
         {error}
-        <label htmlFor='parentUsername'>Parent Username</label>
+        <label htmlFor='parentUsername'>Username</label>
         <Field component={Input} name='parentUsername'
           type='text' id='parentUsername' validate={[required, nonEmpty]} />
-        <label htmlFor='parentPassword'>Parent Password</label>
+        <label htmlFor='parentPassword'>Password</label>
         <Field component={Input} name='parentPassword'
           type='password' id='parentPassword' validate={[required, nonEmpty]} />
         <button disabled={this.props.pristine || this.props.submitting}>LOG IN</button>
