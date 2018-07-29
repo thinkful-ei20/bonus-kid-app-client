@@ -7,6 +7,8 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import ChildSignupForm from '../Forms/ChildSignupForm';
 import ParentHeader from './ParentHeader';
+import ParentTaskCards from './ParentTaskCards';
+import AddTaskForm from '../Forms/AddTaskForm';
 
 
 const mapStateToProps = state => ({
@@ -24,42 +26,10 @@ export class ParentDashboard extends React.Component {
     if (!this.props.loggedIn || !this.props.user.isParent) {
       return <Redirect to='/' />;
     }
-    const taskCards = this.props.user.child.map((child, i) =>
-      <div className='feature-card' key={child.id}>
-        <div className='main-card'>
-          <div className='side-avatar'>
-            <i className='fas fa-user-ninja fa-5x' aria-hidden="true"></i>
-            <p>{child.name}</p>
-          </div>
-          <div className='task-cards'>
-            <ul className='tasks-list'>
-              {child.tasks.map((task, i) =>
-                <li className='task' key={task.id} onClick={() => {
-                  // this.props.dispatch(toggleModal());
-                  // this.props.dispatch(showDetails(child.id, task))
-                }
-                }>
-                  <div className='task-status'>
-                  </div>
-                  <div className='task-details'>
-                    <p>{task.name}</p>
-                  </div>
-                </li>
-              )}
-            </ul>
-          </div>
-        </div>
-        <i className='add-task-btn fas fa-plus fa-2x'
-          onClick={() => {
-            // this.props.dispatch(isAdding(child.id));
-            // this.props.dispatch(toggleAddModal())
-          }}></i>
-      </div>
-    );
     return (
       <div>
         <ParentHeader />
-        {this.props.user.child.length===0 ? <ChildSignupForm /> : <h2>ParentDashboard</h2>}
+        {this.props.user.child.length===0 ? <ChildSignupForm /> : <ParentTaskCards />}
       </div>
     );
   }

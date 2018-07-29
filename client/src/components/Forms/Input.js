@@ -15,7 +15,6 @@ export default class Input extends React.Component {
     if(this.props.meta.touched && this.props.meta.warning){
       warning = (<div className='form-error'>{this.props.meta.warning}</div>);
     }
-    console.log(this.props);
     return(
       <div className='form-input'>
         {error}
