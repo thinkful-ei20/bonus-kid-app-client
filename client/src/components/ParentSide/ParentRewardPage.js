@@ -6,9 +6,10 @@ import { clearAuthToken } from '../../local-storage';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import ChildSignupForm from '../Forms/ChildSignupForm';
-import ParentHeader from './ParentHeader';
+import ParentRewardHeader from './ParentRewardHeader';
 import ParentTaskCards from './ParentTaskCards';
 import AddTaskForm from '../Forms/AddTaskForm';
+import ParentRewardCards from './ParentRewardCards';
 
 
 const mapStateToProps = state => ({
@@ -16,7 +17,7 @@ const mapStateToProps = state => ({
   user: state.auth.user,
 });
 
-export class ParentDashboard extends React.Component {
+export class ParentRewardPage extends React.Component {
   logOut() {
     this.props.dispatch(clearAuth());
     clearAuthToken();
@@ -28,11 +29,11 @@ export class ParentDashboard extends React.Component {
     }
     return (
       <div>
-        <ParentHeader />
-        {this.props.user.child.length===0 ? <ChildSignupForm /> : <ParentTaskCards />}
+        <ParentRewardHeader />
+        <ParentRewardCards />
       </div>
     );
   }
 }
 
-export default connect(mapStateToProps)(ParentDashboard);
+export default connect(mapStateToProps)(ParentRewardPage);
