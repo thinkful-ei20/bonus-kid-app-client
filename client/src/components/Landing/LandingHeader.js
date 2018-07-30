@@ -19,7 +19,7 @@ export const LandingHeader = props => (
       </div>
       <LandingSideNav />
     </div>
-    <h2>Hey!<br />Welcome to <span>BonusKid</span>!</h2> 
+    <h2 className='welcome-text'>Hey!<br />Welcome to <span>BonusKid</span>!</h2> 
   </header>
 );
 
