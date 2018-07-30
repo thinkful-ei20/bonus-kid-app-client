@@ -8,9 +8,9 @@ import { toggleChildDetails } from '../../actions/toggles';
 
 const mapStateToProps = state => ({
   showDetails: state.toggles.childDetails.detailView,
-  task: state.toggles.childDetails.details
+  reward: state.toggles.childDetails.details
 });
-export const ChildTaskModal = props => {
+export const ChildRewardModal = props => {
   const dateExpired = props.showDetails ? new Date(Number(props.task.expiryDate)) : null;
   return(
   <div className={`modal ${props.showDetails ? 'visible': ''}`}>
