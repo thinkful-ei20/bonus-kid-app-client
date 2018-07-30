@@ -1,4 +1,4 @@
-// import ChildRewardModal from './ChildRewardModal';
+import ChildRewardModal from './ChildRewardModal';
 import React from 'react';
 
 import { clearAuth } from '../../actions/auth';
@@ -55,7 +55,7 @@ export const ChildTaskCards = props => {
           </ul>
         </div>
       </div>
-      {/* <ChildRewardModal /> */}
+      <ChildRewardModal />
     </div>
   );
 }

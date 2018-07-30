@@ -10,7 +10,7 @@
 }
 
 .parent-signup-form .parent-form-heading {
-  background-color: #93c37b;
+  background-color:  #006060 ;
   width: 100%;
   padding: 0.7em 0;
   margin: 1em 0;
@@ -32,7 +32,7 @@
   padding: 0.2em;
   text-align: left;
   border: none;
-  border-bottom: #1f672e 2px inset;
+  border-bottom:  #006060  1px inset;
 }
 
 .parent-form-body label {
@@ -41,11 +41,11 @@
   margin: 0;
   text-transform: capitalize;
   text-align: left;
-  color: #1f672e;
+  color:  #006060;
 }
 
 .parent-form-body .parent-signup-btn {
-  color: #1f672e;
+  color: #006060 ;
   width: 20%;
   margin: 0.8em 0 0 auto;
   font-size: 1em;
