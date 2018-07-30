@@ -38,7 +38,6 @@
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
   box-shadow: 5px 5px 5px#404d48;
-  /* text-align: left; */
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
@@ -46,12 +45,12 @@
 
 .parent-choice {
   border-top-left-radius: 10px;
-  box-shadow: '5px 5px 2px 1px rgba(0, 122, 77, 0.5)'
+  /* box-shadow: '5px 5px 2px 1px rgba(0, 122, 77, 0.5)' */
 }
 
 .child-choice {
   border-top-right-radius: 10px;
-  box-shadow: '5px 5px 2px 1px rgba(0, 122, 77, 0.5)'
+  /* box-shadow: '5px 5px 2px 1px rgba(0, 122, 77, 0.5)' */
 
 }
 
@@ -67,9 +66,6 @@
 
 
 .login-forms label {
-  /* font-size: 1.0em;
-  text-align: left;
-  color: #424242; */
   font-size: .90em;
   padding: 0;
   margin: 0;
@@ -133,7 +129,7 @@
 @media screen and (min-width: 850px){
   .login-forms {
     width: 50em;
-    margin-top: -10.0em;
+    margin-top: -11.0em;
     padding: 5em 14em;
   }
   .login-forms .login-btn {
