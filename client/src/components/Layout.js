@@ -6,6 +6,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {refreshAuthToken} from '../actions/auth';
 import {Route, withRouter} from 'react-router-dom';
+import ParentRewardPage from './ParentSide/ParentRewardPage';
 
 const mapStateToProps = state => ({
   loggedIn: state.auth.user !== null
@@ -32,8 +33,8 @@ export class Layout extends React.Component {
       <div className='layout'>
         <Route exact path='/' component={LandingPage} />
         <Route exact path='/parent_dashboard' component={ParentDashboard} />
+        <Route exact path='/reward_page_parent' component={ParentRewardPage} />
         {/* <Route exact path='/child_dashboard' component={ChildDashboard} />
-        <Route exact path='/reward_page_parent' component={RewardPageParent} />
         <Route exact path='/reward_page_child' component={RewardPageChild} />
         <Route exact path='/settings' component={Settings} /> */}
         <Route exact path='/signup' component={SignUpPage} />

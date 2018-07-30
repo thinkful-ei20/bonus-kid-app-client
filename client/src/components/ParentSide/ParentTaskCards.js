@@ -9,9 +9,10 @@ import ChildSignupForm from '../Forms/ChildSignupForm';
 import ParentHeader from './ParentHeader';
 
 import '../../styles/parent-task-cards.css';
-import { toggleAddTaskForm, toggleParentTaskDetail } from '../../actions/toggles';
+import { toggleAddTaskForm, toggleParentDetails } from '../../actions/toggles';
 import AddTaskForm from '../Forms/AddTaskForm';
 import AddTaskModal from './AddTaskModal';
+import ParentTaskModal from './ParentTaskModal';
 
 
 const mapStateToProps = state => ({
@@ -36,7 +37,7 @@ export const ParentTaskCards = props => {
           <ul className='tasks-list'>
             {child.tasks.map((task, i) =>
               <li className='task' key={task.id} 
-                onClick={() => props.dispatch(toggleParentTaskDetail(true, false, task))}>
+                onClick={() => props.dispatch(toggleParentDetails(true, false, task))}>
                 <div className='task-status'>
                 {task.complete ? 
                     <i className='fas fa-check-double' style={statusApproved}></i> : 
@@ -61,6 +62,7 @@ export const ParentTaskCards = props => {
     <div className='child-cards'>
       {childCards}
       <AddTaskModal />
+      <ParentTaskModal />
     </div>
   );
 }

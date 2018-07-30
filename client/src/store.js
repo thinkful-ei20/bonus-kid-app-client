@@ -1,5 +1,6 @@
 import authReducer from './reducers/authReducer';
 import thunk from 'redux-thunk';
+import rewardReducer from './reducers/rewardReducer';
 import taskReducer from './reducers/taskReducer';
 import togglesReducer from './reducers/togglesReducer';
 
@@ -17,7 +18,8 @@ const store = createStore (
     auth: authReducer,
     form: formReducer,
     toggles: togglesReducer,
-    taskLog: taskReducer
+    taskLog: taskReducer,
+    rewardLog: rewardReducer
   }),
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
   applyMiddleware(thunk)

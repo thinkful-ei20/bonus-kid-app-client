@@ -2,16 +2,18 @@ import {
   TOGGLE_LOGIN_FORM, 
   TOGGLE_SIDE_NAV, 
   TOGGLE_ADD_TASK_FORM, 
-  TOGGLE_PARENT_TASK_DETAIL
+  TOGGLE_PARENT_DETAILS,
+  TOGGLE_ADD_REWARD_FORM
 } from '../actions/toggles';
 
 const initState = {
   loginChoice: { parent: true, child: false },
   sideNavView: false,
   addTaskView: { adding: false, id: null },
-  chosenTask: {
-    views: { details: false, editing: false },
-    task: null
+  addRewardView: { adding: false, id: null },
+  chosenCard: {
+    views: { detailView: false, editing: false },
+    details: null
   }
 };
 
@@ -35,12 +37,20 @@ export default (state=initState, action) => {
         id: action.childId
       }
     }
-  case TOGGLE_PARENT_TASK_DETAIL:
+  case TOGGLE_PARENT_DETAILS:
     return {
       ...state,
-      chosenTask: {
-        views: { details: action.details, editing: action.editing },
-        task: action.task
+      chosenCard: {
+        views: { detailView: action.detailView, editing: action.editing },
+        details: action.details
+      }
+    }
+  case TOGGLE_ADD_REWARD_FORM:
+    return {
+      ...state,
+      addRewardView: {
+        adding: !state.addRewardView.adding,
+        id: action.childId
       }
     }
   default:
