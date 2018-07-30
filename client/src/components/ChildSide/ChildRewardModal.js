@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import '../../styles/modals.css';
 
 import '../../styles/task-details.css';
-import { childSubmitTask } from '../../actions/tasks';
+import { childBuyReward } from '../../actions/rewards';
 import { toggleChildDetails } from '../../actions/toggles';
 
 const mapStateToProps = state => ({
@@ -31,7 +31,7 @@ export const ChildRewardModal = props => {
         </p>
         <button className='buy-reward'
             onClick={() => {
-              // props.dispatch(childSubmitTask(props.task.id));
+              props.dispatch(childBuyReward(props.reward.id));
               props.dispatch(toggleChildDetails());
             }}>BUY REWARD</button>
       </div>
