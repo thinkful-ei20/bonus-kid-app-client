@@ -1,0 +1,121 @@
+.child-cards {
+  margin-top: -2.5em;
+}
+.feature-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-card .add-reward-btn {
+  border-radius: 10px;
+  padding: 0.5em 0.8em;
+  font-size: 0.8em;
+  background-color: #93c37b;
+  color: white;
+  /* width: 70%; */
+  margin: -1.2em 1.8em 0 auto;
+}
+
+.main-card {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  margin: 0.5em 0.75em;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px#404d48;
+  background-color: #d9d9d9;
+  flex-grow: 1;
+}
+
+
+
+.side-avatar {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5em;
+  margin-bottom: 0.4em;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+.side-avatar p {
+  padding: 0.2em;
+}
+
+.reward-cards{
+  width: 100%;
+  margin: 0 0 0.1em 0;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  height: 20vh;
+  overflow-y: scroll;
+}
+
+.rewards-list {
+  padding: 0.3em;
+  border-radius: 10px;
+  height: 10vh;
+}
+
+.rewards-list .reward {
+  border-radius: 5px;
+  width: 90%;
+  margin: 0.2em auto;
+  padding: 0.5em;
+  font-size: 0.8em;
+  background-color: #D9D9D9;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  
+}
+
+.reward .reward-details {
+  width: 100%;
+  
+}
+
+.reward .reward-details p {
+  width: 60%;
+  padding: 0 0.3em;
+}
+
+.reward .reward-status {
+  display: flex;
+  flex-direction: column;
+  width: 10%;
+  justify-content: center;
+  align-items: flex-end;
+  text-align: center;
+}
+
+.reward .reward-status .locked, 
+.reward .reward-status .unlocked {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-right: 0.5em;
+}
+
+.reward .reward-status .unlocked p {
+  padding-right: 0.5em;
+}
+
+
+
+@media screen and (min-width: 600px) {
+  .feature-card {
+    display: flex;
+    flex-direction: row;
+  }
+  .side-avatar {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

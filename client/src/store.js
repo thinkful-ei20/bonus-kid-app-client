@@ -1,19 +1,25 @@
 import authReducer from './reducers/authReducer';
-import mainReducer from './reducers';
-import taskReducer from './reducers/taskReducer';
 import thunk from 'redux-thunk';
+import rewardReducer from './reducers/rewardReducer';
+import taskReducer from './reducers/taskReducer';
+import togglesReducer from './reducers/togglesReducer';
 
-import {applyMiddleware, combineReducers, createStore} from 'redux';
-import {loadAuthToken} from './local-storage';
-import {reducer as formReducer} from 'redux-form';
-import {refreshAuthToken, setAuthToken} from './actions/auth';
+import { 
+  applyMiddleware, 
+  combineReducers, 
+  createStore
+} from 'redux';
+import { loadAuthToken } from './local-storage';
+import { reducer as formReducer } from 'redux-form';
+import { refreshAuthToken, setAuthToken } from './actions/auth';
 
 const store = createStore (
   combineReducers({
     auth: authReducer,
-    main: mainReducer,
     form: formReducer,
-    tasks: taskReducer
+    toggles: togglesReducer,
+    taskLog: taskReducer,
+    rewardLog: rewardReducer
   }),
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
   applyMiddleware(thunk)

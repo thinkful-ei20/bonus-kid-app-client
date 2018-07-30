@@ -1,0 +1,121 @@
+.child-details-heading {
+  width: 90%;
+  margin: 0 auto;
+  background-color: #007c4f;
+  color: white;
+  padding: 0.5em;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.details-page, .child-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: fit-content;
+}
+
+.details-page .status, .child-detail .status {
+  padding: 0.8em 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.details-page .status span, .child-detail .status span {
+  background-color: rgb(136, 136, 11);
+  padding: 0.6em 0 0.6em 2em;
+  width: 100%;
+  text-align: left;
+  font-weight: bold;
+  color: white;
+  font-family: 'Raleway';
+  letter-spacing: 0.1em;
+}
+
+.details-page .task-name, .child-detail .task-name {
+  padding: 0.3em;
+  text-align: left;
+  margin: 0.3em 0.5em;
+  display: flex;
+  flex-direction: column;
+  color: green;
+}
+
+.details-page .task-name span, .child-detail .task-name span {
+  color: black;
+  padding: 0.5em 0 0.3em 0;
+  font-size: 0.8em;
+}
+
+.approval-btns {
+  display: flex;
+  margin: 1.3em;
+  justify-content: space-around;
+}
+
+.approval-btns .approve, .approval-btns .deny {
+  padding: 0.4em;
+  font-size: 0.8em;
+  width: 40%;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+  background-color: white;
+  text-transform: uppercase;
+}
+
+.approval-btns .approve {
+  color: #55a941;
+}
+
+.approval-btns .deny {
+  color: #ef624b;
+}
+
+.modal-content .complete-task {
+  width: fit-content;
+  padding: 0.4em;
+  font-size: 1em;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+  margin: 1em auto;
+}
+
+.details-page .points, .child-detail .points {
+  padding: 0.3em;
+  text-align: left;
+  margin: 0.3em 0.5em;
+  display: flex;
+  flex-direction: column;
+  color: green;
+}
+
+.details-page .points span, .child-detail .points span {
+  color: black;
+  padding: 0.5em 0 0.3em 0;
+  font-size: 0.8em;
+}
+
+.details-page .expiry, .child-detail .expiry {
+  padding: 0.3em;
+  text-align: left;
+  margin: 0.3em 0.5em;
+  display: flex;
+  flex-direction: column;
+  color: green;
+}
+.details-page .expiry .date-time, .child-detail .expiry .date-time {
+  display: flex;
+  justify-content: space-between;
+}
+
+.details-page .expiry .date-time span, .child-detail .expiry .date-time span {
+  color: black;
+  padding: 0.5em 0 0.3em 0;
+  font-size: 0.8em;
+}

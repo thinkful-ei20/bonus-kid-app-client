@@ -14,35 +14,35 @@ const initState = {
 };
 
 export default (state=initState, action) => {
-  if(action.type === SET_AUTH_TOKEN){
-    return {
-      ...state,
-      authToken: action.authToken
-    };
-  } else if(action.type === CLEAR_AUTH){
+  switch(action.type){
+  case SET_AUTH_TOKEN:
+    return { ...state, authToken: action.authToken };
+  case CLEAR_AUTH:
     return {
       ...state,
       authToken: null,
-      user: null
+      user: null,
+      newChildAccounts: 0
     };
-  } else if(action.type === AUTH_REQUEST){
+  case AUTH_REQUEST:
     return {
       ...state,
       loading: true,
       error: null
     };
-  } else if(action.type === AUTH_ERROR){
+  case AUTH_ERROR:
     return {
       ...state,
       loading: false,
       error: action.err
     };
-  } else if(action.type === AUTH_SUCCESS){
+  case AUTH_SUCCESS:
     return {
       ...state,
       loading: false,
       user: action.user
     };
+  default:
+    return state;
   }
-  return state;
 };
