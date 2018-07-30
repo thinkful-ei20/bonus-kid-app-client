@@ -10,7 +10,7 @@ const mapStateToProps = state => ({
   id: state.toggles.addTaskView.id
 });
 export const AddTaskModal = props => {
-  console.log(props.isAdding.id);
+  // console.log(props.isAdding.id);
   return(
   <div className={`modal ${props.isAdding ? 'visible': ''}`}>
     <div className='modal-content add-task'>
