@@ -3,6 +3,7 @@ import React from 'react';
 
 import {Field, focus, reduxForm} from 'redux-form';
 import {isTrimmed, matches, nonEmpty, required} from '../../validators';
+import { Redirect } from 'react-router-dom';
 import { registerChild }  from '../../actions/auth';
 
 import '../../styles/child-signup-form.css';
@@ -22,8 +23,8 @@ export class ChildSignupForm extends React.Component {
             name: signupName, 
             email: signupEmail 
           };
-          console.log('user: ', user);
-          return this.props.dispatch(registerChild(user)); 
+          this.props.dispatch(registerChild(user));
+          return <Redirect to='/parent-dashboard' />;
         }
         )}>
         <h3 className='child-form-heading'>Add A Child Account</h3>
