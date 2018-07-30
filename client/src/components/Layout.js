@@ -1,3 +1,5 @@
+import ChildDashboard from './ChildSide/ChildDashboard';
+import ChildRewardPage from './ChildSide/ChildRewardPage';
 import ParentDashboard from './ParentSide/ParentDashboard';
 import LandingPage from './Landing/LandingPage';
 import SignUpPage from './Signup/SignupPage';
@@ -35,8 +37,8 @@ export class Layout extends React.Component {
         <Route exact path='/' component={LandingPage} />
         <Route exact path='/parent_dashboard' component={ParentDashboard} />
         <Route exact path='/reward_page_parent' component={ParentRewardPage} />
-        {/* <Route exact path='/child_dashboard' component={ChildDashboard} />
-        <Route exact path='/reward_page_child' component={RewardPageChild} /> */}
+        <Route exact path='/child_dashboard' component={ChildDashboard} />
+        <Route exact path='/reward_page_child' component={ChildRewardPage} />
         <Route exact path='/settings' component={ParentSettingsPage} />
         <Route exact path='/signup' component={SignUpPage} />
       </div>

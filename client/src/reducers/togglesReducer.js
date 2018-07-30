@@ -3,7 +3,8 @@ import {
   TOGGLE_SIDE_NAV, 
   TOGGLE_ADD_TASK_FORM, 
   TOGGLE_PARENT_DETAILS,
-  TOGGLE_ADD_REWARD_FORM
+  TOGGLE_ADD_REWARD_FORM,
+  TOGGLE_CHILD_DETAILS
 } from '../actions/toggles';
 
 const initState = {
@@ -14,7 +15,8 @@ const initState = {
   chosenCard: {
     views: { detailView: false, editing: false },
     details: null
-  }
+  },
+  childDetails: { detailView: false, details: null }
 };
 
 export default (state=initState, action) => {
@@ -51,6 +53,14 @@ export default (state=initState, action) => {
       addRewardView: {
         adding: !state.addRewardView.adding,
         id: action.childId
+      }
+    }
+  case TOGGLE_CHILD_DETAILS:
+    return {
+      ...state,
+      childDetails: { 
+        detailView: !state.childDetails.detailView, 
+        details: action.details
       }
     }
   default:

@@ -16,4 +16,7 @@ export const toggleParentDetails = (detailView=false, editing=false, details=nul
   detailView,
   editing, 
   details
-})
+});
+
+export const TOGGLE_CHILD_DETAILS = 'TOGGLE_CHILD_DETAILS';
+export const toggleChildDetails = (details=null) => ({ type: TOGGLE_CHILD_DETAILS, details });

@@ -17,7 +17,7 @@ const mapStateToProps = state => ({
   user: state.auth.user,
 });
 
-export class ParentDashboard extends React.Component {
+export class ParentRewardPage extends React.Component {
   logOut() {
     this.props.dispatch(clearAuth());
     clearAuthToken();
@@ -36,4 +36,4 @@ export class ParentDashboard extends React.Component {
   }
 }
 
-export default connect(mapStateToProps)(ParentDashboard);
+export default connect(mapStateToProps)(ParentRewardPage);
