@@ -102,57 +102,42 @@
 
 @media screen and (min-width: 450px){
 
-  .login-forms .login-component {
-    z-index: 4;
-    margin-top: -4.5em;
-  }
-
-  .login-forms{
+  .login-forms {
+    margin-top: -6em;
     padding: 1.8em 3em;
   }
+
 }
 
 @media screen and (min-width: 550px){
 
-  .login-forms .login-component {
-    z-index: 4.65;
-    margin-top: -5.0em;
-  }
-  .login-forms{
+  .login-forms  {
+    margin-top: -6.0em;
     padding: 2em 5em;
   }
+ 
 }
 
 @media screen and (min-width: 650px){
-  .login-forms .login-component {
-    z-index: 6;
-    margin-top: -6.5em;
-  }
-
-  .login-forms{
-    padding: 3em 8em;
-  }
-}
-
-@media screen and (min-width: 650px){
-  .login-forms{
-    padding: 4em 11em;
-  }
-}
-
-@media screen and (min-width: 850px){
-  .login-forms .login-component {
+  .login-forms {
+    width: 35em;
     margin-left: auto;
     margin-right: auto;
-    width:500px;
-    z-index: 7;
-    margin-top: -7.5em;
+    margin-top: -6.5em;
+    padding: 3em 8em;
+
   }
-  .login-forms{
+}
+
+
+@media screen and (min-width: 850px){
+  .login-forms {
+    width: 50em;
+    margin-top: -10.0em;
     padding: 5em 14em;
   }
   .login-forms .login-btn {
-    width: 250px;
+    width: 150px;
   }
 
 }
