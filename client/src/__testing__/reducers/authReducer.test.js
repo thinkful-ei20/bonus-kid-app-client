@@ -30,6 +30,8 @@ describe('authReducer', () => {
     };
     const action = setAuthToken(authTokenInput);
     const result = authReducer(initialState, action)
+    console.log(result);
+    
     expect(result.authToken).toEqual(authTokenInput)
   });
 
