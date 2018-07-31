@@ -10,4 +10,11 @@ describe('<ChildHeader/>', function(){
     }
     shallow(<ChildHeader user={user}/>);
   });
+
+  it('has header className', () => {
+    const user = {
+    }
+    const wrapper = shallow(<ChildHeader user={user}/>);
+    expect(wrapper.hasClass('header')).toEqual(true);
+  });
 });

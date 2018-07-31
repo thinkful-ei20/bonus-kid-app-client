@@ -1,19 +1,4 @@
-import { API_BASE_URL } from '../../config';
 import * as actions from '../../actions/auth';
-import configureMockStore from 'redux-mock-store';
-import thunk from 'redux-thunk';
-import fetchMock from 'fetch-mock';
-
-import {
-  SET_AUTH_TOKEN,
-  CLEAR_AUTH,
-  AUTH_REQUEST,
-  AUTH_ERROR,
-  AUTH_SUCCESS
-} from '../actions/auth';
-
-const middlewares = [thunk]
-const mockStore = configureMockStore(middlewares)
 
 describe('actions', () => {
 
@@ -68,33 +53,3 @@ describe('actions', () => {
 
 });
 
-// describe('asnyc loginParent action', () => {
-//   afterEach(() => {
-//     fetchMock.reset();
-//     fetchMock.restore();
-//   });
-
-//   it('should call storeAuthInfo and authRequest', () => {
-//     const username = 'testGuy';
-//     const password = 'password'
-//     fetchMock
-//       .getOnce('/login', 
-//         {
-//           body: JSON.stringify({ username, password }),
-//           headers: { 'Content-Type': 'application/json' }
-//         })
-
-//     const expectedActions = [
-//       { type: AUTH_REQUEST },      
-//     ]    
-
-
-
-
-
-//   });
-
-
-
-
-// })
