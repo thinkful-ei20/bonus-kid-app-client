@@ -29,9 +29,11 @@ export const ParentTaskCards = props => {
   const childCards = props.user.child.map((child, i) =>
     <div className='feature-card' key={child.id}>
       <div className='main-card'>
+        <p className='child-name'>{child.name}</p>
         <div className='side-avatar'>
-          <i className='fas fa-user-ninja fa-3x' aria-hidden="true"></i>
-          <p>{child.name}</p>
+          <img src='http://i66.tinypic.com/v45hqg.jpg' alt='avatar of child'></img>
+          {/* <i className='fas fa-user-ninja fa-3x' aria-hidden="true"></i> */}
+     
         </div>
         <div className='task-cards'>
           <ul className='tasks-list'>

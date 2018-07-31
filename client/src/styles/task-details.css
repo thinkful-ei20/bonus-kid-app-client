@@ -1,3 +1,4 @@
+
 .child-details-heading {
   width: 90%;
   margin: 0 auto;
@@ -26,7 +27,7 @@
 }
 
 .details-page .status span, .child-detail .status span {
-  background-color: #93C37B;
+  background-color: #008000;
   padding: 0.6em 0 0.6em 2em;
   width: 100%;
   text-align: left;
@@ -40,14 +41,14 @@
   padding: 0.3em;
   text-align: left;
   margin: 0.3em 0.5em;
-  font-size: 1.5em;
+  font-size: 1.2em;
   display: flex;
   flex-direction: column;
-  color: #93C37B;
+  color: #006060;
 }
 
 .details-page .task-name span, .child-detail .task-name span {
-  color: black;
+  color: #1f1f1f;
   padding: 0.5em 0 0.3em 0;
   font-size: 0.8em;
 }
@@ -70,7 +71,7 @@
 }
 
 .approval-btns .approve {
-  color: #55a941;
+  color: #008000;
 }
 
 .approval-btns .deny {
@@ -80,7 +81,7 @@
 .modal-content .complete-task {
   width: fit-content;
   padding: 0.4em;
-  font-size: 1em;
+  font-size: 1.2em;
   cursor: pointer;
   border: none;
   text-align: center;
@@ -103,15 +104,15 @@
   padding: 0.3em;
   text-align: left;
   margin: 0.3em 0.5em;
-  font-size: 1.5em;
+  font-size: 1.2em;
   display: flex;
   flex-direction: column;
-  color: #93C37B;
+  color: #006060;
 
 }
 
 .details-page .points span, .child-detail .points span {
-  color: black;
+  color:#1f1f1f;;
   padding: 0.5em 0 0.3em 0;
   font-size: 0.8em;
 }
@@ -120,10 +121,10 @@
   padding: 0.3em;
   text-align: left;
   margin: 0.3em 0.5em;
-  font-size: 1.5em;
+  font-size: 1.2em;
   display: flex;
   flex-direction: column;
-  color: #93C37B;
+  color: #006060;
 
 }
 .details-page .expiry .date-time, .child-detail .expiry .date-time {
@@ -132,7 +133,7 @@
 }
 
 .details-page .expiry .date-time span, .child-detail .expiry .date-time span {
-  color: black;
+  color: #1f1f1f;
   padding: 0.5em 0 0.3em 0;
   font-size: 0.8em;
 }

@@ -26,7 +26,7 @@ export const ParentHeader = props => (
       </div>
       <ParentSideNav />
     </div>
-    <h2 className='parent-heading'>Hey {props.user.name}!<br />Today is<br /><span>{moment().format('LLLL')}</span></h2> 
+    <h2 className='parent-heading'>Hey <span>{props.user.name}</span>! Today is<br /><span>{moment().format('LLLL')}</span> <br /></h2> 
   </header>
 );
 
