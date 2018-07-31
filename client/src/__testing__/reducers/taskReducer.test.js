@@ -1,17 +1,7 @@
 import taskReducer from '../../reducers/taskReducer';
 
 import {
-  POST_TASK_SUCCESS,
-  POST_TASK_ERROR,
-  PUT_TASK_SUCCESS,
-  PUT_TASK_ERROR,
-  DELETE_TASK_SUCCESS,
   deleteTaskSuccess,
-  DELETE_TASK_ERROR,
-  CHILD_SUBMIT_TASK_SUCCESS,
-  PARENT_APPROVE_TASK_SUCCESS,
-  CHILD_SUBMIT_TASK_ERROR,
-  PARENT_APPROVE_TASK_ERROR,
   postTaskSuccess,
   postTaskError,
   putTaskSuccess,
@@ -19,7 +9,8 @@ import {
   childSubmitTaskSuccess,
   childSubmitTaskError,
   parentApproveTaskSuccess,
-  parentApproveTaskError
+  parentApproveTaskError,
+  putTaskError
 } from '../../actions/tasks';
 
 describe('taskReducer', () => {
@@ -43,16 +34,16 @@ describe('taskReducer', () => {
     expect(result).toEqual(initialState);
   });
 
-  // it('should set error:action.err', () => {
-  //   const err = {message: 'exampleTaskError'}
-  //   const initialState = {
-  //     error: null
-  //   };
-  //   const action = postTaskError(err);
-  //   const result = taskReducer(initialState, action);
-  //   expect(result.error.message).toEqual('exampleTaskError');
-  //   expect(result.error).toEqual(err);
-  // });
+  it('should set error:action.err', () => {
+    const err = {message: 'exampleTaskError'}
+    const initialState = {
+      error: null
+    };
+    const action = postTaskError(err);
+    const result = taskReducer(initialState, action);
+    expect(result.error.message).toEqual('exampleTaskError');
+    expect(result.error).toEqual(err);
+  });
 
   it('should return state', () => {
     const initialState = {
@@ -65,16 +56,16 @@ describe('taskReducer', () => {
   });
 
 
-  // it('should set error:action.err', () => {
-  //   const err = {message: 'exampleTaskPutError'}
-  //   const initialState = {
-  //     error: null
-  //   };
-  //   const action = putTaskError(err);
-  //   const result = taskReducer(initialState, action);
-  //   expect(result.error.message).toEqual('exampleTaskPutError');
-  //   expect(result.error).toEqual(err);
-  // });
+  it('should set error:action.err', () => {
+    const err = {message: 'exampleTaskPutError'}
+    const initialState = {
+      error: null
+    };
+    const action = putTaskError(err);
+    const result = taskReducer(initialState, action);
+    expect(result.error.message).toEqual('exampleTaskPutError');
+    expect(result.error).toEqual(err);
+  });
 
   it('should return state', () => {
     const initialState = {
@@ -85,15 +76,15 @@ describe('taskReducer', () => {
     expect(result).toEqual(initialState);
   });
 
-  // it('should set error: action.err', () => {
-  //   const err = {message:'test delete Reward Error'};
-  //   const initialState = {
-  //     error: null
-  //   };
-  //   const action = deleteTaskError(err);
-  //   const result = taskReducer(initialState, action)
-  //   expect(result.error).toEqual(err);
-  // });
+  it('should set error: action.err', () => {
+    const err = {message:'test delete Reward Error'};
+    const initialState = {
+      error: null
+    };
+    const action = deleteTaskError(err);
+    const result = taskReducer(initialState, action)
+    expect(result.error).toEqual(err);
+  });
 
   it('should return state', () => {
     const initialState = {

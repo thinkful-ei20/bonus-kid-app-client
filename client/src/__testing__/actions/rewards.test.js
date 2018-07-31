@@ -13,12 +13,12 @@ describe('actions', () => {
   });
 
   it('should have a type of POST_REWARD_ERROR', () => {
-    const error = {};    
+    const err = {};    
     const expectedAction = {
       type: 'POST_REWARD_ERROR',
-      error
+      err
     }
-    const result = actions.postRewardError(error);
+    const result = actions.postRewardError(err);
     expect(result).toEqual(expectedAction);
   });
 
@@ -35,12 +35,12 @@ describe('actions', () => {
   });
 
   it('should have a type of PUT_REWARD_ERROR', () => {
-    const error = {};    
+    const err = {};    
     const expectedAction = {
       type: 'PUT_REWARD_ERROR',
-      error
+      err
     }
-    const result = actions.putRewardError(error);
+    const result = actions.putRewardError(err);
     expect(result).toEqual(expectedAction);
   });
 
@@ -55,12 +55,12 @@ describe('actions', () => {
   });
 
   it('should have a type of DELETE_REWARDS_ERROR', () => {
-    const error = {};    
+    const err = {};    
     const expectedAction = {
       type: 'DELETE_REWARDS_ERROR',
-      error
+      err
     }
-    const result = actions.deleteRewardsError(error);
+    const result = actions.deleteRewardsError(err);
     expect(result).toEqual(expectedAction);
   });
 

@@ -1,10 +1,5 @@
 import authReducer from '../../reducers/authReducer'
 import {
-  SET_AUTH_TOKEN,
-  CLEAR_AUTH,
-  AUTH_REQUEST,
-  AUTH_ERROR,
-  AUTH_SUCCESS,
   setAuthToken,
   clearAuth,
   authRequest,
@@ -50,18 +45,19 @@ describe('authReducer', () => {
     expect(result.authToken).toEqual(null)
   });
 
-  // it('authRequest should set loading:false, error:null', () => {
-  //   const initialState = {
-  //     authToken: null,
-  //     loading: false,
-  //     error: {message: "something"},
-  //     user: null
-  //   };
-  //   const action = authRequest();
-  //   const result = authRequest(initialState, action)
-  //   expect(result.loading).toEqual(true)
-  //   expect(result.error).toEqual(null)
-  // });
+  it('authRequest should set loading:false, error:null', () => {
+    const initialState = {
+      authToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9',
+      loading: false,
+      error: {message: "something"},
+      user: null
+    };
+    
+    const action = authRequest();
+    const result = authReducer(initialState, action);    
+    expect(result.loading).toEqual(true)
+    expect(result.error).toEqual(null)
+  });
 
   it('authError should set loading:false, error:action.err', () => {
     const err = {message: 'example'}
@@ -72,7 +68,7 @@ describe('authReducer', () => {
       user: null
     };
     const action = authError(err);
-    const result = authReducer(initialState, action);
+    const result = authReducer(initialState, action);    
     expect(result.error.message).toEqual('example');
     expect(result.error).toEqual(err);
     expect(result.loading).toEqual(false);

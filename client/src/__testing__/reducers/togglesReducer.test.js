@@ -1,12 +1,6 @@
 import togglesReducer from '../../reducers/togglesReducer';
 
 import { 
-  TOGGLE_LOGIN_FORM, 
-  TOGGLE_SIDE_NAV, 
-  TOGGLE_ADD_TASK_FORM, 
-  TOGGLE_PARENT_DETAILS,
-  TOGGLE_ADD_REWARD_FORM,
-  TOGGLE_CHILD_DETAILS,
   toggleLoginForm,
   toggleSideNav,
   toggleAddTaskForm,

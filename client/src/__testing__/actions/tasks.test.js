@@ -11,24 +11,14 @@ describe('actions', () => {
     const result = actions.postTaskSuccess(task);
     expect(result).toEqual(expectedAction);
   });
-
-  it('should have a type of POST_TASK_ERROR', () => {
-    const error = {};    
-    const expectedAction = {
-      type: 'POST_TASK_ERROR',
-      error
-    }
-    const result = actions.postTaskError(error);
-    expect(result).toEqual(expectedAction);
-  });
  
   it('should have a type of POST_TASK_ERROR', () => {
-    const error = {};    
+    const err = {};    
     const expectedAction = {
       type: 'POST_TASK_ERROR',
-      error
+      err
     }
-    const result = actions.postTaskError(error);
+    const result = actions.postTaskError(err);
     expect(result).toEqual(expectedAction);
   });
 
@@ -45,12 +35,12 @@ describe('actions', () => {
   });
 
   it('should have a type of PUT_TASK_ERROR', () => {
-    const error = {};    
+    const err = {};    
     const expectedAction = {
       type: 'PUT_TASK_ERROR',
-      error
+      err
     }
-    const result = actions.putTaskError(error);
+    const result = actions.putTaskError(err);
     expect(result).toEqual(expectedAction);
   });
 
@@ -65,12 +55,12 @@ describe('actions', () => {
   });
 
   it('should have a type of DELETE_TASK_ERROR', () => {
-    const error = {};    
+    const err = {};    
     const expectedAction = {
       type: 'DELETE_TASK_ERROR',
-      error
+      err
     }
-    const result = actions.deleteTaskError(error);
+    const result = actions.deleteTaskError(err);
     expect(result).toEqual(expectedAction);
   });
 
