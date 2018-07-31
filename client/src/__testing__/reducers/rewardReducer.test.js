@@ -53,12 +53,8 @@ describe('rewardReducer', () => {
     const initialState = {
       error: null
     };
-    console.log(initialState);
-
     const action = putRewardError(err);
-    const result = rewardReducer(initialState, action)
-    console.log(result);
-    
+    const result = rewardReducer(initialState, action)    
     expect(result.error).toEqual(err);
   });
 
