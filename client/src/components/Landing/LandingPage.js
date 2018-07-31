@@ -30,24 +30,47 @@ export function LandingPage(props){
   };
   return(
     <div className='landing-page'>
-      <LandingHeader />
-      <section className='login-forms'>
-        <div className='login-choice'>
-          <button
-            className='parent-choice' 
-            disabled={props.parentChoice}
-            onClick={() => props.dispatch(toggleLoginForm())}
-            style={props.parentChoice ? highlight : null}>PARENT</button>
-          <button 
-            className='child-choice' 
-            disabled={!props.parentChoice}
-            onClick={() => props.dispatch(toggleLoginForm())}
-            style={!props.parentChoice ? highlight : null}>CHILD</button>
+      <div className='first-page'>
+        <LandingHeader />
+        <section className='login-forms'>
+          <div className='login-choice'>
+            <button
+              className='parent-choice' 
+              disabled={props.parentChoice}
+              onClick={() => props.dispatch(toggleLoginForm())}
+              style={props.parentChoice ? highlight : null}>PARENT</button>
+            <button 
+              className='child-choice' 
+              disabled={!props.parentChoice}
+              onClick={() => props.dispatch(toggleLoginForm())}
+              style={!props.parentChoice ? highlight : null}>CHILD</button>
+          </div>
+          {props.parentChoice ? <ParentLoginForm /> : <ChildLoginForm />}
+        </section>
+        <div className='non-members'>
+          <h3>Not a member...<br /><Link to='/signup'>sign up here</Link></h3>
         </div>
-        {props.parentChoice ? <ParentLoginForm /> : <ChildLoginForm />}
-      </section>
-      <div className='non-members'>
-        <h3>Not a member...<br /><Link to='/signup'>sign up here</Link></h3>
+      </div>
+      <div className='onboarding-task'>
+        <div className='onboarding-task-background'>
+        </div>
+        <div className='onboarding-task-desc'>
+          <h2>Assign tasks to your kids.</h2>
+        </div>
+      </div>
+      <div className='onboarding-reward'>
+        <div className='onboarding-reward-background'>
+        </div>
+        <div className='onboarding-reward-desc'>
+          <h2>Choose a set of rewards.</h2>
+        </div>
+      </div>
+      <div className='onboarding-slogan'>
+        <div className='onboarding-slogan-background'>
+        </div>
+        <div className='onboarding-slogan-desc'>
+          <h2>Give your kids what they deserve.</h2>
+        </div>
       </div>
     </div>
   );
