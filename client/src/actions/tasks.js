@@ -7,7 +7,7 @@ import { storeAuthInfo, refreshAuthToken } from './auth';
 export const POST_TASK_SUCCESS = 'POST_TASK_SUCCESS',
   postTaskSuccess = task => ({ type: POST_TASK_SUCCESS, task }),
   POST_TASK_ERROR = 'POST_TASK_ERROR',
-  postTaskError = error => ({ type: POST_TASK_ERROR, error }),
+  postTaskError = err => ({ type: POST_TASK_ERROR, err }),
   postTask = (id, task) => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     fetch(`${API_BASE_URL}/tasks/${id}`, {
@@ -27,7 +27,7 @@ export const POST_TASK_SUCCESS = 'POST_TASK_SUCCESS',
 export const PUT_TASK_SUCCESS = 'PUT_TASK_SUCCESS',
   putTaskSuccess = task => ({ type: PUT_TASK_SUCCESS, task }),
   PUT_TASK_ERROR = 'PUT_TASK_ERROR',
-  putTaskError = error => ({ type: PUT_TASK_ERROR, error }),
+  putTaskError = err => ({ type: PUT_TASK_ERROR, err }),
   editTask = (id, task) => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     fetch(`${API_BASE_URL}/tasks/${id}`, {
@@ -46,7 +46,7 @@ export const PUT_TASK_SUCCESS = 'PUT_TASK_SUCCESS',
 export const DELETE_TASK_SUCCESS = 'DELETE_TASK_SUCCESS',
   deleteTaskSuccess = () => ({ type: DELETE_TASK_SUCCESS }),
   DELETE_TASK_ERROR = 'DELETE_TASK_ERROR',
-  deleteTaskError = error => ({ type: DELETE_TASK_ERROR, error }),
+  deleteTaskError = err => ({ type: DELETE_TASK_ERROR, err }),
   deleteTask = (id) => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     fetch(`${API_BASE_URL}/tasks/${id}`, {
