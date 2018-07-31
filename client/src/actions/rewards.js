@@ -10,9 +10,9 @@ export const postRewardSuccess = reward => ({
 })
 
 export const POST_REWARD_ERROR = 'POST_REWARD_ERROR';
-export const postRewardError = error => ({
+export const postRewardError = err => ({
   type: POST_REWARD_ERROR,
-  error
+  err
 })
 
 export const postReward = (id, reward) => (dispatch, getState) => {
@@ -47,9 +47,9 @@ export const putRewardSuccess = reward => ({
 })
 
 export const PUT_REWARD_ERROR = 'PUT_REWARD_ERROR';
-export const putRewardError = error => ({
+export const putRewardError = err => ({
   type: PUT_REWARD_ERROR,
-  error
+  err
 })
 
 export const editReward = (id, reward) => (dispatch, getState) => {
@@ -83,9 +83,9 @@ export const deleteRewardsSuccess = () =>({
 })
 
 export const DELETE_REWARDS_ERROR = 'DELETE_REWARDS_ERROR';
-export const deleteRewardsError = error => ({
+export const deleteRewardsError = err => ({
   type: DELETE_REWARDS_ERROR,
-  error
+  err
 })
 
 export const deleteRewards = (id) => (dispatch, getState) =>{
