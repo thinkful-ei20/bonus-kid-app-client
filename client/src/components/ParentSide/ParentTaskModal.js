@@ -37,14 +37,15 @@ export const ParentTaskModal = props => {
             >EDIT TASK</button> 
           </div>
         </section>
-        <div className='modal-content'>
-          {props.detailView ? <ParentTaskDetails /> : 
-              props.isEditing ? <EditTaskForm /> : null}
-
-        </div>
-        <button className='close' onClick={() => props.dispatch(toggleParentDetails())}>Close</button>
-
+          <div className='modal-content-container'>
+            <div className='modal-content'>
+              {props.detailView ? <ParentTaskDetails /> : 
+                props.isEditing ? <EditTaskForm /> : null}
+            </div>
+          </div>
       </div>
+      <button className='close' onClick={() => props.dispatch(toggleParentDetails())}>Close</button>
+
     </div>
   );
 };

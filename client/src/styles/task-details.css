@@ -1,5 +1,5 @@
 
-.child-details-heading {
+/* .child-details-heading {
   width: 90%;
   margin: 0 auto;
   background-color: #93C37B ;
@@ -9,7 +9,7 @@
   border-top-right-radius: 10px;
   font-size: 1.5em;
   text-align: center;
-}
+} */
 
 .details-page, .child-detail {
   display: flex;
@@ -18,15 +18,14 @@
   height: fit-content;
 }
 
-.details-page .status, .child-detail .status {
+ .status {
   padding: 0.8em 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-bottom: 1em;
 }
 
-.details-page .status span, .child-detail .status span {
+ .status span {
   background-color: #008000;
   padding: 0.6em 0 0.6em 2em;
   width: 100%;
@@ -35,6 +34,12 @@
   color: white;
   font-family: 'Raleway';
   letter-spacing: 0.1em;
+}
+
+.child-detail{
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .details-page .task-name, .child-detail .task-name {
@@ -138,3 +143,45 @@
   font-size: 0.8em;
 }
 
+@media screen and (min-width: 350px){
+  .modal-container{
+    width: 85%;
+ 
+  }
+  
+}
+
+@media screen and (min-width: 400px){
+  .modal-container{
+    width: 75%;
+  
+  }
+}
+
+@media screen and (min-width: 500px){
+  .modal-container{
+    width: 65%;
+  
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .modal-container{
+    width: 55%;
+  
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .child-detail{
+    width: 70%;
+
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .modal-container{
+    width: 500px;
+
+  }
+}

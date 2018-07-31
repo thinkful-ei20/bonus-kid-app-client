@@ -80,3 +80,60 @@
 .modal .task-choice .edit-task-tab {
   border-top-right-radius: 10px;
 }
+
+.close{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (min-width: 350px){
+  .modal-container{
+    width: 85%;
+  }
+  
+  .modal .close{
+    width: 76.5%;
+ 
+  }
+  
+}
+
+@media screen and (min-width: 400px){
+  .modal-container{
+    width: 75%;
+  }
+
+  .modal .close{
+    width: 67.5%;
+ 
+  }
+}
+
+@media screen and (min-width: 500px){
+  .modal-container{
+    width: 65%;
+  }
+  .modal .close{
+    width: 58.5%;
+ 
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .modal-container {
+    width: 55%;
+  }
+
+  .modal .close{
+    width: 49.5%;
+ 
+  }
+}
+
+@media screen and (min-width: 750px) {
+ 
+  .modal .close{
+    width: 450px;
+ 
+  }
+}
