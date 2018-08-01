@@ -8,14 +8,14 @@
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0,0,0, 0.5);
+  background-color: rgba(0,0,0, 0.7);
   padding: 3em 0 1em 0;
   visibility: hidden;
 }
 
 .modal .close {
   width: 90%;
-  background-color: #0c2231;
+  background-color: #006060;
   color: white;
   border: none;
   padding: 0.5em;
@@ -57,14 +57,14 @@
   margin-right: auto;
 }
 
-.modal .task-options {
+.modal .item-options {
   width: 90%;
   margin: 0 auto;
 }
 
-.modal .task-options button {
+.modal .item-options button {
   width: calc(100% /2);
-  color:#0c2231;
+  color:#006060;
   border: none;
   padding: 0.5em;
   font-size: 0.8em;
@@ -74,11 +74,11 @@
   font-family: 'Raleway';
 }
 
-.modal .task-choice .details-tab {
+.modal .item-choice .details-tab {
   border-top-left-radius: 10px;
 }
 
-.modal .task-choice .edit-task-tab {
+.modal .item-choice .edit-tab {
   border-top-right-radius: 10px;
 }
 

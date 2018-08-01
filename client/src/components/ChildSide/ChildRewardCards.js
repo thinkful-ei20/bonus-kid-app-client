@@ -14,7 +14,7 @@ const mapStateToProps = state => ({
 });
 
 export const ChildTaskCards = props => {
-  const statusUnlocked = { color: 'green' }
+  const statusUnlocked = { color: '#f8e21a' }
   const statusPurchased = { color: 'blue' }
   const childCards = props.user.rewards.map((reward, i) =>
     <li className='reward' key={reward.id} 

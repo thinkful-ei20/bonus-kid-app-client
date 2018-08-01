@@ -6,7 +6,7 @@
   flex-direction: column;
 }
 
-.feature-card .add-task-btn {
+.feature-card .add-btn {
   border: none;
   border-radius: 10px;
   padding: 0.5em 0.8em;
@@ -28,13 +28,16 @@
   flex-grow: 1;
 }
 
-.child-name{
+.child-info{
   text-align: center;
   font-weight: 700;
   color: white;
   padding-bottom: 1.0em;
 }
-
+.child-info span{
+  font-size: .8em;
+  color: #BBD4D4;
+}
 img{
   width: 60%;
 }
@@ -132,7 +135,7 @@ img{
 
   }
   
-.child-name{
+.child-info{
   text-align: center;
   font-weight: 700;
   color: white;

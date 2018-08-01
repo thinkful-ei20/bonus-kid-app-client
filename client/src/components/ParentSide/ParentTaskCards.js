@@ -20,7 +20,7 @@ export const ParentTaskCards = props => {
   const childCards = props.user.child.map((child, i) =>
     <div className='feature-card' key={child.id}>
       <div className='main-card'>
-        <div className='child-name'>{child.name}</div>
+        <div className='child-info'>{child.name}</div>
         <div className='side-avatar'>
           <img src='http://i66.tinypic.com/v45hqg.jpg' alt='avatar of child'></img>
           {/* <i className='fas fa-user-ninja fa-3x' aria-hidden="true"></i> */}
@@ -45,7 +45,7 @@ export const ParentTaskCards = props => {
           </ul>
         </div>
       </div>
-      <button className='add-task-btn'
+      <button className='add-btn'
         onClick={() => {
           props.dispatch(toggleAddTaskForm(child.id));
         }}>Add A Task</button>

@@ -15,26 +15,26 @@ const mapStateToProps = state => ({
 export const ParentTaskModal = props => {
   const highlight = { 
     boxShadow: '5px 5px 20px 10px rgba(0, 122, 77, 0.5)',
-    backgroundColor: '#0c2231',
+    backgroundColor: '#006060',
     color: '#ffffff'
   };
   return(
     <div className={`modal ${props.detailView || props.isEditing ? 'visible': ''}`}>
       <div className='modal-container'>
-        <section className='task-options'>
-          <div className='task-choice'>
+        <section className='item-options'>
+          <div className='item-choice'>
             <button
               className='details-tab' 
               disabled={props.detailView}
               onClick={() => props.dispatch(toggleParentDetails(true, false, props.task))}
               style={props.detailView ? highlight : null}
-            >DETAILS</button>
+            >Details</button>
             <button 
-              className='edit-task-tab' 
+              className='edit-tab' 
               disabled={props.isEditing}
               onClick={() => props.dispatch(toggleParentDetails(false, true, props.task))}
               style={props.isEditing ? highlight : null}
-            >EDIT TASK</button> 
+            >Edit</button> 
           </div>
         </section>
           <div className='modal-content-container'>

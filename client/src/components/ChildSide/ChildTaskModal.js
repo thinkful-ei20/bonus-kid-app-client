@@ -19,9 +19,9 @@ export const ChildTaskModal = props => {
     <div className='modal-content'>
       <div className='child-detail'>
         <p className='status'>{props.showDetails ? props.task.complete ? 
-          <span>APPROVED</span> : props.task.childComplete ? 
-            <span>PENDING APPROVAL</span> : <span>NOT STARTED</span> : null}</p>
-        <p className='task-name'>Taskname: <span>{props.showDetails ? props.task.name : null}</span></p>
+          <span>Approved!</span> : props.task.childComplete ? 
+            <span>Pending Approval</span> : <span>Not started</span> : null}</p>
+        <p className='name'>Taskname: <span>{props.showDetails ? props.task.name : null}</span></p>
         <p className='points'>PointValue: <span>{props.showDetails ? props.task.pointValue : null}</span></p>
         <p className='expiry'>Due:
           <span className='date-time'>

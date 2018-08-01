@@ -14,16 +14,25 @@ const mapStateToProps = state => ({
 });
 
 export const ParentTaskCards = props => {
-  const statusUnlocked = { color: 'green' }
-  const statusPurchased = { color: 'blue' }
+  const statusUnlocked = { color: '#fac822' }
+  const statusPurchased = { color: '#fac822' }
+  const completed = { textDecoration: 'line-through' };
+
   const childCards = props.user.child.map((child, i) =>
     <div className='feature-card' key={child.id}>
       <div className='main-card'>
+
+       <div className='child-info'>
+        <p>{child.name}</p>
+        <span>{child.currentPoints} <i className="icon fas fa-circle"></i>
+        {child.totalPoints} <i className="icon fas fa-crown"></i></span>
+       </div>
+
+
         <div className='side-avatar'>
-          <i className='fas fa-user-ninja fa-3x' aria-hidden="true"></i>
-          <p>{child.name}</p>
-          <p>{child.currentPoints} Points to Spend</p>
-          <p>{child.totalPoints} Career Points</p>
+          <img src='http://i66.tinypic.com/v45hqg.jpg' alt='avatar of child'></img>
+          {/* <i className='fas fa-user-ninja fa-3x' aria-hidden="true"></i> */}
+     
         </div>
         <div className='reward-cards'>
           <ul className='rewards-list'>
@@ -37,15 +46,14 @@ export const ParentTaskCards = props => {
                 }
                 }>
                 <div className='reward-status'>
-                {reward.purchased ? <p className='reward-purchased' style={statusPurchased}>PURCHASED</p> : 
+                {reward.purchased ? <p className='reward-purchased' style={statusPurchased}><i className="icon fas fa-check-circle"></i></p> : 
                   reward.pointValue < child.currentPoints ? 
                     <div className='unlocked'>
-                      <i className='fa fa-unlock' style={statusUnlocked}></i>
-                      <p>{reward.pointValue}pts.</p>
+                      <i className="icon fas fa-circle" style={statusUnlocked}></i>
+                      <p>{reward.pointValue}</p>
                     </div> :
                     <div className='locked'>
-                      <i className='fa fa-lock'></i>
-                      <p>{reward.pointValue}pts.</p>
+                      <i className="icon fas fa-ban"></i> <p>{reward.pointValue}</p>
                     </div>
                   }
                 </div>
@@ -57,7 +65,7 @@ export const ParentTaskCards = props => {
           </ul>
         </div>
       </div>
-      <button className='add-reward-btn'
+      <button className='add-btn'
         onClick={() => {
           props.dispatch(toggleAddRewardForm(child.id));
         }}>Add A Reward</button>

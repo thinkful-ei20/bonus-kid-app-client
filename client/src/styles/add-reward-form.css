@@ -5,7 +5,7 @@
 }
 
 .add-reward-form .add-reward-form-heading {
-  background-color: #93c37b;
+  background-color: #006060;
   width: 100%;
   padding: 0.7em 0;
   margin: 1em 0;
@@ -27,7 +27,7 @@
   padding: 0.2em;
   text-align: left;
   border: none;
-  border-bottom: #1f672e 2px inset;
+  border-bottom: #006060 2px inset;
 }
 
 .add-reward-form-body label {
@@ -36,17 +36,17 @@
   margin: 0;
   text-transform: capitalize;
   text-align: left;
-  color: #1f672e;
+  color: #006060;
 }
 
-.add-reward-form-body .add-reward-btn {
-  color: #1f672e;
-  width: 20%;
+/* .add-form-body .add-btn {
+  color: #006060;;
+  background: none
   margin: 0.8em 0 0 auto;
   font-size: 1em;
-}
+} */
 
-@media screen and (min-width: 450px){
+/* @media screen and (min-width: 450px){
 }
 
 @media screen and (min-width: 550px){
@@ -59,4 +59,4 @@
 }
 
 @media screen and (min-width: 850px){
-} */
+}  */
