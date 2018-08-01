@@ -12,7 +12,6 @@ const mapStateToProps = state => ({
 });
 export const ChildTaskModal = props => {
   const dateExpired = props.showDetails ? new Date(Number(props.task.expiryDate)) : null;
-  // console.log(props.task);
   return(
   <div className={`modal ${props.showDetails ? 'visible': ''}`}>
     <h2 className='child-details-heading'>Details</h2>
@@ -20,7 +19,8 @@ export const ChildTaskModal = props => {
       <div className='child-detail'>
         <p className='status'>{props.showDetails ? props.task.complete ? 
           <span>Approved!</span> : props.task.childComplete ? 
-            <span>Pending Approval</span> : <span>Not started</span> : null}</p>
+            <span>Pending Approval</span> : props.task.denied ? <span>Parent denied completion</span> :
+              <span>Not started</span> : null}</p>
         <p className='name'>Taskname: <span>{props.showDetails ? props.task.name : null}</span></p>
         <p className='points'>PointValue: <span>{props.showDetails ? props.task.pointValue : null}</span></p>
         <p className='expiry'>Due:

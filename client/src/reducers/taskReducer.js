@@ -8,7 +8,9 @@ import {
   CHILD_SUBMIT_TASK_SUCCESS,
   PARENT_APPROVE_TASK_SUCCESS,
   CHILD_SUBMIT_TASK_ERROR,
-  PARENT_APPROVE_TASK_ERROR
+  PARENT_APPROVE_TASK_ERROR,
+  PARENT_DENY_TASK_ERROR,
+  PARENT_DENY_TASK_SUCCESS
 } from '../actions/tasks';
 
 const initState = {
@@ -37,6 +39,10 @@ export default (state=initState, action) => {
     return {...state};
   case PARENT_APPROVE_TASK_ERROR:
     return { ...state, error: action.err };
+  case PARENT_DENY_TASK_SUCCESS:
+    return {...state}
+  case PARENT_DENY_TASK_ERROR:
+    return {...state, error: action.err };  
   default:
     return state;
   }
