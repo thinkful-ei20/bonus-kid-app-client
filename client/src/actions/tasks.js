@@ -116,3 +116,35 @@ export const DELETE_TASK_SUCCESS = 'DELETE_TASK_SUCCESS',
     .then(() => dispatch(parentApproveTaskSuccess()))
     .catch(err => dispatch(parentApproveTaskError(err)))
   };
+
+  // =========== PARENT DENY TASK ==========
+
+  export const PARENT_DENY_TASK_SUCCESS = 'PARENT_DENY_TASK_SUCCESS';
+  export const parentDenyTaskSuccess = () => ({
+    type: PARENT_DENY_TASK_SUCCESS
+  });
+
+  export const PARENT_DENY_TASK_ERROR = 'PARENT_DENY_TASK_ERROR';
+  export const parentDenyTaskError = err => ({
+    type: PARENT_DENY_TASK_ERROR, err
+  });
+
+  export const parentDenyTask = (taskId) => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    fetch(`${API_BASE_URL}/tasks/${taskId}`, {
+      method: 'PUT',
+      headers: {
+        Authorization: `Bearer ${authToken}`,
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify({
+        denied: true
+      })
+    })
+    .then(res => normalizeResponseErrors(res))
+    .then(res => res.json())
+    .then(({authToken}) => storeAuthInfo(authToken, dispatch))
+    .then(() => dispatch(parentDenyTaskSuccess()))
+    .catch(err => dispatch(parentDenyTaskError(err)))
+  };
+
