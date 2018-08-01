@@ -2,7 +2,7 @@ import React from 'react';
 
 import {connect} from 'react-redux';
 import '../../styles/task-details.css';
-import { parentApproveTask } from '../../actions/tasks';
+import { parentApproveTask, parentDenyTask } from '../../actions/tasks';
 import { toggleParentDetails } from '../../actions/toggles';
 
 const mapStateToProps = state => ({
@@ -34,8 +34,12 @@ export const ParentTaskDetails = props => {
               props.dispatch(parentApproveTask(props.taskDetail.id));
               props.dispatch(toggleParentDetails());
             }}>Approve</button>
-          <button className='deny' disabled={true}
-            onClick={() => props.dispatch(toggleParentDetails())}>Deny</button>
+          <button className='deny' disabled={false}
+            onClick={() => {
+              props.dispatch(parentDenyTask(props.taskDetail.id))
+              props.dispatch(toggleParentDetails())
+            }
+            }>Deny</button>
         </div>
       </div>  
     </section>
