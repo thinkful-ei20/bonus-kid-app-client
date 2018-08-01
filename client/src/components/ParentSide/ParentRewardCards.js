@@ -1,16 +1,8 @@
 import React from 'react';
-import moment from 'moment';
-
-import { clearAuth } from '../../actions/auth';
-import { clearAuthToken } from '../../local-storage';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
-import ChildSignupForm from '../Forms/ChildSignupForm';
-import ParentHeader from './ParentHeader';
 
 import '../../styles/parent-reward-cards.css';
 import { toggleAddRewardForm, toggleParentDetails } from '../../actions/toggles';
-import AddTaskForm from '../Forms/AddTaskForm';
 import AddRewardModal from './AddRewardModal';
 import ParentRewardModal from './ParentRewardModal';
 
@@ -22,10 +14,8 @@ const mapStateToProps = state => ({
 });
 
 export const ParentTaskCards = props => {
-  const statusSent = { color: 'orange' }
   const statusUnlocked = { color: 'green' }
   const statusPurchased = { color: 'blue' }
-  const completed = { textDecoration: 'line-through' };
   const childCards = props.user.child.map((child, i) =>
     <div className='feature-card' key={child.id}>
       <div className='main-card'>

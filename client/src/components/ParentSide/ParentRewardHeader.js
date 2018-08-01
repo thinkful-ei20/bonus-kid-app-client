@@ -1,6 +1,5 @@
 import ParentSideNav from './ParentSideNav';
 import React from 'react';
-import moment from 'moment';
 
 import {connect} from 'react-redux';
 import {toggleSideNav} from '../../actions/toggles';

@@ -2,8 +2,6 @@ import React from 'react';
 
 import {connect} from 'react-redux';
 import '../../styles/task-details.css';
-import { parentApproveTask } from '../../actions/tasks';
-import { toggleParentDetails } from '../../actions/toggles';
 
 const mapStateToProps = state => ({
   rewardDetail: state.toggles.chosenCard.details.reward,
