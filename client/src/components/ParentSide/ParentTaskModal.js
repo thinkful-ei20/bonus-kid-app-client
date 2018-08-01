@@ -15,7 +15,7 @@ const mapStateToProps = state => ({
 export const ParentTaskModal = props => {
   const highlight = { 
     boxShadow: '5px 5px 20px 10px rgba(0, 122, 77, 0.5)',
-    backgroundColor: '#006060',
+    backgroundColor: '#0c2231',
     color: '#ffffff'
   };
   return(

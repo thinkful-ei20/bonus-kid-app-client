@@ -76,7 +76,8 @@ img{
   margin: 0.2em auto;
   padding: 0.5em;
   font-size: 0.8em;
-  background-color: #D9D9D9;
+  background-color: #0c2231;
+  color: white;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -162,20 +163,19 @@ img{
     flex: 0 0 30%;
   }
 
-  img{
-    max-width: 100%;
-    max-height: 100%;
-  }
   .task-cards{
    flex: 0 375px;
   
   }
   .task-list {
-    padding: 1.1em;
+    padding: 1.3em;
     border-radius: 15px;
     height: 20vh;
     font-size: 1.0em;
+  }
 
+  .task-list .task {
+    padding:1em;
   }
 }
 
