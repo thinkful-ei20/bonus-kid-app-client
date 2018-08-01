@@ -1,14 +1,10 @@
 import ChildTaskModal from './ChildTaskModal';
 import React from 'react';
-import moment from 'moment';
-
-import { clearAuth } from '../../actions/auth';
-import { clearAuthToken } from '../../local-storage';
 import { connect } from 'react-redux';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import '../../styles/parent-task-cards.css';
-import { toggleAddTaskForm, toggleParentDetails, toggleChildDetails } from '../../actions/toggles';
+import { toggleChildDetails } from '../../actions/toggles';
 
 
 const mapStateToProps = state => ({
@@ -20,8 +16,7 @@ const mapStateToProps = state => ({
 export const ChildTaskCards = props => {
   const statusSent = { color: 'orange' }
   const statusPending = { color: 'blue' }
-  const statusApproved = { color: 'green' }
-  const completed = { textDecoration: 'line-through', alignSelf: 'flex-end' };
+  const statusApproved = { color: 'green', textDecoration: 'line-through' }
   const childCards = props.user.tasks.map((task, i) =>
     <li className='task' key={task.id} 
       onClick={() => props.dispatch(toggleChildDetails(task))}>

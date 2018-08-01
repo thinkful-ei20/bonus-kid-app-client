@@ -51,12 +51,6 @@
   font-size: 1em;
 }
 
-.non-members {
-  text-align: center;
-  padding: 1em;
-  font-family: 'Raleway';
-  font-size: 0.8em;
-}
 
 @media screen and (min-width: 450px){
 }

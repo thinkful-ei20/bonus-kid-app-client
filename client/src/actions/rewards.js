@@ -1,6 +1,6 @@
 import {API_BASE_URL} from '../config';
 import{normalizeResponseErrors} from './utils';
-import { storeAuthInfo, refreshAuthToken } from './auth';
+import { storeAuthInfo } from './auth';
 
 //======================= POST rewards =======================
 export const POST_REWARD_SUCCESS = 'POST_REWARD_SUCCESS';

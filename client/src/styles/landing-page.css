@@ -1,5 +1,6 @@
 .first-page {
   height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
 }
@@ -47,6 +48,7 @@
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
+  height: auto;
 }
 
 .parent-choice {
@@ -92,6 +94,7 @@
   padding: 1em;
   font-family: 'Raleway';
   font-size: 0.8em;
+  flex-grow: 1;
 }
 
 .non-members .register-text {
@@ -132,7 +135,9 @@
 }
 
 .onboarding-task .onboarding-task-desc p {
-  padding: 0.6em 0.8em 1.3em 0.8em;
+  padding: 0.6em 2em 1.3em 2em;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
 }
 
 .onboarding-reward {
@@ -158,7 +163,9 @@
 }
 
 .onboarding-reward .onboarding-reward-desc p {
-  padding: 0.6em 0.8em 1.3em 0.8em;
+  padding: 0.6em 2em 1.3em 2em;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
 }
 
 .onboarding-slogan {
@@ -184,47 +191,110 @@
 }
 
 .onboarding-slogan .onboarding-slogan-desc p {
-  padding: 0.6em 0.8em 1.3em 0.8em;
+  padding: 0.6em 2em 1.3em 2em;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
 }
 
-@media screen and (min-width: 450px){
-
+/* Small screen landscape */
+@media screen and (min-width: 550px) and (min-height: 320px) {
+  .first-page {
+    height: auto;
+  }
   .login-forms {
-    margin-top: -6em;
+    margin: -2.5em auto 0 auto;
     padding: 1.8em 3em;
+    width: 80%;
   }
-
 }
 
-@media screen and (min-width: 550px){
-
-  .login-forms  {
-    margin-top: -6.0em;
-    padding: 2em 5em;
+@media screen and (orientation: landscape) {
+  .onboarding-task {
+    display: flex;
   }
- 
+  .onboarding-task .onboarding-task-background {
+    height: 100vh;
+  }
+  .onboarding-reward {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .onboarding-reward .onboarding-reward-background {
+    height: 100vh;
+  }
+  .onboarding-slogan {
+    display: flex;
+  }
+  .onboarding-slogan .onboarding-slogan-background {
+    height: 100vh;
+  }
 }
 
-@media screen and (min-width: 650px){
+@media screen and (min-width: 600px) and (min-height: 900px) {
+  .first-page {
+    height: 100vh;
+  }
+  .non-members {
+    font-size: 1.2em;
+  }
   .login-forms {
-    width: 35em;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: -6.5em;
-    padding: 3em 8em;
-
-  }
-}
-
-
-@media screen and (min-width: 850px){
-  .login-forms {
-    width: 50em;
-    margin-top: -11.0em;
-    padding: 5em 14em;
+    font-size: 1.5em;
+    width: 100%;
   }
   .login-forms .login-btn {
-    width: 150px;
+    font-size: 0.7em;
   }
+  .onboarding-task {
+    display: flex;
+    flex-direction: column;
+  }
+  .onboarding-reward {
+    display: flex;
+    flex-direction: column;
+  }
+  .onboarding-slogan {
+    display: flex;
+    flex-direction: column;
+  }
+  .onboarding-task .onboarding-task-background {
+    height: 40vh;
+  }
+  .onboarding-reward .onboarding-reward-background {
+    height: 40vh;
+  }
+  .onboarding-slogan .onboarding-slogan-background {
+    height: 40vh;
+  }
+}
 
+@media screen and (min-width: 950px) and (min-height: 600px) {
+  .login-forms {
+    font-size: 1.3em;
+    width: 75%;
+    margin: -5em auto 0 auto;
+  }
+  .login-forms .login-btn {
+    font-size: 0.7em;
+  }
+  .non-members {
+    font-size: 1.4em;
+  }
+  .onboarding-task .onboarding-task-desc h2{
+    font-size: 2em;
+  }
+  .onboarding-task .onboarding-task-desc p{
+    font-size: 1.1em;
+  }
+  .onboarding-reward .onboarding-reward-desc h2 {
+    font-size: 2em;
+  }
+  .onboarding-reward .onboarding-reward-desc p {
+    font-size: 1.1em;
+  }
+  .onboarding-slogan .onboarding-slogan-desc h2 {
+    font-size: 2em;
+  }
+  .onboarding-slogan .onboarding-slogan-desc p {
+    font-size: 1.1em;
+  }
 }

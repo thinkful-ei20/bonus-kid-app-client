@@ -1,5 +1,4 @@
 import React from 'react';
-import moment from 'moment';
 
 import { clearAuth } from '../../actions/auth';
 import { clearAuthToken } from '../../local-storage';
@@ -8,7 +7,6 @@ import { Redirect } from 'react-router-dom';
 import ChildSignupForm from '../Forms/ChildSignupForm';
 import ParentHeader from './ParentHeader';
 import ParentTaskCards from './ParentTaskCards';
-import AddTaskForm from '../Forms/AddTaskForm';
 
 
 const mapStateToProps = state => ({

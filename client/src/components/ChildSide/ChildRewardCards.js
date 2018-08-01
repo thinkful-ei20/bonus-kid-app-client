@@ -1,10 +1,8 @@
 import ChildRewardModal from './ChildRewardModal';
 import React from 'react';
 
-import { clearAuth } from '../../actions/auth';
-import { clearAuthToken } from '../../local-storage';
 import { connect } from 'react-redux';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import '../../styles/parent-reward-cards.css';
 import { toggleChildDetails } from '../../actions/toggles';
@@ -18,7 +16,6 @@ const mapStateToProps = state => ({
 export const ChildTaskCards = props => {
   const statusUnlocked = { color: '#f8e21a' }
   const statusPurchased = { color: 'blue' }
-  const completed = { textDecoration: 'line-through' };
   const childCards = props.user.rewards.map((reward, i) =>
     <li className='reward' key={reward.id} 
       onClick={() => props.dispatch(toggleChildDetails(reward))}>
