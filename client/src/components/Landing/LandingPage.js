@@ -50,8 +50,9 @@ export function LandingPage(props){
         <div className='non-members'>
           <h3>Not a member...<br /><Link to='/signup'>sign up here</Link></h3>
         </div>
+        <a href='#first-task' className='arrow-icon'><i className='fa fa-angle-down fa-4x' aria-hidden="true"></i></a>
       </div>
-      <div className='onboarding-task'>
+      <div className='onboarding-task' id='first-task'>
         <div className='onboarding-task-background'>
         </div>
         <div className='onboarding-task-desc'>
