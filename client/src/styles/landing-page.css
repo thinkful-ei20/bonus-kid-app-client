@@ -107,7 +107,7 @@
 .onboarding-task .onboarding-task-background {
   height: 50vh;
   width: 100vw;
-  background: linear-gradient(rgba(0, 0, 0, 0.49), rgba(0, 0, 0, 0.7)),
+  background: linear-gradient(rgba(131, 200, 212, 0.35), rgba(29, 80, 47, 0.58)),
     url(https://c.o0bg.com/rf/image_960w/Boston/2011-2020/2015/12/04/BostonGlobe.com/Lifestyle/Images/shutterstock_176998694.jpg) center center no-repeat;
   background-size: cover;
 }
@@ -115,6 +115,8 @@
 .onboarding-task .onboarding-task-desc {
   height: 50vh;
   width: 100vw;
+  background-color: #0c2231;
+  color: white;
 }
 
 .onboarding-reward {
@@ -124,7 +126,7 @@
 .onboarding-reward .onboarding-reward-background {
   height: 50vh;
   width: 100vw;
-  background: linear-gradient(rgba(0, 0, 0, 0.49), rgba(0, 0, 0, 0.7)),
+  background: linear-gradient(rgba(131, 200, 212, 0.35), rgba(29, 80, 47, 0.58)),
     url(https://i2-prod.mirror.co.uk/incoming/article8109488.ece/ALTERNATES/s615b/Parents-play-board-game-with-children.jpg) center center no-repeat;
   background-size: cover;
 }
@@ -132,6 +134,8 @@
 .onboarding-reward .onboarding-reward-desc {
   height: 50vh;
   width: 100vw;
+  background-color: #0c2231;
+  color: white;
 }
 
 .onboarding-slogan {
@@ -141,7 +145,7 @@
 .onboarding-slogan .onboarding-slogan-background {
   height: 50vh;
   width: 100vw;
-  background: linear-gradient(rgba(0, 0, 0, 0.49), rgba(0, 0, 0, 0.7)),
+  background: linear-gradient(rgba(131, 200, 212, 0.35), rgba(29, 80, 47, 0.58)),
     url(https://s-i.huffpost.com/gen/1503722/images/n-CONFIDENCE-628x314.jpg) center center no-repeat;
   background-size: cover;
 }
@@ -149,6 +153,8 @@
 .onboarding-slogan .onboarding-slogan-desc {
   height: 50vh;
   width: 100vw;
+  background-color: #0c2231;
+  color: white;
 }
 
 @media screen and (min-width: 450px){

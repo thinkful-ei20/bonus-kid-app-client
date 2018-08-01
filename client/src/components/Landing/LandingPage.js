@@ -55,14 +55,16 @@ export function LandingPage(props){
         <div className='onboarding-task-background'>
         </div>
         <div className='onboarding-task-desc'>
-          <h2>Assign tasks to your kids.</h2>
+          <h2>Assign a task.</h2>
+          <p>Set up tasks to send to your child; you can assign each a task a point value that tallies on your child's account.</p>
         </div>
       </div>
       <div className='onboarding-reward'>
         <div className='onboarding-reward-background'>
         </div>
         <div className='onboarding-reward-desc'>
-          <h2>Choose a set of rewards.</h2>
+          <h2>Choose a reward.</h2>
+          <p>Use your points to purchase gifts, trips, and freebies from your parent.</p>
         </div>
       </div>
       <div className='onboarding-slogan'>
@@ -70,6 +72,7 @@ export function LandingPage(props){
         </div>
         <div className='onboarding-slogan-desc'>
           <h2>Give your kids what they deserve.</h2>
+          <p>Sign up for BonusKid now and let's celebrate getting things done.</p>
         </div>
       </div>
     </div>
