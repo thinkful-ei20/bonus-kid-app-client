@@ -206,14 +206,27 @@
     padding: 1.8em 3em;
     width: 80%;
   }
+}
+
+@media screen and (orientation: landscape) {
+  .onboarding-task {
+    display: flex;
+  }
   .onboarding-task .onboarding-task-background {
-    height: 70vh;
+    height: 100vh;
+  }
+  .onboarding-reward {
+    display: flex;
+    flex-direction: row-reverse;
   }
   .onboarding-reward .onboarding-reward-background {
-    height: 70vh;
+    height: 100vh;
+  }
+  .onboarding-slogan {
+    display: flex;
   }
   .onboarding-slogan .onboarding-slogan-background {
-    height: 70vh;
+    height: 100vh;
   }
 }
 
@@ -230,6 +243,18 @@
   }
   .login-forms .login-btn {
     font-size: 0.7em;
+  }
+  .onboarding-task {
+    display: flex;
+    flex-direction: column;
+  }
+  .onboarding-reward {
+    display: flex;
+    flex-direction: column;
+  }
+  .onboarding-slogan {
+    display: flex;
+    flex-direction: column;
   }
   .onboarding-task .onboarding-task-background {
     height: 40vh;
