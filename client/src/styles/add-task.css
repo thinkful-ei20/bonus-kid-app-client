@@ -5,7 +5,7 @@
   font-size: 1.5em;
   display: flex;
   flex-direction: column;
-  color: #93C37B;
+  color: #0c2231;
 }
 
 .add-menu .add-task-form label {
@@ -14,7 +14,7 @@
 
 .add-menu .add-task-form input {
   border: none;
-  border-bottom: 1px #93C37B;
+  border-bottom: 1px #0c2231;
   color: black;
   padding: 0.5em;
   font-size: 0.8em;
@@ -36,7 +36,8 @@
 }
 
 .add-menu .add-task-form .add-task-btn:hover {
-  background-color: #93C37B;
+  background-color: #006060;
   color: white;
   border: 2px solid black;
 }
+

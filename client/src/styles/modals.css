@@ -15,8 +15,8 @@
 
 .modal .close {
   width: 90%;
-  margin: 0 auto;
-  color: rgb(58, 170, 129);
+  background-color: #0c2231;
+  color: white;
   border: none;
   padding: 0.5em;
   font-size: 0.8em;
@@ -34,6 +34,7 @@
   flex-direction: column;
   position: relative;
   overflow: auto;
+  font-size: .8em;
   /* padding: 1em; */
   outline: 0;
   width: 90%;
@@ -50,6 +51,11 @@
   box-shadow: 0 0 1.5em 0 rgba(0, 0, 0, 0.2);
   visibility: visible;
 }
+.modal-container{
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .modal .task-options {
   width: 90%;
@@ -58,7 +64,7 @@
 
 .modal .task-options button {
   width: calc(100% /2);
-  color: rgb(58, 170, 129);
+  color:#0c2231;
   border: none;
   padding: 0.5em;
   font-size: 0.8em;
@@ -74,4 +80,63 @@
 
 .modal .task-choice .edit-task-tab {
   border-top-right-radius: 10px;
+}
+
+.close{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (min-width: 350px){
+  .modal-container{
+    width: 76.5%;
+  }
+  
+  .modal .close{
+    width: 69%;
+ 
+  }
+  
+}
+
+@media screen and (min-width: 400px){
+  .modal-container{
+    width: 67.5%;
+  }
+
+  .modal .close{
+    width: 61%;
+ 
+  }
+}
+
+@media screen and (min-width: 500px){
+  .modal-container{
+    width: 58.5%;
+  }
+  .modal .close{
+    width: 52.5%;
+ 
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .modal-container {
+    width: 55%;
+  }
+
+  .modal .close{
+    width: 49.5%;
+ 
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .modal-container {
+    width: 450px;
+  }
+  .modal .close{
+    width: 407px;
+ 
+  }
 }

@@ -13,7 +13,7 @@ export const AddTaskModal = props => {
   // console.log(props.isAdding.id);
   return(
   <div className={`modal ${props.isAdding ? 'visible': ''}`}>
-    <div className='modal-content add-task'>
+    <div className='modal-container add-task'>
       <AddTaskForm />
     </div>
     <button className='close' onClick={() => props.dispatch(toggleAddTaskForm())}>

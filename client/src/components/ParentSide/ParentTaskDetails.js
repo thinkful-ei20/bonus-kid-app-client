@@ -13,18 +13,21 @@ export const ParentTaskDetails = props => {
   const dateExpired = new Date(Number(props.taskDetail.expiryDate));
   return(
     <section className='details-page'>
-      <div className='detail'>
-        <p className='status'>{props.taskDetail.complete ? 
+     <div className='status'>{props.taskDetail.complete ? 
           <span>APPROVED</span> : props.taskDetail.childComplete ? 
-            <span>PENDING APPROVAL</span> : <span>NOT STARTED</span>}</p>
-        <p className='task-name'>Name: <span>{props.taskDetail.name}</span></p>
-        <p className='points'>Point Value: <span>{props.taskDetail.pointValue}</span></p>
-        <p className='expiry'>Due:
-          <span className='date-time'>
-            <span className='time'>{dateExpired.toLocaleTimeString()}</span>
-            <span className='date'>{dateExpired.toLocaleDateString()}</span>
-          </span>
-        </p>
+            <span>PENDING APPROVAL</span> : <span>NOT STARTED</span>}
+      </div>
+        <div className='child-detail'>
+          <p className='task-name'>Name: <span>{props.taskDetail.name}</span></p>
+          <p className='points'>Point Value: <span>{props.taskDetail.pointValue}</span></p>
+          <p className='expiry'>Due:
+            <span className='date-time'>
+              <span className='time'>{dateExpired.toLocaleTimeString()}</span>
+              <span className='date'>{dateExpired.toLocaleDateString()}</span>
+            </span>
+          </p>
+        </div>
+      <div className='buttons'>
         <div className='approval-btns'>
           <button className='approve' disabled={!props.taskDetail.childComplete}
             onClick={() => {

@@ -1,5 +1,6 @@
-.child-cards {
+/* .child-cards {
   margin-top: -2.5em;
+  overriding the styling on the dashboard
 }
 .feature-card {
   display: flex;
@@ -12,7 +13,6 @@
   font-size: 0.8em;
   background-color: #93c37b;
   color: white;
-  /* width: 70%; */
   margin: -1.2em 1.8em 0 auto;
 }
 
@@ -118,4 +118,4 @@
     justify-content: center;
     align-items: center;
   }
-}
+} */
