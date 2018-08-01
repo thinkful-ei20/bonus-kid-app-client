@@ -23,12 +23,12 @@ export const ChildRewardModal = props => {
             <span>Available to purchase!</span> : <span>Needs more points to purchase!</span> : null}</p>
         <p className='name'>Taskname: <span>{props.showDetails ? props.reward.name : null}</span></p>
         <p className='points'>PointValue: <span>{props.showDetails ? props.reward.pointValue : null}</span></p>
-        <p className='expiry'>Due:
+        {/* <p className='expiry'>Due:
           <span className='date-time'>
             <span className='time'>{props.showDetails ? dateExpired.toLocaleTimeString() : null}</span>
             <span className='date'>{props.showDetails ? dateExpired.toLocaleDateString() : null}</span>
           </span>
-        </p>
+        </p> */}
         <button className='buy-reward'
             onClick={() => {
               props.dispatch(childBuyReward(props.reward.id));

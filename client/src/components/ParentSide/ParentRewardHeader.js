@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 import {toggleSideNav} from '../../actions/toggles';
 
 import '../../styles/header.css';
-import '../../styles/parent-heading.css';
+import '../../styles/heading.css';
 
 const mapStateToProps = state => ({
   loggedIn: state.auth.user !== null,
@@ -25,7 +25,7 @@ export const ParentRewardHeader = props => (
       </div>
       <ParentSideNav />
     </div>
-    <h2 className='parent-heading'>Hey <span>{props.user.name}</span>!<br />These are the <span>rewards</span> you have made available!</h2> 
+    <h2 className='heading'>Hey <span>{props.user.name}</span>!<br />These are the <span>rewards</span> you have made available!</h2> 
   </header>
 );
 

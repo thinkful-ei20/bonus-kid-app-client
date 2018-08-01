@@ -20,12 +20,12 @@ export const ParentTaskDetails = props => {
         <div className='child-detail'>
           <p className='name'>Name: <span>{props.taskDetail.name}</span></p>
           <p className='points'>Points: <span>{props.taskDetail.pointValue}</span></p>
-          <p className='expiry'>Due:
+          {/* <p className='expiry'>Due:
             <span className='date-time'>
               <span className='time'>{dateExpired.toLocaleTimeString()}</span>
               <span className='date'>{dateExpired.toLocaleDateString()}</span>
             </span>
-          </p>
+          </p> */}
         </div>
       <div className='buttons'>
         <div className='approval-btns'>

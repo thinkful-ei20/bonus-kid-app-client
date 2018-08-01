@@ -23,12 +23,12 @@ export const ChildTaskCards = props => {
       {reward.purchased ? <p className='reward-purchased' style={statusPurchased}>PURCHASED</p> : 
                   reward.pointValue < props.user.currentPoints ? 
                     <div className='unlocked'>
-                      <i className='fa fa-unlock' style={statusUnlocked}></i>
-                      <p>{reward.pointValue}pts.</p>
+                      <i className='icon fas fa-circle' style={statusUnlocked}></i>
+                      <p>{reward.pointValue}</p>
                     </div> :
                     <div className='locked'>
-                      <i className='fa fa-lock'></i>
-                      <p>{reward.pointValue}pts.</p>
+                      <i className='icon fas fa-ban'></i>
+                      <p>{reward.pointValue}</p>
                     </div>
                   }
       </div>
