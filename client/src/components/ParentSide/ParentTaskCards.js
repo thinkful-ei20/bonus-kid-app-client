@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import '../../styles/parent-task-cards.css';
+import '../../styles/task-cards.css';
 import { toggleAddTaskForm, toggleParentDetails } from '../../actions/toggles';
 import AddTaskModal from './AddTaskModal';
 import ParentTaskModal from './ParentTaskModal';
