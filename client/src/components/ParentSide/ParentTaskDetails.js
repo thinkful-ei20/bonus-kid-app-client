@@ -14,12 +14,12 @@ export const ParentTaskDetails = props => {
   return(
     <section className='details-page'>
      <div className='status'>{props.taskDetail.complete ? 
-          <span>APPROVED</span> : props.taskDetail.childComplete ? 
-            <span>PENDING APPROVAL</span> : <span>NOT STARTED</span>}
+          <span>You've approved!</span> : props.taskDetail.childComplete ? 
+            <span>Waiting for your approval.</span> : <span>Task sent</span>}
       </div>
         <div className='child-detail'>
-          <p className='task-name'>Name: <span>{props.taskDetail.name}</span></p>
-          <p className='points'>Point Value: <span>{props.taskDetail.pointValue}</span></p>
+          <p className='name'>Name: <span>{props.taskDetail.name}</span></p>
+          <p className='points'>Points: <span>{props.taskDetail.pointValue}</span></p>
           <p className='expiry'>Due:
             <span className='date-time'>
               <span className='time'>{dateExpired.toLocaleTimeString()}</span>

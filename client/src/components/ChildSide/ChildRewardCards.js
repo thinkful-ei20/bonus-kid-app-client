@@ -16,7 +16,7 @@ const mapStateToProps = state => ({
 });
 
 export const ChildTaskCards = props => {
-  const statusUnlocked = { color: 'green' }
+  const statusUnlocked = { color: '#f8e21a' }
   const statusPurchased = { color: 'blue' }
   const completed = { textDecoration: 'line-through' };
   const childCards = props.user.rewards.map((reward, i) =>

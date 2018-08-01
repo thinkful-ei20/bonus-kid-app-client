@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import Input from '../Forms/Input';
 import {required, nonEmpty} from '../../validators';
 
-import '../../styles/add-task-form.css';
+import '../../styles/add-form.css';
 import { postTask } from '../../actions/tasks';
 import { toggleAddTaskForm } from '../../actions/toggles';
 
@@ -31,18 +31,18 @@ export class AddTaskForm extends React.Component {
           this.props.dispatch(toggleAddTaskForm());
           return this.props.dispatch(postTask(this.props.id, newTask));
         })}>
-        <form className='add-task-form'>
-          <h3 className='add-task-form-heading'>Add A Task</h3>
-          <div className='add-task-form-body'>
+        <h3 className='add-form-heading'>Add A Task</h3>
+        <form className='add-form'>
+          <div className='add-form-body'>
             {error}
-            <label htmlFor='taskName'>Add Task: </label>
+            <label htmlFor='taskName'>Task: </label>
             <Field component={Input} name='taskName'
               type='text' id='addTaskName' placeholder='ex. Wash the dishes'
               validate={[required, nonEmpty]} />
-            <label htmlFor='pointValue'>Add Point Value: </label>
+            <label htmlFor='pointValue'>Point Value: </label>
             <Field component={Input} name='pointValue' placeholder='ex. 20'
               type='number' id='addPointValue' validate={[required, nonEmpty]} />
-            <button className='add-task-btn' disabled={this.props.pristine || this.props.submitting}>OK</button>
+            <button className='add-btn' disabled={this.props.pristine || this.props.submitting}>OK</button>
           </div>
         </form>
       </div>
@@ -51,6 +51,6 @@ export class AddTaskForm extends React.Component {
 }
 
 export default connect(mapStateToProps)(reduxForm({
-  form: 'add-task-form',
-  onSubmitFail: (errors, dispatch) => dispatch(focus('add-task-form', 'taskName'))
+  form: 'add-form',
+  onSubmitFail: (errors, dispatch) => dispatch(focus('add-form', 'taskName'))
 })(AddTaskForm));

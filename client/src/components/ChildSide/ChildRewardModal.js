@@ -19,9 +19,9 @@ export const ChildRewardModal = props => {
     <div className='modal-content'>
       <div className='child-detail'>
       <p className='status'>{props.showDetails ? props.reward.purchased ? 
-          <span>PURCHASED</span> : props.reward.pointValue < props.user.currentPoints ? 
-            <span>AVAILABLE FOR PURCHASE</span> : <span>DOES NOT HAVE ENOUGH POINTS TO PURCHASE</span> : null}</p>
-        <p className='task-name'>Taskname: <span>{props.showDetails ? props.reward.name : null}</span></p>
+          <span>Purchaed!</span> : props.reward.pointValue < props.user.currentPoints ? 
+            <span>Available to purchase!</span> : <span>Needs more points to purchase!</span> : null}</p>
+        <p className='name'>Taskname: <span>{props.showDetails ? props.reward.name : null}</span></p>
         <p className='points'>PointValue: <span>{props.showDetails ? props.reward.pointValue : null}</span></p>
         <p className='expiry'>Due:
           <span className='date-time'>
@@ -33,7 +33,7 @@ export const ChildRewardModal = props => {
             onClick={() => {
               props.dispatch(childBuyReward(props.reward.id));
               props.dispatch(toggleChildDetails());
-            }}>BUY REWARD</button>
+            }}>Buy</button>
       </div>
     </div>
     <button className='close' onClick={() => props.dispatch(toggleChildDetails())}>Close</button>
