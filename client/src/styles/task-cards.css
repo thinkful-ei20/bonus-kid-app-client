@@ -152,12 +152,12 @@ img{
 }
 
   .side-avatar {
-    flex: 0 0 30%;
+    flex: 0 0 35%;
     margin-bottom: 2px;
   }
 
   .item-cards{
-   flex: 0 350px;
+   flex: 0 60%;
   
   }
 
@@ -170,14 +170,6 @@ img{
     margin-right: auto;
   }
 
-  .side-avatar {
-    flex: 0 0 30%;
-  }
-
-  .item-cards{
-   flex: 0 375px;
-  
-  }
   .task-list {
     padding: 1.3em;
     border-radius: 15px;
@@ -196,15 +188,6 @@ img{
     margin-left: auto;
     margin-right: auto;
   }
-
-  .side-avatar {
-    flex: 0 0 30%;
-  }
-
-  .item-cards{
-   flex: 0 400px;
-  
-  }
 }
 
 
@@ -220,7 +203,7 @@ img{
   }
 
   .item-cards{
-   flex: 0 450px;
+   flex: 0 65%;
   
   }
 }
