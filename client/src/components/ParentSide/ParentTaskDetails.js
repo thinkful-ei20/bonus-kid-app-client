@@ -15,7 +15,8 @@ export const ParentTaskDetails = props => {
     <section className='details-page'>
      <div className='status'>{props.taskDetail.complete ? 
           <span>Approved!</span> : props.taskDetail.childComplete ? 
-            <span>Waiting for your approval.</span> : <span>Task sent</span>}
+            <span>Waiting for your approval.</span> : props.taskDetail.denied ?
+            <span>Denied, waiting for child completion</span> : <span>Task sent</span>}
       </div>
         <div className='child-detail'>
           <p className='name'>Name: <span>{props.taskDetail.name}</span></p>
@@ -34,7 +35,7 @@ export const ParentTaskDetails = props => {
               props.dispatch(parentApproveTask(props.taskDetail.id));
               props.dispatch(toggleParentDetails());
             }}>Approve</button>
-          <button className='deny' disabled={false}
+          <button className='deny' disabled={props.taskDetail.complete}
             onClick={() => {
               props.dispatch(parentDenyTask(props.taskDetail.id))
               props.dispatch(toggleParentDetails())

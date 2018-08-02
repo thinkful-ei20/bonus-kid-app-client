@@ -30,10 +30,7 @@ export const ChildTaskModal = props => {
               </span>
             </p> */}
             <button className='complete-task'
-              // disabled={props.showDetails ? 
-              //   props.task.childComplete && props.task.complete ? true : 
-              //     props.task.childComplete && !props.task.complete ? true : 
-              //       props.task.denied ? false : false : null}
+              disabled={ props.showDetails && props.task.childComplete ? true : false }
               onClick={() => {
                 props.dispatch(childSubmitTask(props.task.id));
                 props.dispatch(toggleChildDetails());

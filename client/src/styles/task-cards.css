@@ -108,7 +108,7 @@ img{
   text-align: center;
 }
 
-@media screen and (min-width: 350px){
+/* @media screen and (min-width: 350px){
   .child-cards {
     margin-top: -5.5em;
   }
@@ -122,11 +122,15 @@ img{
     margin-top: -6.5em;
   }
 
-}
+} */
 
 @media screen and (min-width: 500px){
   .child-cards {
-    margin-top: -7.5em;
+    margin-top: -5.5em;
+  }
+  .feature-card{
+    width: 90%;
+    margin: 0 auto;    
   }
 }
 
