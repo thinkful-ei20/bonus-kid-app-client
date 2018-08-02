@@ -208,7 +208,7 @@
   }
 }
 
-@media screen and (orientation: landscape) {
+/* @media screen and (orientation: landscape) {
   .onboarding-task {
     display: flex;
   }
@@ -228,9 +228,9 @@
   .onboarding-slogan .onboarding-slogan-background {
     height: 100vh;
   }
-}
+} */
 
-@media screen and (min-width: 600px) and (min-height: 900px) {
+@media screen and (min-width: 600px) {
   .first-page {
     height: 100vh;
   }
@@ -267,7 +267,7 @@
   }
 }
 
-@media screen and (min-width: 950px) and (min-height: 600px) {
+@media screen and (min-width: 950px) {
   .login-forms {
     font-size: 1.3em;
     width: 75%;

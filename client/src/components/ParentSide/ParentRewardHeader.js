@@ -25,7 +25,7 @@ export const ParentRewardHeader = props => (
       </div>
       <ParentSideNav />
     </div>
-    <h2 className='heading'>Hey <span>{props.user.name}</span>!<br />These are the <span>rewards</span> you have made available!</h2> 
+    <h2 className='heading'>Hey <span>{props.user.name}</span>!<br />These are the <span>rewards</span><br/> you have made available!</h2> 
   </header>
 );
 
