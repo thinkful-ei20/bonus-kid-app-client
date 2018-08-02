@@ -16,7 +16,7 @@ const mapStateToProps = state => ({
 export const ParentTaskCards = props => {
   const statusUnlocked = { color: '#fac822' }
   const statusPurchased = { color: '#fac822' }
-  const completed = { textDecoration: 'line-through' };
+  // const completed = { textDecoration: 'line-through' };
 
   const childCards = props.user.child.map((child, i) =>
     <div className='feature-card' key={child.id}>

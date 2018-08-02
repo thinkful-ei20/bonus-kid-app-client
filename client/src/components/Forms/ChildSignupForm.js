@@ -1,5 +1,6 @@
 import Input from '../Forms/Input';
 import React from 'react';
+import { connect } from 'react-redux';
 
 import {Field, focus, reduxForm} from 'redux-form';
 import {isTrimmed, matches, nonEmpty, required} from '../../validators';
@@ -7,11 +8,19 @@ import { Redirect } from 'react-router-dom';
 import { registerChild }  from '../../actions/auth';
 
 import '../../styles/child-signup-form.css';
+import { toggleChildSubmitted } from '../../actions/toggles';
 
 const matchesPassword = matches('signupPassword');
 
+const mapStateToProps = state => ({
+  childSubmitted: state.toggles.newChildCreated
+})
+
 export class ChildSignupForm extends React.Component {
   render() {
+    if (this.props.childSubmitted) {
+      return <Redirect to='/parent_dashboard' />;
+    }
     return (
       <form
         className='child-signup-form'
@@ -24,7 +33,7 @@ export class ChildSignupForm extends React.Component {
             email: signupEmail 
           };
           this.props.dispatch(registerChild(user));
-          return <Redirect to='/parent-dashboard' />;
+          this.props.dispatch(toggleChildSubmitted());
         }
         )}>
         <h3 className='child-form-heading'>Add A Child Account</h3>
@@ -60,8 +69,8 @@ export class ChildSignupForm extends React.Component {
   }
 }
 
-export default reduxForm({
+export default connect(mapStateToProps)(reduxForm({
   form: 'child-signup-form',
   onSubmitFail: (errors, dispatch) =>
     dispatch(focus('child-signup-form', Object.keys(errors)[0]))
-})(ChildSignupForm);
+})(ChildSignupForm));

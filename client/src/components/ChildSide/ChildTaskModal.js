@@ -11,7 +11,7 @@ const mapStateToProps = state => ({
   task: state.toggles.childDetails.details
 });
 export const ChildTaskModal = props => {
-  const dateExpired = props.showDetails ? new Date(Number(props.task.expiryDate)) : null;
+  // const dateExpired = props.showDetails ? new Date(Number(props.task.expiryDate)) : null;
   return(
   <div className={`modal ${props.showDetails ? 'visible': ''}`}>
     <div className='modal-content for-child'>

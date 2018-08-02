@@ -7,6 +7,7 @@ import { Redirect } from 'react-router-dom';
 import ChildSignupForm from '../Forms/ChildSignupForm';
 import ParentHeader from './ParentHeader';
 import ParentTaskCards from './ParentTaskCards';
+import { toggleChildSubmitted } from '../../actions/toggles';
 
 
 const mapStateToProps = state => ({
@@ -18,6 +19,10 @@ export class ParentDashboard extends React.Component {
   logOut() {
     this.props.dispatch(clearAuth());
     clearAuthToken();
+  }
+
+  componentWillMount() {
+    this.props.dispatch(toggleChildSubmitted());
   }
 
   render() {

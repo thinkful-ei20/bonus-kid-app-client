@@ -20,3 +20,6 @@ export const toggleParentDetails = (detailView=false, editing=false, details=nul
 
 export const TOGGLE_CHILD_DETAILS = 'TOGGLE_CHILD_DETAILS';
 export const toggleChildDetails = (details=null) => ({ type: TOGGLE_CHILD_DETAILS, details });
+
+export const TOGGLE_CHILD_SUBMITTED = 'TOGGLE_CHILD_SUBMITTED';
+export const toggleChildSubmitted = () => ({ type: TOGGLE_CHILD_SUBMITTED });

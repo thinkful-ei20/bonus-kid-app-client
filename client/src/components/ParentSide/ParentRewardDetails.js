@@ -10,7 +10,7 @@ const mapStateToProps = state => ({
 });
 
 export const ParentRewardDetails = props => {
-  const dateExpired = new Date(Number(props.rewardDetail.expiryDate));
+  // const dateExpired = new Date(Number(props.rewardDetail.expiryDate));
   return(
     <section className='details-page'>
       <div className='detail'>

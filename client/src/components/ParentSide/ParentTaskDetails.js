@@ -10,7 +10,7 @@ const mapStateToProps = state => ({
 });
 
 export const ParentTaskDetails = props => {
-  const dateExpired = new Date(Number(props.taskDetail.expiryDate));
+  // const dateExpired = new Date(Number(props.taskDetail.expiryDate));
   return(
     <section className='details-page'>
      <div className='status'>{props.taskDetail.complete ? 

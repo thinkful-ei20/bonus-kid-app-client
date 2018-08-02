@@ -12,7 +12,7 @@ const mapStateToProps = state => ({
   user: state.auth.user,
 });
 export const ChildRewardModal = props => {
-  const dateExpired = props.showDetails ? new Date(Number(props.reward.expiryDate)) : null;
+  // const dateExpired = props.showDetails ? new Date(Number(props.reward.expiryDate)) : null;
   return(
   <div className={`modal ${props.showDetails ? 'visible': ''}`}>
     <h2 className='child-details-heading'>Details</h2>
