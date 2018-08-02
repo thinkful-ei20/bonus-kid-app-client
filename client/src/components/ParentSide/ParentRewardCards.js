@@ -34,7 +34,7 @@ export const ParentTaskCards = props => {
           {/* <i className='fas fa-user-ninja fa-3x' aria-hidden="true"></i> */}
      
         </div>
-        <div className='reward-cards'>
+        <div className='item-cards'>
           <ul className='rewards-list'>
             {child.rewards.map((reward, i) =>
               <li className='reward' key={reward.id} 

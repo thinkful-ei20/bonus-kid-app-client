@@ -42,7 +42,7 @@ export const ChildTaskCards = props => {
           <div className='side-avatar'>
             <img src='http://i66.tinypic.com/v45hqg.jpg' alt='avatar of child'></img>
           </div>
-          <div className='task-cards'>
+          <div className='item-cards'>
             <ul className='tasks-list'>
               {childCards}
             </ul>

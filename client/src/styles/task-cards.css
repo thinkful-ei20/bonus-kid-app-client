@@ -62,7 +62,7 @@ img{
   padding: 0.2em;
 }
 
-.task-cards{
+.item-cards{
   width: 100%;
   margin: 0 0 0.1em 0;
   background-color: whitesmoke;
@@ -152,12 +152,12 @@ img{
 }
 
   .side-avatar {
-    flex: 0 0 30%;
+    flex: 0 0 35%;
     margin-bottom: 2px;
   }
 
-  .task-cards{
-   flex: 0 350px;
+  .item-cards{
+   flex: 0 60%;
   
   }
 
@@ -170,14 +170,6 @@ img{
     margin-right: auto;
   }
 
-  .side-avatar {
-    flex: 0 0 30%;
-  }
-
-  .task-cards{
-   flex: 0 375px;
-  
-  }
   .task-list {
     padding: 1.3em;
     border-radius: 15px;
@@ -196,15 +188,6 @@ img{
     margin-left: auto;
     margin-right: auto;
   }
-
-  .side-avatar {
-    flex: 0 0 30%;
-  }
-
-  .task-cards{
-   flex: 0 400px;
-  
-  }
 }
 
 
@@ -219,8 +202,8 @@ img{
     flex: 0 0 30%;
   }
 
-  .task-cards{
-   flex: 0 450px;
+  .item-cards{
+   flex: 0 65%;
   
   }
 }

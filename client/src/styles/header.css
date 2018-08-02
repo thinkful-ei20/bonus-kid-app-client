@@ -40,7 +40,7 @@
 
 .header h2 {
   font-weight: 200;
-  font-size: 1.1em;
+  font-size: .9em;
   line-height: 1.3;
   margin: 0.5em auto;
   color:white;
@@ -51,9 +51,9 @@
 }
 
 /* Small screen landscape */
-@media screen and (min-width: 560px) and (min-height: 320px) {
+@media screen and (min-width: 500px) {
   .header{
-    height: 55vh;
+    height: 45vh;
   }
   .header-content {
     margin-top: 1.2em;
@@ -63,19 +63,21 @@
   }
 }
 
-@media screen and (min-width: 600px) and (min-height: 950px) {
-  .header {
-    height: 28vh;
-  }
+@media screen and (min-width: 600px) {
+
   .header .welcome-text {
     font-size: 1.5em;
   }
   .header-content{
     margin: 0;
   }
+
+  .header .heading {
+    font-size: 1.5em
+  }
 }
 
-@media screen and (min-width: 950px) and (min-height: 600px) {
+@media screen and (min-width: 950px) {
   .header-content {
     padding: 1em;
     font-size: 1.2em;

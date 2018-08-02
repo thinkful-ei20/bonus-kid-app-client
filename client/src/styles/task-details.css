@@ -46,7 +46,7 @@
   padding: 0.3em;
   text-align: left;
   margin: 0.3em 0.5em;
-  font-size: 1.0em;
+  font-size: 1.1em;
   display: flex;
   flex-direction: column;
   color: #006060;
@@ -55,7 +55,7 @@
 .details-page .name span, .child-detail .name span {
   color: #1f1f1f;
   padding: 0.5em 0 0.3em 0;
-  font-size: 0.8em;
+  font-size: 1.1em;
 }
 
 .approval-btns {
@@ -120,14 +120,14 @@
 .details-page .points span, .child-detail .points span {
   color:#1f1f1f;;
   padding: 0.5em 0 0.3em 0;
-  font-size: 0.8em;
+  font-size: 1.1em;
 }
 
 .details-page .expiry, .child-detail .expiry {
   padding: 0.3em;
   text-align: left;
   margin: 0.3em 0.5em;
-  font-size: 1.0em;
+  font-size: 1.1em;
   display: flex;
   flex-direction: column;
   color: #006060;
@@ -141,6 +141,6 @@
 .details-page .expiry .date-time span, .child-detail .expiry .date-time span {
   color: #1f1f1f;
   padding: 0.5em 0 0.3em 0;
-  font-size: 0.8em;
+  font-size: 1.1em;
 }
 
