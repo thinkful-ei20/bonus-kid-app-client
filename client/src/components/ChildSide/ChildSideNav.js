@@ -31,7 +31,7 @@ export class ChildSideNav extends React.Component{
             </Link>
           </li>
           <li>
-            <Link to="/" onClick={() => this.props.dispatch(toggleSideNav())} >
+            <Link to="/reward_page_child" onClick={() => this.props.dispatch(toggleSideNav())} >
                 Rewards
             </Link>
             

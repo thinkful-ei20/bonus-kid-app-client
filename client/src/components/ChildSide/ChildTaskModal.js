@@ -11,31 +11,40 @@ const mapStateToProps = state => ({
   task: state.toggles.childDetails.details
 });
 export const ChildTaskModal = props => {
-  const dateExpired = props.showDetails ? new Date(Number(props.task.expiryDate)) : null;
-  console.log(props.task);
+  // const dateExpired = props.showDetails ? new Date(Number(props.task.expiryDate)) : null;
   return(
   <div className={`modal ${props.showDetails ? 'visible': ''}`}>
-    <h2 className='child-details-heading'>Details</h2>
-    <div className='modal-content'>
-      <div className='child-detail'>
-        <p className='status'>{props.showDetails ? props.task.complete ? 
-          <span>APPROVED</span> : props.task.childComplete ? 
-            <span>PENDING APPROVAL</span> : <span>NOT STARTED</span> : null}</p>
-        <p className='task-name'>Taskname: <span>{props.showDetails ? props.task.name : null}</span></p>
-        <p className='points'>PointValue: <span>{props.showDetails ? props.task.pointValue : null}</span></p>
-        <p className='expiry'>Due:
-          <span className='date-time'>
-            <span className='time'>{props.showDetails ? dateExpired.toLocaleTimeString() : null}</span>
-            <span className='date'>{props.showDetails ? dateExpired.toLocaleDateString() : null}</span>
-          </span>
-        </p>
-        <button className='complete-task'
-            onClick={() => {
-              props.dispatch(childSubmitTask(props.task.id));
-              props.dispatch(toggleChildDetails());
-            }}>TASK COMPLETE</button>
+    <div className='modal-content for-child'>
+      <div className='details-page'>
+      <div className='status'>{props.showDetails ? props.task.complete ?
+        <span>Approved!</span> : props.task.childComplete ? 
+        <span>Pending Approval</span> : props.task.denied ? <span>Parent denied,<br></br>Requires completion</span> :
+        <span>In Progress...</span> : null}</div>
+          <div className='child-detail'>
+            <p className='name'>Task: <span>{props.showDetails ? props.task.name : null}</span></p>
+            <p className='points'>Points: <span>{props.showDetails ? props.task.pointValue : null}</span></p>
+            {/* <p className='expiry'>Due:
+              <span className='date-time'>
+                <span className='time'>{props.showDetails ? dateExpired.toLocaleTimeString() : null}</span>
+                <span className='date'>{props.showDetails ? dateExpired.toLocaleDateString() : null}</span>
+              </span>
+            </p> */}
+            <button className='complete-task'
+              disabled={ props.showDetails && props.task.childComplete ? true : false }
+              onClick={() => {
+                props.dispatch(childSubmitTask(props.task.id));
+                props.dispatch(toggleChildDetails());
+              }}>
+              {props.showDetails ? 
+                props.task.childComplete && props.task.complete ? <span>Finished!</span> : 
+                  props.task.childComplete && !props.task.complete ? <span>Waiting for Parent Approval</span> : 
+                    props.task.denied ? <span>Submit for Approval</span> : <span>Submit for Approval</span> : null
+              
+              }</button>
+
+          </div>
+        </div>
       </div>
-    </div>
     <button className='close' onClick={() => props.dispatch(toggleChildDetails())}>Close</button>
   </div>
 );

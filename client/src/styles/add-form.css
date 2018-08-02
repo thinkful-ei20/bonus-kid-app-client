@@ -1,12 +1,15 @@
-.add-task-form {
+.add-form {
   display: flex;
   flex-direction: column;
   /* margin: -2.5em auto 0.5em auto; */
   background-color: white;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.add-task-form .add-task-form-heading {
-  background-color: #93c37b;
+.add-form-heading {
+  background-color: #006060;
   width: 100%;
   padding: 0.7em 0;
   margin: 1em 0;
@@ -15,33 +18,36 @@
   text-align: center;
 }
 
-.add-task-form-body {
+.add-form-body {
   padding: 0.5em 1.5em;
   display: flex;
   flex-direction: column;
 }
 
-.add-task-form-body input {
+.add-form-body input {
   width: 95%;
   margin-bottom: 0.5em;
   font-size: 1.1em;
   padding: 0.2em;
+  color:rgb(54, 54, 54);
   text-align: left;
   border: none;
-  border-bottom: #1f672e 2px inset;
+  border-bottom: #006060 2px inset;
 }
 
-.add-task-form-body label {
+.add-form-body label {
   font-size: 1em;
   padding: 0;
   margin: 0;
   text-transform: capitalize;
   text-align: left;
-  color: #1f672e;
+  color: #006060;
 }
 
-.add-task-form-body .add-task-btn {
-  color: #1f672e;
+.add-form-body .add-btn {
+  color: #006060;
+  background: none;
+  border: none;
   width: 20%;
   margin: 0.8em 0 0 auto;
   font-size: 1em;

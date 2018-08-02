@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import Input from '../Forms/Input';
 import {required, nonEmpty} from '../../validators';
 
-import '../../styles/add-task-form.css';
+import '../../styles/add-form.css';
 import { postReward } from '../../actions/rewards';
 import { toggleAddRewardForm } from '../../actions/toggles';
 
@@ -31,18 +31,18 @@ export class AddRewardForm extends React.Component {
           this.props.dispatch(toggleAddRewardForm());
           return this.props.dispatch(postReward(this.props.id, newReward));
         })}>
-        <form className='add-reward-form'>
-          <h3 className='add-reward-form-heading'>Add A Reward</h3>
-          <div className='add-reward-form-body'>
+        <h3 className='add-form-heading'>Add A Reward</h3>
+        <form className='add-form'>
+          <div className='add-form-body'>
             {error}
-            <label htmlFor='rewardName'>Add Reward: </label>
+            <label htmlFor='rewardName'>Reward: </label>
             <Field component={Input} name='rewardName'
               type='text' id='addrewardName' placeholder='ex. A trip to the movies'
               validate={[required, nonEmpty]} />
-            <label htmlFor='pointValue'>Add Point Value: </label>
+            <label htmlFor='pointValue'>Point Value: </label>
             <Field component={Input} name='pointValue' placeholder='ex. 100'
               type='number' id='addRewardPointValue' validate={[required, nonEmpty]} />
-            <button className='add-reward-btn' disabled={this.props.pristine || this.props.submitting}>OK</button>
+            <button className='add-btn' disabled={this.props.pristine || this.props.submitting}>OK</button>
           </div>
         </form>
       </div>
@@ -51,6 +51,6 @@ export class AddRewardForm extends React.Component {
 }
 
 export default connect(mapStateToProps)(reduxForm({
-  form: 'add-reward-form',
-  onSubmitFail: (errors, dispatch) => dispatch(focus('add-reward-form', 'rewardName'))
+  form: 'add-form',
+  onSubmitFail: (errors, dispatch) => dispatch(focus('add-form', 'rewardName'))
 })(AddRewardForm));

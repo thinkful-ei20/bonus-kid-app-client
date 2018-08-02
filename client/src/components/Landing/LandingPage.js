@@ -30,24 +30,51 @@ export function LandingPage(props){
   };
   return(
     <div className='landing-page'>
-      <LandingHeader />
-      <section className='login-forms'>
-        <div className='login-choice'>
-          <button
-            className='parent-choice' 
-            disabled={props.parentChoice}
-            onClick={() => props.dispatch(toggleLoginForm())}
-            style={props.parentChoice ? highlight : null}>PARENT</button>
-          <button 
-            className='child-choice' 
-            disabled={!props.parentChoice}
-            onClick={() => props.dispatch(toggleLoginForm())}
-            style={!props.parentChoice ? highlight : null}>CHILD</button>
+      <div className='first-page'>
+        <LandingHeader />
+        <section className='login-forms'>
+          <div className='login-choice'>
+            <button
+              className='parent-choice' 
+              disabled={props.parentChoice}
+              onClick={() => props.dispatch(toggleLoginForm())}
+              style={props.parentChoice ? highlight : null}>PARENT</button>
+            <button 
+              className='child-choice' 
+              disabled={!props.parentChoice}
+              onClick={() => props.dispatch(toggleLoginForm())}
+              style={!props.parentChoice ? highlight : null}>CHILD</button>
+          </div>
+          {props.parentChoice ? <ParentLoginForm /> : <ChildLoginForm />}
+        </section>
+        <div className='non-members'>
+          <h3>Not a member...<br /><Link to='/signup'>sign up here</Link></h3>
         </div>
-        {props.parentChoice ? <ParentLoginForm /> : <ChildLoginForm />}
-      </section>
-      <div className='non-members'>
-        <h3>Not a member...<br /><Link to='/signup'>sign up here</Link></h3>
+        <a href='#first-task' className='arrow-icon'><i className='fa fa-angle-down fa-4x'></i></a>
+      </div>
+      <div className='onboarding-task' id='first-task'>
+        <div className='onboarding-task-background'>
+        </div>
+        <div className='onboarding-task-desc'>
+          <h2>Assign a task.</h2>
+          <p>Set up tasks to send to your child; you can assign each a task a point value that tallies on your child's account.</p>
+        </div>
+      </div>
+      <div className='onboarding-reward'>
+        <div className='onboarding-reward-background'>
+        </div>
+        <div className='onboarding-reward-desc'>
+          <h2>Choose a reward.</h2>
+          <p>Use your points to purchase gifts, trips, and freebies from your parent.</p>
+        </div>
+      </div>
+      <div className='onboarding-slogan'>
+        <div className='onboarding-slogan-background'>
+        </div>
+        <div className='onboarding-slogan-desc'>
+          <h2>Give your kids what they deserve.</h2>
+          <p>Sign up for BonusKid now and let's celebrate getting things done.</p>
+        </div>
       </div>
     </div>
   );

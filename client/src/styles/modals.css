@@ -8,15 +8,15 @@
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0,0,0, 0.5);
+  background-color: rgba(0,0,0, 0.7);
   padding: 3em 0 1em 0;
   visibility: hidden;
 }
 
 .modal .close {
   width: 90%;
-  margin: 0 auto;
-  color: rgb(58, 170, 129);
+  background-color: #006060;
+  color: white;
   border: none;
   padding: 0.5em;
   font-size: 0.8em;
@@ -28,19 +28,33 @@
   border-bottom-left-radius: 10px;
 }
 
+.modal-container{
+  width: 100%;
+  margin-top: 2em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .modal-content {
   background-color: white;
   display: flex;
   flex-direction: column;
   position: relative;
   overflow: auto;
+  font-size: .8em;
   /* padding: 1em; */
   outline: 0;
   width: 90%;
   margin: 0 auto;
 }
 
-.modal-content.add-task {
+.for-child{
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+
+.add-task {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
@@ -51,14 +65,15 @@
   visibility: visible;
 }
 
-.modal .task-options {
+
+.modal .item-options {
   width: 90%;
   margin: 0 auto;
 }
 
-.modal .task-options button {
+.modal .item-options button {
   width: calc(100% /2);
-  color: rgb(58, 170, 129);
+  color:#006060;
   border: none;
   padding: 0.5em;
   font-size: 0.8em;
@@ -68,10 +83,68 @@
   font-family: 'Raleway';
 }
 
-.modal .task-choice .details-tab {
+.modal .item-choice .details-tab {
   border-top-left-radius: 10px;
 }
 
-.modal .task-choice .edit-task-tab {
+.modal .item-choice .edit-tab {
   border-top-right-radius: 10px;
+}
+
+.close{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+ @media screen and (min-width: 400px){
+
+  .modal .item-options, .modal-content{
+    width: 61%;
+  }
+
+  .modal .close{
+    width: 61%;
+ 
+  }
+}
+
+@media screen and (min-width: 500px){
+
+  .modal .item-options, .modal-content{
+    width: 51%;
+  }
+
+  .modal .close{
+    width: 51%;
+ 
+  }
+}
+
+@media screen and (min-width: 600px){
+
+  .modal .item-options, .modal-content{
+    width: 45%;
+  }
+
+  .modal .close{
+    width: 45%;
+ 
+  }
+}
+
+@media screen and (min-width: 750px){
+  .modal-container {
+    margin-top: 3em;
+  }
+
+  .modal .item-options, .modal-content{
+    width: 450px;
+  }
+
+  .modal .close{
+    width: 450px;
+ 
+  }
 }

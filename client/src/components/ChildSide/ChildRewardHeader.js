@@ -1,6 +1,5 @@
 import ChildSideNav from './ChildSideNav';
 import React from 'react';
-import moment from 'moment';
 
 import {connect} from 'react-redux';
 import {toggleSideNav} from '../../actions/toggles';
@@ -26,7 +25,7 @@ export const ChildHeader = props => (
       </div>
       <ChildSideNav />
     </div>
-    <h2 className='parent-heading'>Hey {props.user.name}!<br />You've been working hard.<br />Let's check out some <span>rewards</span>!</h2> 
+    <h2 className='heading'>Hey <span>{props.user.name}</span>!<br />You've been working hard.<br />Let's check out some <span>rewards</span>!</h2> 
   </header>
 );
 

@@ -21,10 +21,12 @@ export function SignupPage(props){
   }
   return(
     <div className='signup-page'>
-      <SignupHeader />
-      <ParentSignupForm />
-      <div className='non-members'>
-        <h3>Already a member...<br /><Link to='/'>log in here</Link></h3>
+      <div className='one-pager'>
+        <SignupHeader />
+        <ParentSignupForm />
+        <div className='non-members'>
+          <h3>Already a member...<br /><Link to='/'>log in here</Link></h3>
+        </div>
       </div>
     </div>
   );

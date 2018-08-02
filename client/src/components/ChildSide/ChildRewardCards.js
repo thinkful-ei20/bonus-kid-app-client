@@ -1,10 +1,8 @@
 import ChildRewardModal from './ChildRewardModal';
 import React from 'react';
 
-import { clearAuth } from '../../actions/auth';
-import { clearAuthToken } from '../../local-storage';
 import { connect } from 'react-redux';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import '../../styles/parent-reward-cards.css';
 import { toggleChildDetails } from '../../actions/toggles';
@@ -16,9 +14,8 @@ const mapStateToProps = state => ({
 });
 
 export const ChildTaskCards = props => {
-  const statusUnlocked = { color: 'green' }
+  const statusUnlocked = { color: '#f8e21a' }
   const statusPurchased = { color: 'blue' }
-  const completed = { textDecoration: 'line-through' };
   const childCards = props.user.rewards.map((reward, i) =>
     <li className='reward' key={reward.id} 
       onClick={() => props.dispatch(toggleChildDetails(reward))}>
@@ -26,12 +23,12 @@ export const ChildTaskCards = props => {
       {reward.purchased ? <p className='reward-purchased' style={statusPurchased}>PURCHASED</p> : 
                   reward.pointValue < props.user.currentPoints ? 
                     <div className='unlocked'>
-                      <i className='fa fa-unlock' style={statusUnlocked}></i>
-                      <p>{reward.pointValue}pts.</p>
+                      <i className='icon fas fa-circle' style={statusUnlocked}></i>
+                      <p>{reward.pointValue}</p>
                     </div> :
                     <div className='locked'>
-                      <i className='fa fa-lock'></i>
-                      <p>{reward.pointValue}pts.</p>
+                      <i className='icon fas fa-ban'></i>
+                      <p>{reward.pointValue}</p>
                     </div>
                   }
       </div>
@@ -42,21 +39,25 @@ export const ChildTaskCards = props => {
   return (
     <div className='feature-card'>
       <div className='main-card'>
-        <div className='side-avatar'>
-          <i className='fas fa-user-ninja fa-3x' aria-hidden="true"></i>
+
+        <div className='child-info'>
           <p>{props.user.name}</p>
-          <p>{props.user.currentPoints} Points to Spend</p>
-          <p>{props.user.totalPoints} Career Points</p>
-          <Link to='/reward_page_child'><i className='fa fa-gift fa-2x' aria-hidden="true"></i></Link>
+          <span>{props.user.currentPoints} <i className="icon fas fa-circle"></i>
+          {props.user.totalPoints} <i className="icon fas fa-crown"></i></span>
         </div>
-        <div className='reward-cards'>
+
+        <div className='side-avatar'>
+          <img src='http://i66.tinypic.com/v45hqg.jpg' alt='avatar of child'></img>
+        </div>      
+        <div className='item-cards'>
           <ul className='rewards-list'>
             {childCards}
           </ul>
         </div>
-      </div>
+     </div>
       <ChildRewardModal />
-    </div>
+  </div>
+
   );
 }
 

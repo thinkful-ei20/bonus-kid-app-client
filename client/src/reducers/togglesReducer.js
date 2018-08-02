@@ -4,7 +4,8 @@ import {
   TOGGLE_ADD_TASK_FORM, 
   TOGGLE_PARENT_DETAILS,
   TOGGLE_ADD_REWARD_FORM,
-  TOGGLE_CHILD_DETAILS
+  TOGGLE_CHILD_DETAILS,
+  TOGGLE_CHILD_SUBMITTED
 } from '../actions/toggles';
 
 const initState = {
@@ -16,7 +17,8 @@ const initState = {
     views: { detailView: false, editing: false },
     details: null
   },
-  childDetails: { detailView: false, details: null }
+  childDetails: { detailView: false, details: null },
+  newChildCreated: false
 };
 
 export default (state=initState, action) => {
@@ -62,6 +64,11 @@ export default (state=initState, action) => {
         detailView: !state.childDetails.detailView, 
         details: action.details
       }
+    }
+  case TOGGLE_CHILD_SUBMITTED:
+    return {
+      ...state,
+      newChildCreated: action.isSubmitted
     }
   default:
     return state;

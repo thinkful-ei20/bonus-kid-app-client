@@ -5,7 +5,7 @@
   font-size: 1em;
   display: flex;
   flex-direction: column;
-  color: green;
+  color: #006060;
 }
 
 .edit-menu .edit-reward-form label {
@@ -14,7 +14,7 @@
 
 .edit-menu .edit-reward-form input {
   border: none;
-  border-bottom: 1px #55a941 solid;
+  border-bottom: 1px #006060 solid;
   color: black;
   padding: 0.5em;
   font-size: 0.8em;

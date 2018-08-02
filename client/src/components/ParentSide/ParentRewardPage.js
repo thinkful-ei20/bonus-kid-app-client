@@ -1,14 +1,10 @@
 import React from 'react';
-import moment from 'moment';
 
 import { clearAuth } from '../../actions/auth';
 import { clearAuthToken } from '../../local-storage';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import ChildSignupForm from '../Forms/ChildSignupForm';
 import ParentRewardHeader from './ParentRewardHeader';
-import ParentTaskCards from './ParentTaskCards';
-import AddTaskForm from '../Forms/AddTaskForm';
 import ParentRewardCards from './ParentRewardCards';
 
 
