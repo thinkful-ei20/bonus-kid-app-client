@@ -62,7 +62,7 @@ img{
   padding: 0.2em;
 }
 
-.task-cards{
+.item-cards{
   width: 100%;
   margin: 0 0 0.1em 0;
   background-color: whitesmoke;
@@ -152,7 +152,7 @@ img{
     margin-bottom: 2px;
   }
 
-  .task-cards{
+  .item-cards{
    flex: 0 350px;
   
   }
@@ -170,7 +170,7 @@ img{
     flex: 0 0 30%;
   }
 
-  .task-cards{
+  .item-cards{
    flex: 0 375px;
   
   }
@@ -197,7 +197,7 @@ img{
     flex: 0 0 30%;
   }
 
-  .task-cards{
+  .item-cards{
    flex: 0 400px;
   
   }
@@ -215,7 +215,7 @@ img{
     flex: 0 0 30%;
   }
 
-  .task-cards{
+  .item-cards{
    flex: 0 450px;
   
   }
