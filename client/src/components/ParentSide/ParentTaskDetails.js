@@ -14,7 +14,7 @@ export const ParentTaskDetails = props => {
   return(
     <section className='details-page'>
      <div className='status'>{props.taskDetail.complete ? 
-          <span>You've approved!</span> : props.taskDetail.childComplete ? 
+          <span>Approved!</span> : props.taskDetail.childComplete ? 
             <span>Waiting for your approval.</span> : <span>Task sent</span>}
       </div>
         <div className='child-detail'>
