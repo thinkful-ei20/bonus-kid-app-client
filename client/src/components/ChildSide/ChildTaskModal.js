@@ -18,8 +18,8 @@ export const ChildTaskModal = props => {
       <div className='details-page'>
       <div className='status'>{props.showDetails ? props.task.complete ?
         <span>Approved!</span> : props.task.childComplete ? 
-        <span>Pending Approval</span> : props.task.denied ? <span>Parent denied completion</span> :
-        <span>Not started</span> : null}</div>
+        <span>Pending Approval</span> : props.task.denied ? <span>Parent denied,<br></br>Requires completion</span> :
+        <span>In Progress...</span> : null}</div>
           <div className='child-detail'>
             <p className='name'>Task: <span>{props.showDetails ? props.task.name : null}</span></p>
             <p className='points'>Points: <span>{props.showDetails ? props.task.pointValue : null}</span></p>
@@ -30,10 +30,21 @@ export const ChildTaskModal = props => {
               </span>
             </p> */}
             <button className='complete-task'
-                onClick={() => {
-                  props.dispatch(childSubmitTask(props.task.id));
-                  props.dispatch(toggleChildDetails());
-                }}>Finished!</button>
+              // disabled={props.showDetails ? 
+              //   props.task.childComplete && props.task.complete ? true : 
+              //     props.task.childComplete && !props.task.complete ? true : 
+              //       props.task.denied ? false : false : null}
+              onClick={() => {
+                props.dispatch(childSubmitTask(props.task.id));
+                props.dispatch(toggleChildDetails());
+              }}>
+              {props.showDetails ? 
+                props.task.childComplete && props.task.complete ? <span>Finished!</span> : 
+                  props.task.childComplete && !props.task.complete ? <span>Waiting for Parent Approval</span> : 
+                    props.task.denied ? <span>Submit for Approval</span> : <span>Submit for Approval</span> : null
+              
+              }</button>
+
           </div>
         </div>
       </div>
