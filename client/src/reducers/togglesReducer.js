@@ -68,7 +68,7 @@ export default (state=initState, action) => {
   case TOGGLE_CHILD_SUBMITTED:
     return {
       ...state,
-      newChildCreated: !state.newChildCreated
+      newChildCreated: action.isSubmitted
     }
   default:
     return state;

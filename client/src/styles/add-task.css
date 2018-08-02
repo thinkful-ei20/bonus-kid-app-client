@@ -41,3 +41,9 @@
   border: 2px solid black;
 }
 
+@media screen and (min-width: 500px){
+  .modal .modal-content, .modal .close{
+    width: 96%;
+  }
+}
+

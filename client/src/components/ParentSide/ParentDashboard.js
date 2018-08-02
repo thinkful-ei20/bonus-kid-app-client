@@ -22,7 +22,7 @@ export class ParentDashboard extends React.Component {
   }
 
   componentWillMount() {
-    this.props.dispatch(toggleChildSubmitted());
+    this.props.dispatch(toggleChildSubmitted(false));
   }
 
   render() {

@@ -50,10 +50,12 @@
   color: #00A4A6;
 }
 
-/* Small screen landscape */
 @media screen and (min-width: 500px) {
   .header{
     height: 45vh;
+  }
+  .header h2{
+    font-size: 1.1em;
   }
   .header-content {
     margin-top: 1.2em;
@@ -71,18 +73,34 @@
   .header-content{
     margin: 0;
   }
-
   .header .heading {
     font-size: 1.5em
   }
+
 }
 
+@media screen and (min-width: 750px) {
+  .header h2 {
+    font-size: 1.4em;
+  }
+}
+
+
 @media screen and (min-width: 950px) {
+  .header{
+    height: 30vh;
+  }
   .header-content {
     padding: 1em;
     font-size: 1.2em;
   }
   .header .welcome-text {
     font-size: 2em;
+  }
+  .header h2 {
+    font-size: 1.7em;
+  }
+  .non-members h3{
+    font-size: .7em;
   }
 }

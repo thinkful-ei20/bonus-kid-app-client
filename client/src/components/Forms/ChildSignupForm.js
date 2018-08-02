@@ -33,7 +33,7 @@ export class ChildSignupForm extends React.Component {
             email: signupEmail 
           };
           this.props.dispatch(registerChild(user));
-          this.props.dispatch(toggleChildSubmitted());
+          this.props.dispatch(toggleChildSubmitted(true));
         }
         )}>
         <h3 className='child-form-heading'>Add A Child Account</h3>

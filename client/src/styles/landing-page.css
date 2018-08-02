@@ -197,7 +197,7 @@
 }
 
 /* Small screen landscape */
-@media screen and (min-width: 550px) and (min-height: 320px) {
+/* @media screen and (min-width: 550px) {
   .first-page {
     height: auto;
   }
@@ -206,7 +206,7 @@
     padding: 1.8em 3em;
     width: 80%;
   }
-}
+} */
 
 /* @media screen and (orientation: landscape) {
   .onboarding-task {
@@ -276,6 +276,9 @@
   .login-forms .login-btn {
     font-size: 0.7em;
   }
+  .login-forms{
+    width: 750px;
+  }
   .non-members {
     font-size: 1.4em;
   }
@@ -296,5 +299,30 @@
   }
   .onboarding-slogan .onboarding-slogan-desc p {
     font-size: 1.1em;
+  }
+  
+
+
+  .onboarding-task {
+    display: flex;
+    flex-direction: row;
+  }
+  .onboarding-task .onboarding-task-background {
+    height: 55vh;
+  }
+  .onboarding-reward {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .onboarding-reward .onboarding-reward-background {
+    height: 50vh;
+  }
+  .onboarding-slogan {
+    display: flex;
+    flex-direction: row;
+
+  }
+  .onboarding-slogan .onboarding-slogan-background {
+    height: 55vh;
   }
 }
