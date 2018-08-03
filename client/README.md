@@ -31,7 +31,7 @@ Parents will be promted to link a child to their account upon creation.
 
 ----
 
-### Task Dashboard
+### Task Dashboard I
 
 ```
 This is how the dashboard looks for parents and children.
@@ -43,7 +43,19 @@ The children can submit tasks for approval.
 ```
 
 
-![Image of parent dashboard](https://image.ibb.co/cDpYYz/bonus_kid_p_dash.png "Parent Dashboard") ![Image of child dashboard](https://image.ibb.co/bXaXtz/bonus_kid_c_dash.png "Child's dashboard") ![Image of parent approval modal](https://image.ibb.co/hQPp6K/bonus_kid_p_dash_approve.png "Approve or deny a task")
+![Image of parent dashboard](https://image.ibb.co/cDpYYz/bonus_kid_p_dash.png "Parent Dashboard") ![Image of child dashboard](https://image.ibb.co/bXaXtz/bonus_kid_c_dash.png "Child's dashboard")
+
+### Task Dashboard II
+
+```
+Clicking on the tasks opens up prompts.
+Parents can approve, edit, delete tasks.
+Children can submit tasks to be approved.
+```
+
+
+
+![Image of parent approval modal](https://image.ibb.co/hQPp6K/bonus_kid_p_dash_approve.png "Approve or deny a task") ![Image of child submitting a task](https://image.ibb.co/dnGVDz/bonus_kid_c_modal.png "Send a task in for approval")
 
 ----
 
@@ -51,9 +63,9 @@ The children can submit tasks for approval.
 
 ```
 This is the rewards page. It works much the same way as the tasks page. 
-Here the parents can create new rewards and check on thier child's purchase history. 
-Children can purchase the rewards.
-Checking this page frequently can reming parents to take their kids out on a treat!
+Parents can create new rewards and check on thier child's purchase history. 
+Children can purchase with their points.
+Checking this page frequently can remind parents to take their kids out on a treat!
 ```
 
 ![Image of parent reward](https://image.ibb.co/dtvkfe/bonus_kid_p_reward.png "Parent rewards page")![Image of child rewards](https://image.ibb.co/cCUE6K/bonus_kid_reward.png "Child rewards page")![Image of reward modal](https://image.ibb.co/kUwrLe/bonus_kid_reward_modal.png "Logo Title Text 1")
