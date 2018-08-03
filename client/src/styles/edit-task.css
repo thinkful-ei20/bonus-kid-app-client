@@ -35,12 +35,6 @@
   border-radius: 10px;
 }
 
-.edit-menu .edit-task-form .edit-task-btn:hover {
-  background-color: #93C37B;
-  color: white;
-  border: 2px solid black;
-}
-
 .edit-menu #delete-task-btn {
   display: flex;
   font-size: 0.7em;
@@ -53,12 +47,5 @@
   letter-spacing: 0.1em;
   border-radius: 10px;
   align-self: center;
-}
-
-
-.edit-menu .delete-task-btn:hover {
-  background-color: red;
-  color: white;
-  border: 2px solid black;
 }
 

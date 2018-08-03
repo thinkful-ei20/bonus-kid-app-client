@@ -94,18 +94,6 @@
   background: none;
 }
 
-.approval-btns .approve:hover, .modal-content .complete-task:hover {
-  background-color: rgb(34, 118, 253);
-  color: white;
-  border: 2px solid black;
-}
-
-.approval-btns .deny:hover {
-  background-color: red;
-  color: white;
-  border: 2px solid black;
-}
-
 .details-page .points, .child-detail .points {
   padding: 0.3em;
   text-align: left;
