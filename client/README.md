@@ -6,6 +6,46 @@ Between studying, extra-curricular activities, and handling their responsibiliti
 This app is designed to increase positive interaction between parents and children and encourage children to have better behavior habits.
 
 
+# Features
+
+- Sign up and link children to parent account
+- Parent and child dashboards simulutanously update
+- Create tasks for children to complete
+- Designate points for tasks 
+- Child can check off their work and earn the points
+- Parent can approve of a child's completed task
+- Parent can create an indiviualized reward store for kids
+- Child can purchase rewards with points
+
+## User Flow
+
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+
+![Image of landing page](https://image.ibb.co/f2oStz/bonus_kid_landing.png "Logo Title Text 1")
+
+![Image of parent dashboard](https://image.ibb.co/cDpYYz/bonus_kid_p_dash.png "Parent Dashboard")
+
+![Image of landing page](https://image.ibb.co/bXaXtz/bonus_kid_c_dash.png "Logo Title Text 1")
+
+![Image of landing page](https://image.ibb.co/eDrSRK/bonus_kid_c_modal.png "Logo Title Text 1")
+
+![Image of landing page](https://image.ibb.co/hQPp6K/bonus_kid_p_dash_approve.png "Logo Title Text 1")
+
+![Image of landing page](https://image.ibb.co/hQPp6K/bonus_kid_p_dash_approve.png "Logo Title Text 1")
+
+![Image of landing page](https://image.ibb.co/dtvkfe/bonus_kid_p_reward.png "Logo Title Text 1")
+
+![Image of landing page](https://image.ibb.co/cCUE6K/bonus_kid_reward.png "Logo Title Text 1")
+
+![Image of landing page](https://image.ibb.co/kUwrLe/bonus_kid_reward_modal.png "Logo Title Text 1")
+
+
+
+
+
+# Development Highlights
+
+
 ## Developers' Note
 There are two user types in Bonus Kid, Parent and Child. Some obstacles to overcome were planning out how to share information between parent and child accounts, while giving parent accounts the ability to manage children accounts if necessary. Making astute relationships within our database and populating schemas on different occasions resolved the issue. 
 
@@ -15,13 +55,7 @@ The technical highlight of Bonus Kid utilization MongoDB’s loose schemas. To e
 
 As an additional feature, parents should be notified when their child completed a task. Moment.js is used both on the server side and client side. On the client, it ensures that the time sent in is consistent with the server. On the server side there is business logic to compare the expiry date (or due date of a task) to the date a specific PUT request is sent in by a child user. The server is also able to then send a corresponding text message (provided by a parent user upon logging in) through the Twilio package.
 
-
-## Features
-![Screen shots of login and dashboard]("https://i.imgur.com/FBv3pyy.png" "Login and dashboard")
-
-
-
-##Manageing State
+## Manageing State
 At first glance, handling the data from the server may seem a bit trickey. We loaded all of our data within the user auth token. We recommned installing Redux dev tools for your browser while developing. 
 
 To retreive the database from state look into ```auth.authToken``` in the redux state. Data decoded from the authToken will look something like this: 
@@ -121,22 +155,12 @@ You can see the entireity of the user object by decoded the authtoken at [JWT de
 ![Our data stored in Authtoken]("https://i.imgur.com/StJNNJP.png" "jwt-decode")
 
 
-
-## Features
-
-- Give your children rewards for being productive!
-- Add tasks for them to complete.
-- Verify if your child has completed their tasks and reward them with points.
-- Children will be able to buy from the parents store!
-
 ## Code style
 Standard/Thinkful-style
 
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 
-
-
-### Front-end Tech:
+## Tech Stack:
 - jwt-decode
 - react
 - react-dom
@@ -149,10 +173,6 @@ Standard/Thinkful-style
 - passport
 - passport-jwt
 - passport-local
-
-## Screenshots
-
-
 
 
 
