@@ -17,12 +17,13 @@ export const ChildRewardModal = props => {
   <div className={`modal ${props.showDetails ? 'visible': ''}`}>
     <h2 className='child-details-heading'>Details</h2>
     <div className='modal-content'>
-      <div className='child-detail'>
-      <p className='status'>{props.showDetails ? props.reward.purchased ? 
+    <p className='status'>{props.showDetails ? props.reward.purchased ? 
           <span>Purchased!</span> : props.reward.pointValue < props.user.currentPoints ? 
             <span>Available to purchase!</span> : <span>Needs more points to purchase!</span> : null}</p>
-        <p className='name'>Taskname: <span>{props.showDetails ? props.reward.name : null}</span></p>
-        <p className='points'>PointValue: <span>{props.showDetails ? props.reward.pointValue : null}</span></p>
+       
+      <div className='child-detail'>
+      <p className='name'>Reward: <span>{props.showDetails ? props.reward.name : null}</span></p>
+        <p className='points'>Points: <span>{props.showDetails ? props.reward.pointValue : null}</span></p>
         {/* <p className='expiry'>Due:
           <span className='date-time'>
             <span className='time'>{props.showDetails ? dateExpired.toLocaleTimeString() : null}</span>
