@@ -10,10 +10,10 @@ export default class Input extends React.Component {
     let error; let warning;
     const errStyle = { borderColor: '#c78181' };
     if(this.props.meta.touched && this.props.meta.error){
-      error = (<div className='form-warning'>{this.props.meta.error}</div>);
+      error = (<div className='form-error'><p className='error-message'>{this.props.meta.error}</p></div>);
     }
     if(this.props.meta.touched && this.props.meta.warning){
-      warning = (<div className='form-error'>{this.props.meta.warning}</div>);
+      warning = (<div className='form-warning'><p className='warning-message'>{this.props.meta.warning}</p></div>);
     }
     return(
       <div className='form-input'>

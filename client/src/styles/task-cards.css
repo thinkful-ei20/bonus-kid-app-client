@@ -3,11 +3,12 @@
 }
 
 .child-cards {
-  margin-top: -5em;
+  margin-top: -4em;
 }
 .feature-card {
   display: flex;
   flex-direction: column;
+  margin-top: -3em;
 }
 
 .feature-card .add-btn {
@@ -30,6 +31,26 @@
   box-shadow: 5px 5px 5px#404d48;
   background-color: #006060;
   flex-grow: 1;
+}
+
+.child-details-heading {
+  text-align: center;
+  background-color: #006060;
+  color: white;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0.6em;
+  font-size: 1em;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.child-detail .buy-reward {
+  margin: 0 0 0 auto;
+  padding: 0.9em;
+  font-size: 1.1em;
+  width: fit-content;
+  color: green;
 }
 
 .child-info{
