@@ -19,7 +19,7 @@ This app is designed to increase positive interaction between parents and childr
 
 ## User Flow
 
-### Login and Sign Up
+### 1. Login and Sign Up
 ```
 Users can sign in or create a page. 
 There are sepereate signins for parents and children. 
@@ -31,7 +31,7 @@ Parents will be promted to link a child to their account upon creation.
 
 ----
 
-### Task Dashboard I
+### 2. Task Dashboard I
 
 ```
 This is how the dashboard looks for parents and children.
@@ -45,7 +45,7 @@ The children can submit tasks for approval.
 
 ![Image of parent dashboard](https://image.ibb.co/cDpYYz/bonus_kid_p_dash.png "Parent Dashboard") ![Image of child dashboard](https://image.ibb.co/bXaXtz/bonus_kid_c_dash.png "Child's dashboard")
 
-### Task Dashboard II
+### 2a. Task Dashboard II
 
 ```
 Clicking on the tasks opens up prompts.
@@ -59,7 +59,7 @@ Children can submit tasks to be approved.
 
 ----
 
-### Reward Dashboard
+### 3. Reward Dashboard
 
 ```
 This is the rewards page. It works much the same way as the tasks page. 
@@ -180,9 +180,6 @@ To retreive the database from state look into ```auth.authToken``` in the redux 
 You can see the entireity of the user object by decoded the authtoken at [JWT decode](https://jwt.io/).
 
 
-![Our data stored in Authtoken]("https://i.imgur.com/StJNNJP.png" "jwt-decode")
-
-
 ## Code style
 Standard/Thinkful-style
 
@@ -202,5 +199,7 @@ Standard/Thinkful-style
 - passport-jwt
 - passport-local
 
+## Created by
 
+@mckoyd @darrenjones @tammyztian @ArizonaMangoJuice
 
