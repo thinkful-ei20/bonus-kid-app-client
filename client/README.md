@@ -19,28 +19,48 @@ This app is designed to increase positive interaction between parents and childr
 
 ## User Flow
 
+### Login and Sign Up
+
 Users can sign in or create a page. 
+
 There are sepereate signins for parents and children. 
+
 Only parents are able to create accounts. 
+
 Parents will be promted to link a child to their account upon creation. 
-![Image of landing page](https://image.ibb.co/f2oStz/bonus_kid_landing.png "Logo Title Text 1")
+
+![Image of landing page](https://image.ibb.co/f2oStz/bonus_kid_landing.png "Langing Page")
 
 ----
+
+### Task Dashboard
 
 This is how the dashboard looks for parents and children.
+
 There are cards with the child's avatar and the progress of their tasks.
+
 The parent dashboard will load all the linked child accounts. 
+
 The child dash board will only display the child's card.
+
 Parents will be able to approve, delete, edit and assign tasks from here. 
+
 The children can submit tasks for approval.
-![Image of parent dashboard](https://image.ibb.co/cDpYYz/bonus_kid_p_dash.png "Parent Dashboard") ![Image of child dashboard](https://image.ibb.co/bXaXtz/bonus_kid_c_dash.png "Logo Title Text 1") ![Image of parent approval modal](https://image.ibb.co/hQPp6K/bonus_kid_p_dash_approve.png "Logo Title Text 1")![Image of opened modal](https://image.ibb.co/eDrSRK/bonus_kid_c_modal.png "Logo Title Text 1") 
+
+
+![Image of parent dashboard](https://image.ibb.co/cDpYYz/bonus_kid_p_dash.png "Parent Dashboard") ![Image of child dashboard](https://image.ibb.co/bXaXtz/bonus_kid_c_dash.png "Child's dashboard") ![Image of parent approval modal](https://image.ibb.co/hQPp6K/bonus_kid_p_dash_approve.png "Approve or deny a task")
 
 ----
 
+### Reward Dashboard
+
 This is the rewards page. It works much the same way as the tasks page. 
-Here the parents can create new rewards and check on thier child's purchase history. Children can purchase the rewards. 
+
+Here the parents can create new rewards and check on thier child's purchase history. Children can purchase the rewards.
+
 Checking this page frequently can reming parents to take their kids out on a treat!
-![Image of parent reward](https://image.ibb.co/dtvkfe/bonus_kid_p_reward.png "Logo Title Text 1")![Image of child rewards](https://image.ibb.co/cCUE6K/bonus_kid_reward.png "Logo Title Text 1")![Image of reward modal](https://image.ibb.co/kUwrLe/bonus_kid_reward_modal.png "Logo Title Text 1")
+
+![Image of parent reward](https://image.ibb.co/dtvkfe/bonus_kid_p_reward.png "Parent rewards page")![Image of child rewards](https://image.ibb.co/cCUE6K/bonus_kid_reward.png "Child rewards page")![Image of reward modal](https://image.ibb.co/kUwrLe/bonus_kid_reward_modal.png "Logo Title Text 1")
 
 
 
