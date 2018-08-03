@@ -76,7 +76,7 @@ Checking this page frequently can remind parents to take their kids out on a tre
 
 "Moblie first" and "kid friendly" were at the crux of the application design. Also taken to high consideration was finding a color palatte that passed Web Content Accessibility Guidelines (WCAG). The initial design was taken adjusted to address responsive design.
 
-![Landing page on a larger screen size to show responsive design] (https://files.slack.com/files-pri/T02D02A55-FC2BG421G/screen_shot_2018-08-02_at_10.29.33_pm__2_.png "Responsive design")
+![Landing page on a larger screen size to show responsive design](https://files.slack.com/files-pri/T02D02A55-FC2BG421G/screen_shot_2018-08-02_at_10.29.33_pm__2_.png "Responsive design")
 
 # Development Highlights
 
