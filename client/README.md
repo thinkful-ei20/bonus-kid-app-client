@@ -5,6 +5,7 @@ Between studying, extra-curricular activities, and handling their responsibiliti
 
 This app is designed to increase positive interaction between parents and children and encourage children to have better behavior habits.
 
+*View our [server code here](https://github.com/thinkful-ei20/bonus-kid-app-server).*
 
 # Features
 
@@ -37,7 +38,7 @@ Parents will be promted to link a child to their account upon creation.
 This is how the dashboard looks for parents and children.
 There are cards with the child's avatar and the progress of their tasks.
 The parent dashboard will load all the linked child accounts. 
-The child dash board will only display the child's card.
+The child dashboard will only display the child's card.
 Parents will be able to approve, delete, edit and assign tasks from here. 
 The children can submit tasks for approval.
 ```
@@ -71,15 +72,21 @@ Checking this page frequently can remind parents to take their kids out on a tre
 ![Image of parent reward](https://image.ibb.co/mwBDYz/bonus_kid_p_reward.png "Parent rewards page")![Image of child rewards](https://image.ibb.co/cCUE6K/bonus_kid_reward.png "Child rewards page")
 
 
+# Design
+
+"Moblie first" and "kid friendly" were at the crux of the application design. Also taken to high consideration was finding a color palatte that passed Web Content Accessibility Guidelines (WCAG). The initial design was taken adjusted to address responsive design.
+
+![Landing page on a larger screen size to show responsive design] (https://files.slack.com/files-pri/T02D02A55-FC2BG421G/screen_shot_2018-08-02_at_10.29.33_pm__2_.png "Responsive design")
+
 # Development Highlights
 
 
 ## Developers' Note
-There are two user types in Bonus Kid, Parent and Child. Some obstacles to overcome were planning out how to share information between parent and child accounts, while giving parent accounts the ability to manage children accounts if necessary. Making astute relationships within our database and populating schemas on different occasions resolved the issue. 
+There are two user types in Bonus Kid, Parent and Child. One obstacles to overcome was planning out how to share information between parent and child accounts, while giving parent accounts the ability to manage children accounts if necessary. Making astute relationships within our database and populating schemas on different occasions resolved the issue. 
 
 View our [server code here](https://github.com/thinkful-ei20/bonus-kid-app-server).
 
-The technical highlight of Bonus Kid utilization MongoDB’s loose schemas. To ensure a smooth user experience on the client, only one fetch call is made to render a page.  The authtoken is loaded with all of the user’s data needed to render a page, and store the data in our Redux ‘User’ state. Each time a call to the database is made, a PUT, POST, or DELETE, a new authtoken is return to the client with updated information rather than just the change in the database. 
+The technical highlight of Bonus Kid utilization MongoDB’s loose schemas. To ensure a smooth user experience on the client, only one fetch call is required to render the page.  The authtoken is loaded with all of the user’s data needed to render a page, and store the data in our Redux ‘User’ state. Each time a call to the database is made, a PUT, POST, or DELETE, a new authtoken is return to the client with updated information rather than just the change in the database. 
 
 As an additional feature, parents should be notified when their child completed a task. Moment.js is used both on the server side and client side. On the client, it ensures that the time sent in is consistent with the server. On the server side there is business logic to compare the expiry date (or due date of a task) to the date a specific PUT request is sent in by a child user. The server is also able to then send a corresponding text message (provided by a parent user upon logging in) through the Twilio package.
 
