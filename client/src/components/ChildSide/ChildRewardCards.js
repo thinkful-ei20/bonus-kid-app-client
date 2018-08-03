@@ -15,12 +15,12 @@ const mapStateToProps = state => ({
 
 export const ChildTaskCards = props => {
   const statusUnlocked = { color: '#f8e21a' }
-  const statusPurchased = { color: 'blue' }
+  const statusPurchased = { color: '#00A4A6' }
   const childCards = props.user.rewards.map((reward, i) =>
     <li className='reward' key={reward.id} 
       onClick={() => props.dispatch(toggleChildDetails(reward))}>
       <div className='reward-status'>
-      {reward.purchased ? <p className='reward-purchased' style={statusPurchased}>PURCHASED</p> : 
+      {reward.purchased ? <div className='reward-purchased' style={statusPurchased}><i className='fas fa-check' style={statusPurchased}></i></div> : 
                   reward.pointValue < props.user.currentPoints ? 
                     <div className='unlocked'>
                       <i className='icon fas fa-circle' style={statusUnlocked}></i>
