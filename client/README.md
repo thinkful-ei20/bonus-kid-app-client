@@ -21,13 +21,9 @@ This app is designed to increase positive interaction between parents and childr
 
 ### Login and Sign Up
 ```
-
 Users can sign in or create a page. 
-
 There are sepereate signins for parents and children. 
-
 Only parents are able to create accounts. 
-
 Parents will be promted to link a child to their account upon creation. 
 ```
 
@@ -39,15 +35,10 @@ Parents will be promted to link a child to their account upon creation.
 
 ```
 This is how the dashboard looks for parents and children.
-
 There are cards with the child's avatar and the progress of their tasks.
-
 The parent dashboard will load all the linked child accounts. 
-
 The child dash board will only display the child's card.
-
 Parents will be able to approve, delete, edit and assign tasks from here. 
-
 The children can submit tasks for approval.
 ```
 
@@ -60,9 +51,8 @@ The children can submit tasks for approval.
 
 ```
 This is the rewards page. It works much the same way as the tasks page. 
-
-Here the parents can create new rewards and check on thier child's purchase history. Children can purchase the rewards.
-
+Here the parents can create new rewards and check on thier child's purchase history. 
+Children can purchase the rewards.
 Checking this page frequently can reming parents to take their kids out on a treat!
 ```
 
