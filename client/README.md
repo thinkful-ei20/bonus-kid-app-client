@@ -1,4 +1,4 @@
-# Bonus Kid Client
+# Bonus Kid
 We are [live here](https://bonus-kid-client.herokuapp.com/)!
 
 Between studying, extra-curricular activities, and handling their responsibilities kids deserve a bonus! 
@@ -195,6 +195,7 @@ Standard/Thinkful-style
 - redux-form
 - redux-thunk
 - nodemon
+- moment.js
 - passport
 - passport-jwt
 - passport-local
