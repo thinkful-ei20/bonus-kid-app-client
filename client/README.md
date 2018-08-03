@@ -68,8 +68,7 @@ Children can purchase with their points.
 Checking this page frequently can remind parents to take their kids out on a treat!
 ```
 
-![Image of parent reward](https://image.ibb.co/dtvkfe/bonus_kid_p_reward.png "Parent rewards page")![Image of child rewards](https://image.ibb.co/cCUE6K/bonus_kid_reward.png "Child rewards page")![Image of reward modal](https://image.ibb.co/kUwrLe/bonus_kid_reward_modal.png "Logo Title Text 1")
-
+![Image of parent reward](https://image.ibb.co/mwBDYz/bonus_kid_p_reward.png "Parent rewards page")![Image of child rewards](https://image.ibb.co/cCUE6K/bonus_kid_reward.png "Child rewards page")
 
 
 # Development Highlights
