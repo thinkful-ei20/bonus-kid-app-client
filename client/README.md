@@ -90,7 +90,7 @@ The technical highlight of Bonus Kid utilization MongoDB’s loose schemas. To e
 
 As an additional feature, parents should be notified when their child completed a task. Moment.js is used both on the server side and client side. On the client, it ensures that the time sent in is consistent with the server. On the server side there is business logic to compare the expiry date (or due date of a task) to the date a specific PUT request is sent in by a child user. The server is also able to then send a corresponding text message (provided by a parent user upon logging in) through the Twilio package.
 
-## Manageing State
+## Managing State
 At first glance, handling the data from the server may seem a bit trickey. We loaded all of our data within the user auth token. We recommned installing Redux dev tools for your browser while developing. 
 
 To retreive the database from state look into ```auth.authToken``` in the redux state. Data decoded from the authToken will look something like this: 
