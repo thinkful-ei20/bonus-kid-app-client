@@ -238,23 +238,35 @@
   .non-members {
     font-size: 1.4em;
   }
+  .onboarding-task .onboarding-task-desc,
+  .onboarding-reward .onboarding-reward-desc,
+  .onboarding-slogan .onboarding-slogan-desc{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
   .onboarding-task .onboarding-task-desc h2{
     font-size: 2em;
   }
   .onboarding-task .onboarding-task-desc p{
     font-size: 1.1em;
+    text-align: center;
+
   }
   .onboarding-reward .onboarding-reward-desc h2 {
     font-size: 2em;
   }
   .onboarding-reward .onboarding-reward-desc p {
     font-size: 1.1em;
+    text-align: center;
   }
   .onboarding-slogan .onboarding-slogan-desc h2 {
     font-size: 2em;
   }
   .onboarding-slogan .onboarding-slogan-desc p {
     font-size: 1.1em;
+    text-align: center;
+
   }
   
 
@@ -283,5 +295,16 @@
   }
 }
 
-@media screen and (min-width: 1000px) {
-}
+@media screen and (min-width: 1200px) {
+  .login-forms{
+    margin: -11% auto -13% auto;
+
+  }
+} 
+
+@media screen and (min-width: 1450px) {
+  .login-forms{
+    margin: -9% auto -14% auto;
+
+  }
+} 

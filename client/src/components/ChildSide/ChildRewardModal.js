@@ -19,7 +19,7 @@ export const ChildRewardModal = props => {
     <div className='modal-content'>
       <div className='child-detail'>
       <p className='status'>{props.showDetails ? props.reward.purchased ? 
-          <span>Purchaed!</span> : props.reward.pointValue < props.user.currentPoints ? 
+          <span>Purchased!</span> : props.reward.pointValue < props.user.currentPoints ? 
             <span>Available to purchase!</span> : <span>Needs more points to purchase!</span> : null}</p>
         <p className='name'>Taskname: <span>{props.showDetails ? props.reward.name : null}</span></p>
         <p className='points'>PointValue: <span>{props.showDetails ? props.reward.pointValue : null}</span></p>

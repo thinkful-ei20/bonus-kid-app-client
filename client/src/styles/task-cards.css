@@ -8,7 +8,7 @@
 .feature-card {
   display: flex;
   flex-direction: column;
-  margin-top: -3em;
+  margin: -20% auto 20% auto;
 }
 
 .feature-card .add-btn {
@@ -43,7 +43,9 @@
   font-size: 1em;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+
 }
+
 
 .child-detail .buy-reward {
   margin: 0 0 0 auto;
@@ -51,6 +53,8 @@
   font-size: 1.1em;
   width: fit-content;
   color: green;
+  background-color: white;
+  border: none;
 }
 
 .child-info{
@@ -151,7 +155,9 @@ img{
   }
   .feature-card{
     width: 90%;
-    margin: 0 auto;    
+  }
+  .child-details-heading{
+    width: 80%;
   }
 }
 
@@ -201,6 +207,9 @@ img{
   .task-list .task {
     padding:1em;
   }
+  .child-details-heading{
+    width: 66%;
+  }
 }
 
 @media screen and (min-width: 850px){
@@ -208,6 +217,9 @@ img{
     width: 80%;
     margin-left: auto;
     margin-right: auto;
+  }
+  .feature-card{
+    width: 800px;
   }
 }
 
@@ -218,14 +230,20 @@ img{
     margin-left: auto;
     margin-right: auto;
   }
+  .feature-card{
+    margin: -14% auto 14% auto;
+  }
 
   .side-avatar {
     flex: 0 0 30%;
   }
 
   .item-cards{
-   flex: 0 65%;
-  
+   flex: 0 65%;  
+   height: auto;
+  }
+  .child-details-heading{
+    width: 750px;
   }
 }
 @media screen and (min-width: 1100px){
@@ -248,3 +266,14 @@ img{
   }
 }
 
+@media screen and (min-width: 1200px){
+  .feature-card{
+    margin: -10% auto 10% auto;
+  }
+}
+
+@media screen and (min-width: 1600px){
+  .feature-card{
+    margin: -8% auto 8% auto;
+  }
+}

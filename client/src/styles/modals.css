@@ -101,11 +101,9 @@
  @media screen and (min-width: 400px){
 
   .modal .item-options, .modal-content{
-    width: 61%;
   }
 
   .modal .close{
-    width: 61%;
  
   }
 }
@@ -113,26 +111,34 @@
 @media screen and (min-width: 500px){
 
   .modal .item-options, .modal-content{
-    width: 51%;
+    width: 80%;
   }
 
   .modal .close{
-    width: 51%;
- 
+    width: 80%;
   }
 }
 
 @media screen and (min-width: 600px){
 
   .modal .item-options, .modal-content{
-    width: 45%;
   }
 
   .modal .close{
-    width: 45%;
  
   }
 }
+
+@media screen and (min-width: 700px){
+  .modal .item-options, .modal-content{
+    width: 66%;
+  }
+
+  .modal .close{
+    width: 66%;
+  }
+}
+
 
 @media screen and (min-width: 750px){
   .modal-container {
@@ -140,11 +146,18 @@
   }
 
   .modal .item-options, .modal-content{
-    width: 450px;
   }
 
   .modal .close{
-    width: 450px;
  
+  }
+}
+@media screen and (min-width: 900px){
+  .modal .item-options, .modal-content{
+    width: 750px;
+  }
+
+  .modal .close{
+    width: 750px;
   }
 }

@@ -57,7 +57,7 @@ export function LandingPage(props){
         </div>
         <div className='onboarding-task-desc'>
           <h2>Assign a task.</h2>
-          <p>Set up tasks to send to your child; you can assign each a task a point value that tallies on your child's account.</p>
+          <p>Set up tasks to send to your child; you can assign each task a point value that tallies on your child's account when completed.</p>
         </div>
       </div>
       <div className='onboarding-reward'>
