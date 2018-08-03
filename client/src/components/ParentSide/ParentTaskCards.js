@@ -26,7 +26,7 @@ export const ParentTaskCards = props => {
         {child.totalPoints} <i className="icon fas fa-crown"></i></span>
         </div>
         <div className='side-avatar'>
-          <img src='http://i66.tinypic.com/v45hqg.jpg' alt='avatar of child'></img>
+          <img src='https://image.ibb.co/c9Ng3z/avatar_1.jpg' alt='avatar of child'></img>
           {/* <i className='fas fa-user-ninja fa-3x' aria-hidden="true"></i> */}
      
         </div>
