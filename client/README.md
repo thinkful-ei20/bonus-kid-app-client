@@ -7,6 +7,14 @@ This app is designed to increase positive interaction between parents and childr
 
 *View our [server code here](https://github.com/thinkful-ei20/bonus-kid-app-server).*
 
+# Demo Accout
+ ## Parent
+ - username: Demo
+ - password: password123
+ ## Child 
+ - username: demochild
+ - password: password123
+
 # Features
 
 - Sign up and link children to parent account
