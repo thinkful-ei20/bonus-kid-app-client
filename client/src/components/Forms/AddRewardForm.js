@@ -42,7 +42,7 @@ export class AddRewardForm extends React.Component {
             <label htmlFor='pointValue'>Point Value: </label>
             <Field component={Input} name='pointValue' placeholder='ex. 100'
               type='number' id='addRewardPointValue' validate={[required, nonEmpty]} />
-            <button className='add-btn' disabled={this.props.pristine || this.props.submitting}>OK</button>
+            <button className='add-btn' disabled={this.props.pristine || this.props.submitting}>Submit</button>
           </div>
         </form>
       </div>

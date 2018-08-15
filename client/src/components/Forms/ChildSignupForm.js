@@ -61,7 +61,7 @@ export class ChildSignupForm extends React.Component {
           <button
             type="submit" className='child-signup-btn'
             disabled={this.props.pristine || this.props.submitting}>
-          OK
+          Submit
           </button>
         </div>
       </form>
