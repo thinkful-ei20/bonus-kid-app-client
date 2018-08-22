@@ -15,9 +15,11 @@
   flex-direction: column;
   padding: 0 1.5em;
   /* margin: -27% auto 0 auto; */
+  margin: auto;
   font-size: 0.9em;
   width: 90%;
   height: auto;
+  margin-top: 1em !important;
 }
 
 .login-choice button {
@@ -208,7 +210,7 @@
   .onboarding-task {
     display: flex;
     flex-direction: column;
-    margin-top: 100px;
+    margin-top: 50px;
   }
   .onboarding-reward {
     display: flex;

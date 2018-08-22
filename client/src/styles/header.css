@@ -53,7 +53,7 @@
 
 @media screen and (min-width: 500px) {
   .header{
-    height: 25vh;
+    height: 45vh;
   }
   .header h2{
     /* font-size: 1.1em; */
