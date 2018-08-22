@@ -1,5 +1,5 @@
 .first-page {
-  height: 100vh;
+  /* height: 100vh; */
   width: 100vw;
   /* display: flex; */
   /* flex-direction: column; */
@@ -99,8 +99,8 @@
   padding: 1em;
   font-family: 'Raleway';
   font-size: 0.8em;
-  flex-grow: 1;
-  margin-top: 10%;
+  /* flex-grow: 1; */
+  /* margin-top: 10%; */
 }
 
 .non-members .register-text {
@@ -179,7 +179,7 @@
   }
 
   .onboarding-task{
-    margin-top: 260px;
+    margin-top: 100px;
   }
 }
 
@@ -191,11 +191,11 @@
 
 @media screen and (min-width: 600px) {
   .first-page {
-    height: 100vh;
+    /* height: 100vh; */
   }
   .non-members {
     font-size: 1em;
-    margin-top: 17%;
+    /* margin-top: 17%; */
   }
   .login-forms {
     font-size: 1em;
@@ -208,7 +208,7 @@
   .onboarding-task {
     display: flex;
     flex-direction: column;
-    margin-top: 400px;
+    margin-top: 100px;
   }
   .onboarding-reward {
     display: flex;

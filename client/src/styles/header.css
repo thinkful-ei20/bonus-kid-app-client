@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   background-color: #0c2231;
-  height: 40vh;
+  height: 25vh;
 }
 
 
@@ -52,7 +52,7 @@
 
 @media screen and (min-width: 500px) {
   .header{
-    height: 45vh;
+    height: 25vh;
   }
   .header h2{
     font-size: 1.1em;
