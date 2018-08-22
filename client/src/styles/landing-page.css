@@ -14,7 +14,7 @@
   display: flex;
   flex-direction: column;
   padding: 0 1.5em;
-  margin: -27% auto 0 auto;
+  /* margin: -27% auto 0 auto; */
   font-size: 0.9em;
   width: 90%;
   height: auto;
@@ -173,14 +173,19 @@
 
 @media screen and (min-width: 400px) {
   .login-forms {
-    margin: -25% auto 0 auto;
+    /* margin: -25% auto 0 auto; */
     width: 80%;
+    margin: auto;
+  }
+
+  .onboarding-task{
+    margin-top: 260px;
   }
 }
 
 @media screen and (min-width: 500px) {
   .login-forms {
-    margin: -15% auto 0 auto;
+    /* margin: -15% auto 0 auto; */
   }
 }
 
@@ -195,7 +200,7 @@
   .login-forms {
     font-size: 1em;
     width: 85%;
-    margin: -18% auto -13% auto;
+    /* margin: -18% auto -13% auto; */
   }
   .login-forms .login-btn {
     font-size: 0.7em;
@@ -203,6 +208,7 @@
   .onboarding-task {
     display: flex;
     flex-direction: column;
+    margin-top: 400px;
   }
   .onboarding-reward {
     display: flex;
@@ -226,7 +232,8 @@
 @media screen and (min-width: 750px) {
   .login-forms {
     width: 70%;
-    margin: -15% auto -13% auto;
+    /* margin: -15% auto -13% auto; */
+    height: 400px;
   }
 }
 
@@ -234,7 +241,8 @@
   .login-forms {
     font-size: 1.3em;
     width: 750px;
-    margin: -15% auto -13% auto;
+    height: initial;
+    /* margin: -15% auto -13% auto; */
   }
   .login-forms .login-btn {
     font-size: 0.7em;
@@ -301,14 +309,14 @@
 
 @media screen and (min-width: 1200px) {
   .login-forms{
-    margin: -11% auto -13% auto;
+    /* margin: -11% auto -13% auto; */
 
   }
 } 
 
 @media screen and (min-width: 1450px) {
   .login-forms{
-    margin: -9% auto -14% auto;
+    /* margin: -9% auto -14% auto; */
 
   }
 } 
