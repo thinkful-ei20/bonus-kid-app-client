@@ -1,8 +1,8 @@
 .first-page {
   height: 100vh;
   width: 100vw;
-  display: flex;
-  flex-direction: column;
+  /* display: flex; */
+  /* flex-direction: column; */
 }
 
 .landing-page {
@@ -112,10 +112,14 @@
 }
 
 .arrow-icon {
-  align-self: center;
-  cursor: pointer;
-  text-decoration: none;
-  color: #0c2231;
+  -ms-flex-item-align: center;
+    align-self: center;
+    cursor: pointer;
+    text-decoration: none;
+    color: #0c2231;
+    display: block;
+    margin: auto;
+    text-align: center;
 }
 
 .onboarding-task .onboarding-task-background,
@@ -176,7 +180,7 @@
 
 @media screen and (min-width: 500px) {
   .login-forms {
-    margin: -20% auto 0 auto;
+    margin: -15% auto 0 auto;
   }
 }
 
