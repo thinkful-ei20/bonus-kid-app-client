@@ -61,6 +61,8 @@
 
 .child-choice {
   border-top-right-radius: 10px;
+  box-shadow: 5px 5px 5px #404d48;
+  border-top: 1px solid rgb(0, 96, 96);
 }
 
 .login-forms input {

@@ -3,12 +3,13 @@
 }
 
 .child-cards {
-  margin-top: -4em;
+  margin-top: 1.5em;
 }
 .feature-card {
   display: flex;
   flex-direction: column;
   margin: -20% auto 20% auto;
+  max-width: 90%;
 }
 
 .feature-card .add-btn {
@@ -151,7 +152,6 @@ img{
 
 @media screen and (min-width: 500px){
   .child-cards {
-    margin-top: -3.5em;
   }
   .feature-card{
     width: 90%;

@@ -11,7 +11,7 @@ export const SignupHeader = props => (
     <div className='header-content'>
       <div className='left-header'>
         <i className="fa fa-child fa-lg" aria-hidden="true"></i>
-        <h1 role='banner' onClick={() => console.log('button works')}>BonusKid</h1>
+        <h1 role='banner' >BonusKid</h1>
       </div>
       <div className='right-header'>
         <i className='fa fa-bars fa-2x' aria-hidden='true'
