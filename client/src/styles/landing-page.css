@@ -14,12 +14,10 @@
   display: flex;
   flex-direction: column;
   padding: 0 1.5em;
-  /* margin: -27% auto 0 auto; */
-  margin: auto;
-  font-size: 0.9em;
+  margin: -16vw auto 0 auto;
+  /* font-size: 0.9em; */
   width: 90%;
   height: auto;
-  margin-top: 1em !important;
 }
 
 .login-choice button {
@@ -179,7 +177,7 @@
   .login-forms {
     /* margin: -25% auto 0 auto; */
     width: 80%;
-    margin: auto;
+    /* margin: auto; */
   }
 
   .onboarding-task{

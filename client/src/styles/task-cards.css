@@ -3,31 +3,33 @@
 }
 
 .child-cards {
-  margin-top: 1.5em;
+  margin: -4em auto;
 }
 .feature-card {
   display: flex;
   flex-direction: column;
-  margin: -20% auto 20% auto;
   max-width: 90%;
+  margin: 0 auto;
 }
 
 .feature-card .add-btn {
   border: none;
   border-radius: 10px;
   padding: 0.5em 0.8em;
-  font-size: 0.8em;
+  font-size: 0.9em;
   background-color: #0c2231;
   color: white;
-  /* width: 70%; */
-  margin: -1.2em 1.8em 0 auto;
+  width: 40%;
+  /* margin: -6em 1.8em -3.5em auto; */
+  margin: -9px 12px 9px auto;
 }
 
 .main-card {
   padding: 1em;
   display: flex;
   flex-direction: column;
-  margin: 0.5em 0.75em;
+  /* margin: 4.5em 0.75em; */
+  margin: 0 auto;
   border-radius: 25px;
   box-shadow: 5px 5px 5px#404d48;
   background-color: #006060;

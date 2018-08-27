@@ -26,7 +26,9 @@ export const ChildHeader = props => (
       </div>
       <ChildSideNav />
     </div>
-    <h2 className='heading'>Hey <span>{props.user.name}</span>!<br />It's<span> {moment().format("dddd")}<br /> {moment().format("MMMM Do, h:mmA")} </span>.</h2> 
+    <h2 className='heading'>Hey <span>{props.user.name}</span>!
+    {/* It's<span> {moment().format("dddd")}<br /> {moment().format("MMMM Do, h:mmA")} </span>. */}
+    </h2> 
   </header>
 );
 
