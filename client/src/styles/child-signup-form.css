@@ -60,9 +60,9 @@
 }
 
 @media screen and (min-width: 500px){
-  .child-signup-form{
+  /* .child-signup-form{
     width: 70%;
-  }
+  } */
 }
 
 @media screen and (min-width: 650px){
@@ -72,8 +72,8 @@
 }
 
 @media screen and (min-width: 900px){
-  .child-signup-form{
+  /* .child-signup-form{
     width: 650px;
     margin: -10% auto 0 auto;
-  }
+  } */
 }

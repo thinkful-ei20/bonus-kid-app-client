@@ -51,10 +51,28 @@
   color: #00A4A6;
 }
 
+@media screen and (orientation: landscape){
+  .header h2{
+    margin: -0.5em auto;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (min-width: 500px) {
   .header{
-    height: 45vh;
-    padding: 1.3em;
+    /* height: 45vh; */
+    /* padding: 1.3em; */
   }
   .header h2{
     /* font-size: 1.5em; */
@@ -63,14 +81,14 @@
     /* margin-top: .5em; */
   }
   .left-header {
-    align-self: center;
+    /* align-self: center; */
   }
 }
 
 @media screen and (min-width: 600px) {
 
   .header .welcome-text {
-    font-size: 1.7em;
+    /* font-size: 1.7em; */
   }
   .header-content{
     /* margin: 0; */
@@ -95,12 +113,12 @@
     /* font-size: 1.2em; */
   }
   .header .welcome-text {
-    font-size: 1.7em;
+    /* font-size: 1.7em; */
   }
   .header h2 {
     /* font-size: 1.7em; */
   }
   .non-members h3{
-    font-size: .7em;
+    /* font-size: .7em; */
   }
 }

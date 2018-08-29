@@ -13,10 +13,10 @@ const mapStateToProps = state => ({
 export const AddTaskModal = props => {
   return(
   <div className={`modal ${props.isAdding ? 'visible': ''}`}>
-    <div className='modal-content add-task'>
+    <div className='modal-content-add-form-container add-task'>
       <AddRewardForm />
     </div>
-    <button className='close' onClick={() => props.dispatch(toggleAddRewardForm())}>
+    <button className='close-add-form' onClick={() => props.dispatch(toggleAddRewardForm())}>
       Cancel</button>
   </div>
 );

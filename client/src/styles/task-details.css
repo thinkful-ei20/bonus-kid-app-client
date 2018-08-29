@@ -60,8 +60,9 @@
 
 .approval-btns {
   display: flex;
-  margin: 1.3em;
+  margin: .9em;
   justify-content: space-around;
+  font-size: 1.2em;
 }
 
 .approval-btns .approve, .approval-btns .deny {

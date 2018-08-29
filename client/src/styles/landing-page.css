@@ -173,40 +173,58 @@
   background-size: cover;
 }
 
+@media screen and (orientation: landscape){
+  .login-forms{
+    margin: -8vw auto 0 auto;
+    width: 70%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (min-width: 400px) {
   .login-forms {
     /* margin: -25% auto 0 auto; */
-    width: 80%;
+    /* width: 80%; */
     /* margin: auto; */
   }
 
-  .onboarding-task{
+  /* .onboarding-task{
     margin-top: 100px;
-  }
+  } */
 }
 
 @media screen and (min-width: 500px) {
-  .login-forms {
-    /* margin: -15% auto 0 auto; */
-  }
+  /* .login-forms {
+    margin: -15% auto 0 auto;
+  } */
 }
 
 @media screen and (min-width: 600px) {
-  .first-page {
-    /* height: 100vh; */
-  }
-  .non-members {
+  /* .first-page {
+    height: 100vh;
+  } */
+  /* .non-members {
     font-size: 1em;
-    /* margin-top: 17%; */
-  }
-  .login-forms {
+    margin-top: 17%;
+  } */
+  /* .login-forms {
     font-size: 1em;
     width: 85%;
-    /* margin: -18% auto -13% auto; */
-  }
-  .login-forms .login-btn {
+    margin: -18% auto -13% auto;
+  } */
+  /* .login-forms .login-btn {
     font-size: 0.7em;
-  }
+  } */
   .onboarding-task {
     display: flex;
     flex-direction: column;
@@ -232,26 +250,26 @@
 }
 
 @media screen and (min-width: 750px) {
-  .login-forms {
+  /* .login-forms {
     width: 70%;
-    /* margin: -15% auto -13% auto; */
+    margin: -15% auto -13% auto;
     height: 400px;
-  }
+  } */
 }
 
 @media screen and (min-width: 900px) {
-  .login-forms {
+  /* .login-forms {
     font-size: 1.3em;
     width: 750px;
     height: initial;
-    /* margin: -15% auto -13% auto; */
-  }
-  .login-forms .login-btn {
+    margin: -15% auto -13% auto;
+  } */
+  /* .login-forms .login-btn {
     font-size: 0.7em;
-  }
-  .non-members {
+  } */
+  /* .non-members {
     font-size: 1.4em;
-  }
+  } */
   .onboarding-task .onboarding-task-desc,
   .onboarding-reward .onboarding-reward-desc,
   .onboarding-slogan .onboarding-slogan-desc{
@@ -282,9 +300,6 @@
     text-align: center;
 
   }
-  
-
-
   .onboarding-task {
     display: flex;
     flex-direction: row;
@@ -309,16 +324,16 @@
   }
 }
 
-@media screen and (min-width: 1200px) {
+/* @media screen and (min-width: 1200px) {
   .login-forms{
-    /* margin: -11% auto -13% auto; */
+    margin: -11% auto -13% auto;
 
   }
-} 
+}  */
 
-@media screen and (min-width: 1450px) {
+/* @media screen and (min-width: 1450px) {
   .login-forms{
-    /* margin: -9% auto -14% auto; */
+    margin: -9% auto -14% auto;
 
   }
-} 
+}   */

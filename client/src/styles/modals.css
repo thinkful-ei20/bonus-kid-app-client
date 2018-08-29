@@ -13,8 +13,23 @@
   visibility: hidden;
 }
 
-.modal .close {
+.close {
   width: 90%;
+  background-color: #006060;
+  color: white;
+  border: none;
+  padding: 0.5em;
+  font-size: 0.8em;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  font-family: 'Raleway';
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.close-add-form{
+  margin: 0 auto;
+  width: 68.5%;
   background-color: #006060;
   color: white;
   border: none;
@@ -31,8 +46,6 @@
 .modal-container{
   width: 100%;
   margin-top: 2em;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .modal-content {
@@ -45,6 +58,18 @@
   /* padding: 1em; */
   outline: 0;
   width: 90%;
+  margin: 0 auto;
+}
+.modal-content-add-form-container{
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: auto;
+  font-size: .9em;
+  /* padding: 1em; */
+  outline: 0;
+  width: 68.5%;
   margin: 0 auto;
 }
 
@@ -96,6 +121,28 @@
   margin-right: auto;
 }
 
+@media screen and (orientation: landscape){
+  .modal-container{
+    margin: 0 auto;
+    width: 76%;
+    margin-top: -2em;
+  }
+  .close{
+    width: 68.5%;
+  }
+  .modal-content{
+    /* width: 68.5%; */
+  }
+}
+
+
+
+
+
+
+
+
+
 
 
  @media screen and (min-width: 400px){
@@ -111,11 +158,11 @@
 @media screen and (min-width: 500px){
 
   .modal .item-options, .modal-content{
-    width: 80%;
+    /* width: 80%; */
   }
 
   .modal .close{
-    width: 74%;
+    /* width: 74%; */
   }
 }
 
@@ -131,18 +178,18 @@
 
 @media screen and (min-width: 700px){
   .modal .item-options, .modal-content{
-    width: 66%;
+    /* width: 66%; */
   }
 
   .modal .close{
-    width: 66%;
+    /* width: 66%; */
   }
 }
 
 
 @media screen and (min-width: 750px){
   .modal-container {
-    margin-top: 3em;
+    /* margin-top: 3em; */
   }
 
   .modal .item-options, .modal-content{
@@ -154,10 +201,10 @@
 }
 @media screen and (min-width: 900px){
   .modal .item-options, .modal-content{
-    width: 750px;
+    /* width: 750px; */
   }
 
   .modal .close{
-    width: 750px;
+    /* width: 750px; */
   }
 }
