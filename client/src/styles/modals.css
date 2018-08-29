@@ -168,7 +168,11 @@
 
 @media screen and (min-width: 600px){
 
-  .modal .item-options, .modal-content{
+  .modal-content-add-form-container{
+    width: 48.5%;
+  }
+  .close-add-form{
+    width: 48.5%;
   }
 
   .modal .close{

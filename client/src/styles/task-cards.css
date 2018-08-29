@@ -35,6 +35,16 @@
   background-color: #006060;
   flex-grow: 1;
 }
+.main-card-child-reward{
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  margin: -2em auto;
+  border-radius: 25px;
+  box-shadow: 5px 5px 5px#404d48;
+  background-color: #006060;
+  flex-grow: 1;
+}
 
 .child-details-heading {
   text-align: center;
@@ -189,7 +199,12 @@ img{
   }
   .item-cards{
     width: 80%;
-
+  }
+  .main-card-child-reward{
+    margin: -1em auto;
+  }
+  .main-card{
+    margin: 2em auto;
   }
 }
 

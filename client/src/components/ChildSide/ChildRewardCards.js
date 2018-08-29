@@ -38,7 +38,7 @@ export const ChildTaskCards = props => {
     </li>);
   return (
     <div className='feature-card'>
-      <div className='main-card'>
+      <div className='main-card-child-reward'>
 
         <div className='child-info'>
           <p>{props.user.name}</p>

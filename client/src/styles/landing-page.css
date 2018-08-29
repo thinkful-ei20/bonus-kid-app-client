@@ -258,6 +258,9 @@
 }
 
 @media screen and (min-width: 900px) {
+  .landing-page {
+    font-size: 1.2em;
+  }
   /* .login-forms {
     font-size: 1.3em;
     width: 750px;
@@ -324,16 +327,23 @@
   }
 }
 
-/* @media screen and (min-width: 1200px) {
+@media screen and (min-width: 1200px) {
   .login-forms{
-    margin: -11% auto -13% auto;
-
+    width: 40%;
   }
-}  */
-
-/* @media screen and (min-width: 1450px) {
-  .login-forms{
-    margin: -9% auto -14% auto;
-
+  .non-members {
+    margin-top: 7%;
   }
-}   */
+  .landing-page {
+    font-size: 1.3em;
+  }
+} 
+
+@media screen and (min-width: 1600px) {
+  .non-members {
+    margin-top: 3%;
+  }
+  .arrow-icon{
+    margin: 10em auto;
+  }
+}  
