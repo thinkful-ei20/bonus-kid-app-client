@@ -65,9 +65,9 @@
 }
 
 @media screen and (min-width: 750px){
-  .parent-signup-form{
+  /* .parent-signup-form{
     width: 700px;
-  }
+  } */
 }
 
 @media screen and (min-width: 950px){

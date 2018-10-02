@@ -50,7 +50,8 @@
   border: none;
   /* width: 20%; */
   margin: 0.8em auto;
-  font-size: 1.2em;
+  font-size: 1.3em;
+  text-shadow: 0px 2px 3px #006060;
 }
 
 @media screen and (min-width: 450px){

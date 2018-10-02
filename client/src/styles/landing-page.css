@@ -1,8 +1,8 @@
 .first-page {
-  height: 100vh;
+  /* height: 100vh; */
   width: 100vw;
-  display: flex;
-  flex-direction: column;
+  /* display: flex; */
+  /* flex-direction: column; */
 }
 
 .landing-page {
@@ -14,8 +14,8 @@
   display: flex;
   flex-direction: column;
   padding: 0 1.5em;
-  margin: -27% auto 0 auto;
-  font-size: 0.9em;
+  margin: -16vw auto 0 auto;
+  /* font-size: 0.9em; */
   width: 90%;
   height: auto;
 }
@@ -59,6 +59,8 @@
 
 .child-choice {
   border-top-right-radius: 10px;
+  box-shadow: 5px 5px 5px #404d48;
+  border-top: 1px solid rgb(0, 96, 96);
 }
 
 .login-forms input {
@@ -99,8 +101,8 @@
   padding: 1em;
   font-family: 'Raleway';
   font-size: 0.8em;
-  flex-grow: 1;
-  margin-top: 10%;
+  /* flex-grow: 1; */
+  /* margin-top: 10%; */
 }
 
 .non-members .register-text {
@@ -112,10 +114,14 @@
 }
 
 .arrow-icon {
-  align-self: center;
-  cursor: pointer;
-  text-decoration: none;
-  color: #0c2231;
+  -ms-flex-item-align: center;
+    align-self: center;
+    cursor: pointer;
+    text-decoration: none;
+    color: #0c2231;
+    display: block;
+    margin: auto;
+    text-align: center;
 }
 
 .onboarding-task .onboarding-task-background,
@@ -167,38 +173,62 @@
   background-size: cover;
 }
 
+@media screen and (orientation: landscape){
+  .login-forms{
+    margin: -8vw auto 0 auto;
+    width: 70%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (min-width: 400px) {
   .login-forms {
-    margin: -25% auto 0 auto;
-    width: 80%;
+    /* margin: -25% auto 0 auto; */
+    /* width: 80%; */
+    /* margin: auto; */
   }
+
+  /* .onboarding-task{
+    margin-top: 100px;
+  } */
 }
 
 @media screen and (min-width: 500px) {
-  .login-forms {
-    margin: -20% auto 0 auto;
-  }
+  /* .login-forms {
+    margin: -15% auto 0 auto;
+  } */
 }
 
 @media screen and (min-width: 600px) {
-  .first-page {
+  /* .first-page {
     height: 100vh;
-  }
-  .non-members {
+  } */
+  /* .non-members {
     font-size: 1em;
     margin-top: 17%;
-  }
-  .login-forms {
+  } */
+  /* .login-forms {
     font-size: 1em;
     width: 85%;
     margin: -18% auto -13% auto;
-  }
-  .login-forms .login-btn {
+  } */
+  /* .login-forms .login-btn {
     font-size: 0.7em;
-  }
+  } */
   .onboarding-task {
     display: flex;
     flex-direction: column;
+    margin-top: 50px;
   }
   .onboarding-reward {
     display: flex;
@@ -220,24 +250,29 @@
 }
 
 @media screen and (min-width: 750px) {
-  .login-forms {
+  /* .login-forms {
     width: 70%;
     margin: -15% auto -13% auto;
-  }
+    height: 400px;
+  } */
 }
 
 @media screen and (min-width: 900px) {
-  .login-forms {
+  .landing-page {
+    font-size: 1.2em;
+  }
+  /* .login-forms {
     font-size: 1.3em;
     width: 750px;
+    height: initial;
     margin: -15% auto -13% auto;
-  }
-  .login-forms .login-btn {
+  } */
+  /* .login-forms .login-btn {
     font-size: 0.7em;
-  }
-  .non-members {
+  } */
+  /* .non-members {
     font-size: 1.4em;
-  }
+  } */
   .onboarding-task .onboarding-task-desc,
   .onboarding-reward .onboarding-reward-desc,
   .onboarding-slogan .onboarding-slogan-desc{
@@ -268,9 +303,6 @@
     text-align: center;
 
   }
-  
-
-
   .onboarding-task {
     display: flex;
     flex-direction: row;
@@ -297,14 +329,21 @@
 
 @media screen and (min-width: 1200px) {
   .login-forms{
-    margin: -11% auto -13% auto;
-
+    width: 40%;
+  }
+  .non-members {
+    margin-top: 7%;
+  }
+  .landing-page {
+    font-size: 1.3em;
   }
 } 
 
-@media screen and (min-width: 1450px) {
-  .login-forms{
-    margin: -9% auto -14% auto;
-
+@media screen and (min-width: 1600px) {
+  .non-members {
+    margin-top: 3%;
   }
-} 
+  .arrow-icon{
+    margin: 10em auto;
+  }
+}  

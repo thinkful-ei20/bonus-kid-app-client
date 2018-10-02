@@ -17,7 +17,7 @@ export const ChildHeader = props => (
     <div className='header-content'>
       <div className='left-header'>
         <i className="fa fa-child fa-lg" aria-hidden="true"></i>
-        <h1 role='banner' onClick={() => console.log('button works')}>BonusKid</h1>
+        <h1 role='banner'>BonusKid</h1>
       </div>
       <div className='right-header'>
         <i className='fa fa-bars fa-2x' aria-hidden='true'
@@ -25,7 +25,7 @@ export const ChildHeader = props => (
       </div>
       <ChildSideNav />
     </div>
-    <h2 className='heading'>Hey <span>{props.user.name}</span>!<br />You've been working hard.<br />Let's check out some <span>rewards</span>!</h2> 
+    <h2 className='heading'>Hey <span>{props.user.name}</span>!<br />Let's check out some <span>rewards</span>!</h2> 
   </header>
 );
 

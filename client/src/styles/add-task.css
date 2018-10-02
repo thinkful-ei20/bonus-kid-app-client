@@ -37,8 +37,8 @@
 
 
 @media screen and (min-width: 500px){
-  .modal .modal-content, .modal .close{
+  /* .modal .modal-content, .modal .close{
     width: 96%;
-  }
+  } */
 }
 

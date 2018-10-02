@@ -2,7 +2,8 @@
   display: flex;
   flex-direction: column;
   background-color: #0c2231;
-  height: 40vh;
+  height: 35vh;
+  padding: .5em;
 }
 
 
@@ -28,8 +29,7 @@
 .left-header h1 {
   align-self: center;
   margin-left: 5px;
-  cursor: pointer;
-  font-size: 1em;
+  font-size: 1.2em;
 }
 
 .right-header{
@@ -40,64 +40,85 @@
 
 .header h2 {
   font-weight: 200;
-  font-size: 1em;
+  font-size: 1.2em;
   line-height: 1.3;
   margin: 0.5em auto;
   color:white;
+  /* padding: 1em; */
 }
 
 .header h2 span {
   color: #00A4A6;
 }
 
+@media screen and (orientation: landscape){
+  .header h2{
+    margin: -0.5em auto;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (min-width: 500px) {
   .header{
-    height: 45vh;
+    /* height: 45vh; */
+    /* padding: 1.3em; */
   }
   .header h2{
-    font-size: 1.1em;
+    /* font-size: 1.5em; */
   }
   .header-content {
-    margin-top: 1.2em;
+    /* margin-top: .5em; */
   }
   .left-header {
-    align-self: center;
+    /* align-self: center; */
   }
 }
 
 @media screen and (min-width: 600px) {
 
   .header .welcome-text {
-    font-size: 1.5em;
+    /* font-size: 1.7em; */
   }
   .header-content{
-    margin: 0;
+    /* margin: 0; */
   }
   .header .heading {
-    font-size: 1.5em
+    /* font-size: 1.5em */
   }
 
 }
 
 @media screen and (min-width: 750px) {
   .header h2 {
-    font-size: 1.4em;
+    /* font-size: 1.7em; */
+    /* padding: 1em; */
   }
 }
 
 
 @media screen and (min-width: 950px) {
   .header-content {
-    padding: 1em;
-    font-size: 1.2em;
+    /* padding: 1em; */
+    /* font-size: 1.2em; */
   }
   .header .welcome-text {
-    font-size: 2em;
+    /* font-size: 1.7em; */
   }
   .header h2 {
-    font-size: 1.7em;
+    /* font-size: 1.7em; */
   }
   .non-members h3{
-    font-size: .7em;
+    /* font-size: .7em; */
   }
 }

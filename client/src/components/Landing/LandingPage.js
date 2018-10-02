@@ -22,7 +22,7 @@ export function LandingPage(props){
     return <Redirect to='/child_dashboard' />;
   }
   const highlight = { 
-    borderTop: '#36f8b1 1px dashed',
+    borderTop: '#36f8b1 1px solid',
     boxShadow: props.parentChoice ? '0px 5px 5px 1px rgba(0, 122, 77, 0.5)' :
       '5px 5px 2px 1px rgba(0, 122, 77, 0.5)',
     backgroundColor: '#006060',
